@@ -1,0 +1,79 @@
+{% extends 'restaurant/base/base.html' %}
+
+{% block title %}Home - Restaurant Management System{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Dashboard Stats -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Today's Reservations</h5>
+                    <p class="card-text display-4">{{ today_reservations_count }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Active Orders</h5>
+                    <p class="card-text display-4">{{ active_orders_count }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5 class="card-title">Staff on Duty</h5>
+                    <p class="card-text display-4">{{ staff_on_duty_count }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-white bg-danger">
+                <div class="card-body">
+                    <h5 class="card-title">Low Stock Items</h5>
+                    <p class="card-text display-4">{{ low_stock_count }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Quick Actions -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    Quick Actions
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'restaurant:reservation_create' %}" class="btn btn-primary">New Reservation</a>
+                        <a href="{% url 'restaurant:order_create' %}" class="btn btn-success">New Order</a>
+                        <a href="{% url 'restaurant:menu_list' %}" class="btn btn-info">View Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Activity -->
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    Recent Activity
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        {% for activity in recent_activities %}
+                        <li class="list-group-item">{{ activity }}</li>
+                        {% empty %}
+                        <li class="list-group-item">No recent activity</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

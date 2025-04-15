@@ -1,0 +1,60 @@
+{% extends 'restaurant/base/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header">
+                    <h4>{% if inventory_item %}Edit{% else %}New{% endif %} Inventory Item</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.item_name.id_for_label }}" class="form-label">Item Name</label>
+                            {% render_field form.item_name class="form-control" placeholder="Enter item name" %}
+                            {% if form.item_name.errors %}
+                                <div class="text-danger">{{ form.item_name.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.quantity_on_hand.id_for_label }}" class="form-label">Quantity on Hand</label>
+                            {% render_field form.quantity_on_hand class="form-control" type="number" min="0" %}
+                            {% if form.quantity_on_hand.errors %}
+                                <div class="text-danger">{{ form.quantity_on_hand.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.reorder_level.id_for_label }}" class="form-label">Reorder Level</label>
+                            {% render_field form.reorder_level class="form-control" type="number" min="0" %}
+                            {% if form.reorder_level.errors %}
+                                <div class="text-danger">{{ form.reorder_level.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.supplier_info.id_for_label }}" class="form-label">Supplier Information</label>
+                            {% render_field form.supplier_info class="form-control" rows="3" placeholder="Enter supplier details" %}
+                            {% if form.supplier_info.errors %}
+                                <div class="text-danger">{{ form.supplier_info.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                {% if inventory_item %}Update{% else %}Create{% endif %} Inventory Item
+                            </button>
+                            <a href="{% url 'restaurant:inventory_list' %}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

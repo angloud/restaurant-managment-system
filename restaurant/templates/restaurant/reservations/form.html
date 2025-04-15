@@ -1,0 +1,68 @@
+{% extends 'restaurant/base/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header">
+                    <h4>{% if reservation %}Edit{% else %}New{% endif %} Reservation</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.customer.id_for_label }}" class="form-label">Customer</label>
+                            {% render_field form.customer class="form-control" %}
+                            {% if form.customer.errors %}
+                                <div class="text-danger">{{ form.customer.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.table_number.id_for_label }}" class="form-label">Table Number</label>
+                            {% render_field form.table_number class="form-control" type="number" min="1" %}
+                            {% if form.table_number.errors %}
+                                <div class="text-danger">{{ form.table_number.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.date_time.id_for_label }}" class="form-label">Date & Time</label>
+                            {% render_field form.date_time class="form-control" type="datetime-local" %}
+                            {% if form.date_time.errors %}
+                                <div class="text-danger">{{ form.date_time.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.number_of_guests.id_for_label }}" class="form-label">Number of Guests</label>
+                            {% render_field form.number_of_guests class="form-control" type="number" min="1" %}
+                            {% if form.number_of_guests.errors %}
+                                <div class="text-danger">{{ form.number_of_guests.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.status.id_for_label }}" class="form-label">Status</label>
+                            {% render_field form.status class="form-control" %}
+                            {% if form.status.errors %}
+                                <div class="text-danger">{{ form.status.errors }}</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                {% if reservation %}Update{% else %}Create{% endif %} Reservation
+                            </button>
+                            <a href="{% url 'restaurant:reservation_list' %}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
