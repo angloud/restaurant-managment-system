@@ -16,6 +16,9 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = ['table_number']
+        widgets = {
+            'table_number': forms.NumberInput(attrs={'class': 'form-control'}),
+        }
 
 class MenuItemForm(forms.ModelForm):
     class Meta:

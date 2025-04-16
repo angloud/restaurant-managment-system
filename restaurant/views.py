@@ -44,23 +44,6 @@ def reservation_list(request):
     })
 
 @login_required
-def reservation_create(request):
-    if request.method == 'POST':
-        form = ReservationForm(request.POST)
-        if form.is_valid():
-            reservation = form.save(commit=False)
-            reservation.status = 'PENDING'
-            reservation.save()
-            messages.success(request, 'Reservation created successfully!')
-            return redirect('restaurant:reservation_list')
-    else:
-        form = ReservationForm()
-    
-    return render(request, 'restaurant/reservations/form.html', {
-        'form': form
-    })
-
-@login_required
 def reservation_update(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk)
     if request.method == 'POST':

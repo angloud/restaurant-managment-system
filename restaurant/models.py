@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 class Customer(models.Model):
     customer_id = models.AutoField(primary_key=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     customer_name = models.CharField(max_length=100)
     customer_info = models.TextField()
 
@@ -19,7 +20,7 @@ class Reservation(models.Model):
 
     reservation_id = models.AutoField(primary_key=True)
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
-    table_number = models.IntegerField()
+    table_number = models.IntegerField(null=True, blank=True)
     date_time = models.DateTimeField()
     number_of_guests = models.IntegerField()
     status = models.CharField(max_length=50, choices=STATUS_CHOICES)
@@ -37,6 +38,7 @@ class Order(models.Model):
     ]
 
     order_id = models.AutoField(primary_key=True)
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True, blank=True)
     table_number = models.IntegerField()
     order_time = models.DateTimeField(auto_now_add=True)
     status = models.CharField(max_length=50, choices=STATUS_CHOICES)

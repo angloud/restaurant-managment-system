@@ -1,0 +1,111 @@
+{% extends 'customer_portal/base.html' %}
+
+{% block title %}Make Reservation - Restaurant Portal{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Make a Reservation</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.date.id_for_label }}" class="form-label">Date</label>
+                            {{ form.date }}
+                            {% if form.date.errors %}
+                                <div class="alert alert-danger">
+                                    {{ form.date.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.time.id_for_label }}" class="form-label">Time</label>
+                            {{ form.time }}
+                            {% if form.time.errors %}
+                                <div class="alert alert-danger">
+                                    {{ form.time.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.number_of_guests.id_for_label }}" class="form-label">Number of Guests</label>
+                        {{ form.number_of_guests }}
+                        {% if form.number_of_guests.errors %}
+                            <div class="alert alert-danger">
+                                {{ form.number_of_guests.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.special_requests.id_for_label }}" class="form-label">Special Requests</label>
+                        {{ form.special_requests }}
+                        {% if form.special_requests.errors %}
+                            <div class="alert alert-danger">
+                                {{ form.special_requests.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Make Reservation</button>
+                        <a href="{% url 'customer_portal:dashboard' %}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card {
+        margin-top: 30px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+    }
+    .form-control {
+        border-radius: 5px;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 10px;
+        font-weight: bold;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        padding: 10px;
+    }
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Set minimum date to today
+    document.addEventListener('DOMContentLoaded', function() {
+        const dateInput = document.getElementById('{{ form.date.id_for_label }}');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+    });
+</script>
+{% endblock %} 

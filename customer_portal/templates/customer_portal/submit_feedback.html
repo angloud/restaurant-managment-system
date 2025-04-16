@@ -1,0 +1,139 @@
+{% extends 'customer_portal/base.html' %}
+
+{% block title %}Submit Feedback - Restaurant Portal{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Submit Feedback</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-4">
+                        <label class="form-label">Rating</label>
+                        <div class="rating-input">
+                            {% for value, label in form.rating.field.choices %}
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="{{ form.rating.name }}" 
+                                           id="rating{{ value }}" value="{{ value }}"
+                                           {% if form.rating.value == value %}checked{% endif %}>
+                                    <label class="form-check-label" for="rating{{ value }}">
+                                        {% for i in "12345"|make_list %}
+                                            {% if forloop.counter <= value %}
+                                                <i class="fas fa-star text-warning"></i>
+                                            {% else %}
+                                                <i class="far fa-star text-warning"></i>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {% if form.rating.errors %}
+                            <div class="alert alert-danger">
+                                {{ form.rating.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.comment.id_for_label }}" class="form-label">Your Feedback</label>
+                        {{ form.comment }}
+                        {% if form.comment.errors %}
+                            <div class="alert alert-danger">
+                                {{ form.comment.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="form-check">
+                            {{ form.is_public }}
+                            <label class="form-check-label" for="{{ form.is_public.id_for_label }}">
+                                Make this feedback public
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+                        <a href="{% url 'customer_portal:dashboard' %}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card {
+        margin-top: 30px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+    }
+    .form-control {
+        border-radius: 5px;
+    }
+    .rating-input {
+        display: flex;
+        gap: 20px;
+    }
+    .rating-input .form-check {
+        margin-right: 0;
+    }
+    .rating-input label {
+        cursor: pointer;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 10px;
+        font-weight: bold;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        padding: 10px;
+    }
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+<script>
+    // Add star rating interaction
+    document.addEventListener('DOMContentLoaded', function() {
+        const ratingInputs = document.querySelectorAll('.rating-input input[type="radio"]');
+        ratingInputs.forEach(input => {
+            input.addEventListener('change', function() {
+                const value = this.value;
+                const stars = document.querySelectorAll('.rating-input i');
+                stars.forEach((star, index) => {
+                    if (index < value) {
+                        star.classList.remove('far');
+                        star.classList.add('fas');
+                    } else {
+                        star.classList.remove('fas');
+                        star.classList.add('far');
+                    }
+                });
+            });
+        });
+    });
+</script>
+{% endblock %} 

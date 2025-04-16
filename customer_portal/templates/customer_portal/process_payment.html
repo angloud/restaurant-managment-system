@@ -1,0 +1,148 @@
+{% extends 'customer_portal/base.html' %}
+
+{% block title %}Process Payment - Restaurant Portal{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Process Payment</h3>
+            </div>
+            <div class="card-body">
+                {% if reservation %}
+                    <div class="alert alert-info mb-4">
+                        <h5>Reservation Details</h5>
+                        <p>Date: {{ reservation.date_time|date:"F j, Y" }}</p>
+                        <p>Time: {{ reservation.date_time|time:"g:i A" }}</p>
+                        <p>Number of Guests: {{ reservation.number_of_guests }}</p>
+                        <p>Amount to Pay: $50.00 (Reservation Deposit)</p>
+                    </div>
+                {% elif order %}
+                    <div class="alert alert-info mb-4">
+                        <h5>Order Details</h5>
+                        <p>Order #{{ order.order_id }}</p>
+                        <p>Date: {{ order.order_time|date:"F j, Y" }}</p>
+                        <p>Amount to Pay: ${{ order.total_amount }}</p>
+                    </div>
+                {% endif %}
+                
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-4">
+                        <label class="form-label">Payment Method</label>
+                        <div class="payment-methods">
+                            {% for value, label in form.payment_method.field.choices %}
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="{{ form.payment_method.name }}" 
+                                           id="payment{{ value }}" value="{{ value }}"
+                                           {% if form.payment_method.value == value %}checked{% endif %}>
+                                    <label class="form-check-label" for="payment{{ value }}">
+                                        {{ label }}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {% if form.payment_method.errors %}
+                            <div class="alert alert-danger">
+                                {{ form.payment_method.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="card payment-details mb-4" style="display: none;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card Details</h5>
+                            <div class="mb-3">
+                                <label class="form-label">Card Number</label>
+                                <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Expiry Date</label>
+                                    <input type="text" class="form-control" placeholder="MM/YY">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">CVV</label>
+                                    <input type="text" class="form-control" placeholder="123">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Process Payment</button>
+                        <a href="{% url 'customer_portal:dashboard' %}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card {
+        margin-top: 30px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+    }
+    .form-control {
+        border-radius: 5px;
+    }
+    .payment-methods {
+        border: 1px solid #dee2e6;
+        border-radius: 5px;
+        padding: 15px;
+    }
+    .payment-details {
+        border: 1px solid #dee2e6;
+    }
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        padding: 10px;
+        font-weight: bold;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+    .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        padding: 10px;
+    }
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const paymentMethodInputs = document.querySelectorAll('input[name="{{ form.payment_method.name }}"]');
+        const paymentDetailsCard = document.querySelector('.payment-details');
+        
+        function toggleCardDetails() {
+            const selectedMethod = document.querySelector('input[name="{{ form.payment_method.name }}"]:checked');
+            if (selectedMethod && selectedMethod.value === 'CARD') {
+                paymentDetailsCard.style.display = 'block';
+            } else {
+                paymentDetailsCard.style.display = 'none';
+            }
+        }
+        
+        paymentMethodInputs.forEach(input => {
+            input.addEventListener('change', toggleCardDetails);
+        });
+        
+        toggleCardDetails();
+    });
+</script>
+{% endblock %} 

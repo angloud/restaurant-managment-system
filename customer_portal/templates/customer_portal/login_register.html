@@ -1,0 +1,99 @@
+{% extends 'customer_portal/base.html' %}
+
+{% block title %}Customer Portal - Login/Register{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" id="authTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link {% if active_tab == 'login' %}active{% endif %}" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">Login</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link {% if active_tab == 'register' %}active{% endif %}" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab">Register</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                    
+                    <div class="tab-content" id="authTabsContent">
+                        <div class="tab-pane fade {% if active_tab == 'login' %}show active{% endif %}" id="login" role="tabpanel">
+                            <form method="post" action="{% url 'customer_portal:auth_page' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="login" value="1">
+                                {{ login_form.as_p }}
+                                <button type="submit" class="btn btn-primary">Login</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade {% if active_tab == 'register' %}show active{% endif %}" id="register" role="tabpanel">
+                            <form method="post" action="{% url 'customer_portal:auth_page' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="register" value="1">
+                                {{ register_form.as_p }}
+                                <button type="submit" class="btn btn-primary">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block extra_css %}
+<style>
+    .card {
+        border: none;
+        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .card-header {
+        background-color: #fff;
+        border-bottom: none;
+    }
+    .nav-tabs .nav-link {
+        color: #6c757d;
+        border: none;
+        padding: 1rem 1.5rem;
+    }
+    .nav-tabs .nav-link.active {
+        color: #0d6efd;
+        background-color: #fff;
+        border-bottom: 3px solid #0d6efd;
+    }
+    .btn-primary {
+        background-color: #0d6efd;
+        border: none;
+        padding: 0.5rem 1.5rem;
+    }
+    .btn-primary:hover {
+        background-color: #0b5ed7;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const activeTab = '{{ active_tab }}';
+        if (activeTab === 'register') {
+            const registerTab = document.getElementById('register-tab');
+            const loginTab = document.getElementById('login-tab');
+            registerTab.classList.add('active');
+            loginTab.classList.remove('active');
+            document.getElementById('register').classList.add('show', 'active');
+            document.getElementById('login').classList.remove('show', 'active');
+        }
+    });
+</script>
+{% endblock %}
+{% endblock %} 

@@ -1,0 +1,129 @@
+{% extends 'customer_portal/base.html' %}
+
+{% block title %}Dashboard - Restaurant Portal{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="mb-4">Welcome, {{ user.username }}!</h2>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Upcoming Reservations -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>Upcoming Reservations</h4>
+            </div>
+            <div class="card-body">
+                {% if reservations %}
+                    <div class="list-group">
+                        {% for reservation in reservations %}
+                            <div class="list-group-item">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Table {{ reservation.table_number }}</h5>
+                                    <small class="text-muted">{{ reservation.date_time|date:"F j, Y, g:i a" }}</small>
+                                </div>
+                                <p class="mb-1">{{ reservation.number_of_guests }} guests</p>
+                                <small class="text-{{ reservation.status|lower }}">Status: {{ reservation.status }}</small>
+                                <div class="mt-2">
+                                    <a href="{% url 'customer_portal:reservation_detail' reservation.pk %}" class="btn btn-sm btn-primary">View Details</a>
+                                    <a href="{% url 'customer_portal:submit_feedback_reservation' reservation.pk %}" class="btn btn-sm btn-info">Leave Feedback</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No upcoming reservations.</p>
+                    <a href="{% url 'customer_portal:make_reservation' %}" class="btn btn-primary">Make a Reservation</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Orders -->
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>Recent Orders</h4>
+            </div>
+            <div class="card-body">
+                {% if orders %}
+                    <div class="list-group">
+                        {% for order in orders %}
+                            <div class="list-group-item">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Order #{{ order.order_id }}</h5>
+                                    <small class="text-muted">{{ order.order_time|date:"F j, Y, g:i a" }}</small>
+                                </div>
+                                <p class="mb-1">Table {{ order.table_number }}</p>
+                                <small class="text-{{ order.status|lower }}">Status: {{ order.status }}</small>
+                                <div class="mt-2">
+                                    <a href="{% url 'customer_portal:process_payment_order' order.pk %}" class="btn btn-sm btn-success">Pay Now</a>
+                                    <a href="{% url 'customer_portal:submit_feedback_order' order.pk %}" class="btn btn-sm btn-info">Leave Feedback</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No recent orders.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Feedback -->
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Your Recent Feedback</h4>
+            </div>
+            <div class="card-body">
+                {% if feedback %}
+                    <div class="list-group">
+                        {% for item in feedback %}
+                            <div class="list-group-item">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">Rating: {{ item.get_rating_display }}</h5>
+                                    <small class="text-muted">{{ item.created_at|date:"F j, Y" }}</small>
+                                </div>
+                                <p class="mb-1">{{ item.comment }}</p>
+                                {% if item.reservation %}
+                                    <small>For Reservation #{{ item.reservation.reservation_id }}</small>
+                                {% elif item.order %}
+                                    <small>For Order #{{ item.order.order_id }}</small>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No feedback submitted yet.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card {
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid #dee2e6;
+    }
+    .list-group-item {
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    .text-pending { color: #ffc107; }
+    .text-confirmed { color: #28a745; }
+    .text-cancelled { color: #dc3545; }
+    .text-completed { color: #17a2b8; }
+</style>
+{% endblock %} 
