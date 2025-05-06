@@ -8,18 +8,35 @@ from .forms import (
     PaymentForm, CustomerProfileForm, ReservationForm
 )
 from .models import CustomerFeedback, Payment, CustomerProfile
-from restaurant.models import Reservation, Order, Customer
+from restaurant.models import Reservation, Order, Customer, Table
 from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib.auth.forms import AuthenticationForm
+from django import forms
+
+class CustomAuthenticationForm(AuthenticationForm):
+    username = forms.CharField(
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'})
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'})
+    )
 
 def auth_page(request):
     if request.method == 'POST':
         if 'login' in request.POST:
-            login_form = AuthenticationForm(request, data=request.POST)
+            login_form = CustomAuthenticationForm(request, data=request.POST)
             if login_form.is_valid():
                 user = login_form.get_user()
                 login(request, user)
+                # Ensure customer profile exists
+                Customer.objects.get_or_create(
+                    user=user,
+                    defaults={
+                        'customer_name': f"{user.first_name} {user.last_name}",
+                        'customer_info': f'Customer since {timezone.now().strftime("%Y-%m-%d")}'
+                    }
+                )
                 return redirect('customer_portal:dashboard')
             register_form = CustomerRegistrationForm()
             active_tab = 'login'
@@ -27,13 +44,21 @@ def auth_page(request):
             register_form = CustomerRegistrationForm(request.POST)
             if register_form.is_valid():
                 user = register_form.save()
+                # Create customer profile if it doesn't exist
+                Customer.objects.get_or_create(
+                    user=user,
+                    defaults={
+                        'customer_name': f"{user.first_name} {user.last_name}",
+                        'customer_info': f'Customer since {timezone.now().strftime("%Y-%m-%d")}'
+                    }
+                )
                 login(request, user)
                 messages.success(request, 'Registration successful! Welcome to our restaurant portal.')
                 return redirect('customer_portal:dashboard')
-            login_form = AuthenticationForm()
+            login_form = CustomAuthenticationForm()
             active_tab = 'register'
     else:
-        login_form = AuthenticationForm()
+        login_form = CustomAuthenticationForm()
         register_form = CustomerRegistrationForm()
         active_tab = 'login'
 
@@ -45,52 +70,48 @@ def auth_page(request):
 
 @login_required
 def make_reservation(request):
+    # Get the customer information
+    user = request.user
+    customer = get_object_or_404(Customer, user=user)
+    
+    # Try to get phone number from profile, if exists
+    try:
+        profile = CustomerProfile.objects.get(user=user)
+        phone = profile.phone_number
+    except CustomerProfile.DoesNotExist:
+        phone = ""
+    
     if request.method == 'POST':
         form = ReservationForm(request.POST)
         if form.is_valid():
-            try:
-                # Get the Customer instance for the logged-in user
-                customer = Customer.objects.get(user=request.user)
-                date_time = timezone.datetime.combine(
-                    form.cleaned_data['date'],
-                    form.cleaned_data['time']
-                )
-                reservation = Reservation.objects.create(
-                    customer=customer,
-                    date_time=date_time,
-                    number_of_guests=form.cleaned_data['number_of_guests'],
-                    status='PENDING'
-                )
-                
-                # Send confirmation email
-                send_mail(
-                    'Reservation Confirmation',
-                    f'Your reservation for {date_time} has been received. We will assign a table for you upon arrival.',
-                    settings.EMAIL_HOST_USER,
-                    [request.user.email],
-                    fail_silently=False,
-                )
-                
-                messages.success(request, 'Reservation created successfully! We will assign a table for you upon arrival.')
-                return redirect('customer_portal:reservation_detail', pk=reservation.pk)
-            except Customer.DoesNotExist:
-                messages.error(request, 'Customer profile not found. Please contact support.')
-                return redirect('customer_portal:dashboard')
+            reservation = form.save(commit=False)
+            reservation.customer_name = form.cleaned_data.get('customer_name', f"{user.first_name} {user.last_name}")
+            reservation.customer_email = user.email
+            reservation.customer_phone = form.cleaned_data.get('customer_phone', phone)
+            reservation.status = 'PENDING'
+            reservation.save()
+            
+            messages.success(request, 'Your reservation has been submitted successfully! Please check your email for confirmation.')
+            return redirect('customer_portal:dashboard')
+        else:
+            messages.error(request, 'Please correct the errors below.')
     else:
-        form = ReservationForm()
+        # Prefill the form with customer data
+        initial_data = {
+            'customer_name': f"{user.first_name} {user.last_name}",
+            'customer_email': user.email,
+            'customer_phone': phone,
+        }
+        form = ReservationForm(initial=initial_data)
+    
     return render(request, 'customer_portal/make_reservation.html', {'form': form})
 
 @login_required
 def reservation_detail(request, pk):
-    try:
-        customer = Customer.objects.get(user=request.user)
-        reservation = get_object_or_404(Reservation, pk=pk, customer=customer)
-        return render(request, 'customer_portal/reservation_detail.html', {
-            'reservation': reservation
-        })
-    except Customer.DoesNotExist:
-        messages.error(request, 'Customer profile not found. Please contact support.')
-        return redirect('customer_portal:dashboard')
+    reservation = get_object_or_404(Reservation, pk=pk, customer_email=request.user.email)
+    return render(request, 'customer_portal/reservation_detail.html', {
+        'reservation': reservation
+    })
 
 @login_required
 def submit_feedback(request, reservation_id=None, order_id=None):
@@ -146,12 +167,27 @@ def profile(request):
 @login_required
 def dashboard(request):
     customer = get_object_or_404(Customer, user=request.user)
-    reservations = Reservation.objects.filter(customer=customer).order_by('-date_time')
-    orders = Order.objects.filter(customer=customer).order_by('-order_time')
-    feedback = CustomerFeedback.objects.filter(customer=request.user).order_by('-created_at')
     
-    return render(request, 'customer_portal/dashboard.html', {
+    # Get customer's reservations
+    reservations = Reservation.objects.filter(
+        customer_email=request.user.email
+    ).order_by('-date_time')[:5]
+    
+    # Get customer's orders through their reservations
+    orders = Order.objects.filter(
+        table__reservation__customer_email=request.user.email
+    ).order_by('-created_at')[:5]
+    
+    # Get customer's feedback using the User instance
+    feedback = CustomerFeedback.objects.filter(
+        customer=request.user
+    ).order_by('-created_at')[:5]
+    
+    context = {
+        'customer': customer,
         'reservations': reservations,
         'orders': orders,
-        'feedback': feedback
-    })
+        'feedback': feedback,
+    }
+    
+    return render(request, 'customer_portal/dashboard.html', context)

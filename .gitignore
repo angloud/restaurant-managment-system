@@ -41,4 +41,11 @@ ENV/
 
 # OS
 .DS_Store
-Thumbs.db 
+Thumbs.db
+
+# Cursor specific
+.cursor/
+*.cursor-log
+*.cursor-cache
+*.mdc
+*.mdx 

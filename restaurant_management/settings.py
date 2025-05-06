@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'restaurant',
     'customer_portal',
     'widget_tweaks',
+    'inventory',
 ]
 
 MIDDLEWARE = [
@@ -139,6 +140,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For developm
 # EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = 'your-email@gmail.com'
 # EMAIL_HOST_PASSWORD = 'your-app-specific-password'
+DEFAULT_FROM_EMAIL = 'reservations@restaurant.com'  # Default sender email
 
 # Media files
 MEDIA_URL = '/media/'

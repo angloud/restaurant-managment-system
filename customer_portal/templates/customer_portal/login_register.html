@@ -27,20 +27,92 @@
                     {% endif %}
                     
                     <div class="tab-content" id="authTabsContent">
+                        <!-- Login Tab -->
                         <div class="tab-pane fade {% if active_tab == 'login' %}show active{% endif %}" id="login" role="tabpanel">
-                            <form method="post" action="{% url 'customer_portal:auth_page' %}">
+                            <form method="post" action="{% url 'customer_portal:auth_page' %}" class="mt-3">
                                 {% csrf_token %}
                                 <input type="hidden" name="login" value="1">
-                                {{ login_form.as_p }}
-                                <button type="submit" class="btn btn-primary">Login</button>
+                                
+                                <div class="mb-3">
+                                    <label for="{{ login_form.username.id_for_label }}" class="form-label">Username</label>
+                                    {{ login_form.username }}
+                                    {% if login_form.username.errors %}
+                                        <div class="text-danger small">{{ login_form.username.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="{{ login_form.password.id_for_label }}" class="form-label">Password</label>
+                                    {{ login_form.password }}
+                                    {% if login_form.password.errors %}
+                                        <div class="text-danger small">{{ login_form.password.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </div>
                             </form>
                         </div>
+                        
+                        <!-- Register Tab -->
                         <div class="tab-pane fade {% if active_tab == 'register' %}show active{% endif %}" id="register" role="tabpanel">
-                            <form method="post" action="{% url 'customer_portal:auth_page' %}">
+                            <form method="post" action="{% url 'customer_portal:auth_page' %}" class="mt-3">
                                 {% csrf_token %}
                                 <input type="hidden" name="register" value="1">
-                                {{ register_form.as_p }}
-                                <button type="submit" class="btn btn-primary">Register</button>
+                                
+                                <div class="mb-3">
+                                    <label for="{{ register_form.username.id_for_label }}" class="form-label">Username</label>
+                                    {{ register_form.username }}
+                                    {% if register_form.username.errors %}
+                                        <div class="text-danger small">{{ register_form.username.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label for="{{ register_form.first_name.id_for_label }}" class="form-label">First Name</label>
+                                        {{ register_form.first_name }}
+                                        {% if register_form.first_name.errors %}
+                                            <div class="text-danger small">{{ register_form.first_name.errors }}</div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col">
+                                        <label for="{{ register_form.last_name.id_for_label }}" class="form-label">Last Name</label>
+                                        {{ register_form.last_name }}
+                                        {% if register_form.last_name.errors %}
+                                            <div class="text-danger small">{{ register_form.last_name.errors }}</div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="{{ register_form.email.id_for_label }}" class="form-label">Email</label>
+                                    {{ register_form.email }}
+                                    {% if register_form.email.errors %}
+                                        <div class="text-danger small">{{ register_form.email.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="{{ register_form.password1.id_for_label }}" class="form-label">Password</label>
+                                    {{ register_form.password1 }}
+                                    {% if register_form.password1.errors %}
+                                        <div class="text-danger small">{{ register_form.password1.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="{{ register_form.password2.id_for_label }}" class="form-label">Confirm Password</label>
+                                    {{ register_form.password2 }}
+                                    {% if register_form.password2.errors %}
+                                        <div class="text-danger small">{{ register_form.password2.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary">Create Account</button>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -54,29 +126,61 @@
 <style>
     .card {
         border: none;
-        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        border-radius: 10px;
+        overflow: hidden;
     }
     .card-header {
-        background-color: #fff;
+        background-color: white;
+        border-bottom: none;
+        padding: 20px 20px 0;
+    }
+    .nav-tabs {
         border-bottom: none;
     }
     .nav-tabs .nav-link {
         color: #6c757d;
         border: none;
-        padding: 1rem 1.5rem;
+        font-weight: 500;
+        padding: 10px 15px;
+        position: relative;
+        transition: all 0.3s;
     }
     .nav-tabs .nav-link.active {
-        color: #0d6efd;
-        background-color: #fff;
-        border-bottom: 3px solid #0d6efd;
+        color: #3a86ff;
+        background-color: transparent;
+        border-bottom: 2px solid #3a86ff;
+    }
+    .card-body {
+        padding: 30px;
     }
     .btn-primary {
-        background-color: #0d6efd;
+        background-color: #3a86ff;
         border: none;
-        padding: 0.5rem 1.5rem;
+        padding: 10px;
+        font-weight: 500;
+        border-radius: 5px;
+        transition: all 0.3s;
     }
     .btn-primary:hover {
-        background-color: #0b5ed7;
+        background-color: #2d6ccd;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 10px rgba(45, 108, 205, 0.2);
+    }
+    .form-control {
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: 1px solid #dee2e6;
+        transition: all 0.3s;
+    }
+    .form-control:focus {
+        border-color: #3a86ff;
+        box-shadow: 0 0 0 0.25rem rgba(58, 134, 255, 0.25);
+    }
+    .form-label {
+        font-weight: 500;
+        color: #495057;
+        margin-bottom: 5px;
     }
 </style>
 {% endblock %}
@@ -84,15 +188,22 @@
 {% block extra_js %}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const activeTab = '{{ active_tab }}';
-        if (activeTab === 'register') {
-            const registerTab = document.getElementById('register-tab');
-            const loginTab = document.getElementById('login-tab');
+        const loginTab = document.getElementById('login-tab');
+        const registerTab = document.getElementById('register-tab');
+        
+        loginTab.addEventListener('click', function() {
+            loginTab.classList.add('active');
+            registerTab.classList.remove('active');
+            document.getElementById('login').classList.add('show', 'active');
+            document.getElementById('register').classList.remove('show', 'active');
+        });
+        
+        registerTab.addEventListener('click', function() {
             registerTab.classList.add('active');
             loginTab.classList.remove('active');
             document.getElementById('register').classList.add('show', 'active');
             document.getElementById('login').classList.remove('show', 'active');
-        }
+        });
     });
 </script>
 {% endblock %}

@@ -1,111 +1,128 @@
 {% extends 'customer_portal/base.html' %}
+{% load static %}
 
 {% block title %}Make Reservation - Restaurant Portal{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="text-center">Make a Reservation</h3>
-            </div>
-            <div class="card-body">
-                <form method="post">
-                    {% csrf_token %}
-                    
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="{{ form.date.id_for_label }}" class="form-label">Date</label>
-                            {{ form.date }}
-                            {% if form.date.errors %}
-                                <div class="alert alert-danger">
-                                    {{ form.date.errors }}
-                                </div>
-                            {% endif %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Make a Reservation</h3>
+                </div>
+                <div class="card-body">
+                    {% if messages %}
+                    <div class="messages">
+                        {% for message in messages %}
+                        <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-{{ message.tags }}{% endif %}" role="alert">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <form method="post" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.customer_name.id_for_label }}" class="form-label">Your Name</label>
+                            {{ form.customer_name.errors }}
+                            {{ form.customer_name }}
+                            <div class="form-text">Your name as it will appear on the reservation</div>
                         </div>
                         
-                        <div class="col-md-6 mb-3">
-                            <label for="{{ form.time.id_for_label }}" class="form-label">Time</label>
-                            {{ form.time }}
-                            {% if form.time.errors %}
-                                <div class="alert alert-danger">
-                                    {{ form.time.errors }}
-                                </div>
-                            {% endif %}
+                        <div class="mb-3">
+                            <label for="{{ form.customer_email.id_for_label }}" class="form-label">Email</label>
+                            {{ form.customer_email.errors }}
+                            {{ form.customer_email }}
+                            <div class="form-text">We'll send confirmation to this email</div>
                         </div>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="{{ form.number_of_guests.id_for_label }}" class="form-label">Number of Guests</label>
-                        {{ form.number_of_guests }}
-                        {% if form.number_of_guests.errors %}
-                            <div class="alert alert-danger">
-                                {{ form.number_of_guests.errors }}
-                            </div>
-                        {% endif %}
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="{{ form.special_requests.id_for_label }}" class="form-label">Special Requests</label>
-                        {{ form.special_requests }}
-                        {% if form.special_requests.errors %}
-                            <div class="alert alert-danger">
-                                {{ form.special_requests.errors }}
-                            </div>
-                        {% endif %}
-                    </div>
-                    
-                    <div class="d-grid gap-2">
-                        <button type="submit" class="btn btn-primary">Make Reservation</button>
-                        <a href="{% url 'customer_portal:dashboard' %}" class="btn btn-secondary">Cancel</a>
-                    </div>
-                </form>
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.customer_phone.id_for_label }}" class="form-label">Phone Number</label>
+                            {{ form.customer_phone.errors }}
+                            {{ form.customer_phone }}
+                            <div class="form-text">In case we need to contact you about your reservation</div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.date_time.id_for_label }}" class="form-label">Date and Time</label>
+                            {{ form.date_time.errors }}
+                            {{ form.date_time }}
+                            <div class="form-text">Please select a date and time between 11 AM and 10 PM</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.number_of_guests.id_for_label }}" class="form-label">Number of Guests</label>
+                            {{ form.number_of_guests.errors }}
+                            {{ form.number_of_guests }}
+                            <div class="form-text">For parties larger than 20, please contact us directly</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="{{ form.special_requests.id_for_label }}" class="form-label">Special Requests</label>
+                            {{ form.special_requests.errors }}
+                            {{ form.special_requests }}
+                            <div class="form-text">Any dietary requirements or special occasion?</div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Make Reservation</button>
+                            <a href="{% url 'customer_portal:dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-{% endblock %}
 
-{% block extra_css %}
 <style>
+    .form-control {
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-bottom: 0.5rem;
+    }
+    .alert {
+        margin-bottom: 1rem;
+    }
     .card {
-        margin-top: 30px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        border: none;
+        border-radius: 10px;
     }
     .card-header {
-        background-color: #f8f9fa;
-        border-bottom: 1px solid #dee2e6;
+        border-radius: 10px 10px 0 0 !important;
+        padding: 15px 20px;
     }
-    .form-control {
-        border-radius: 5px;
+    .form-label {
+        font-weight: 500;
     }
-    .btn-primary {
-        background-color: #007bff;
-        border: none;
-        padding: 10px;
-        font-weight: bold;
-    }
-    .btn-primary:hover {
-        background-color: #0056b3;
-    }
-    .btn-secondary {
-        background-color: #6c757d;
-        border: none;
-        padding: 10px;
-    }
-    .btn-secondary:hover {
-        background-color: #5a6268;
+    .form-text {
+        font-size: 0.85rem;
+        color: #6c757d;
     }
 </style>
-{% endblock %}
 
-{% block extra_js %}
 <script>
-    // Set minimum date to today
+    // Add validation classes to form fields
     document.addEventListener('DOMContentLoaded', function() {
-        const dateInput = document.getElementById('{{ form.date.id_for_label }}');
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.min = today;
+        const form = document.querySelector('form');
+        
+        // Add Bootstrap form-control class to all form inputs
+        const formInputs = form.querySelectorAll('input, select, textarea');
+        formInputs.forEach(input => {
+            input.classList.add('form-control');
+        });
+
+        form.addEventListener('submit', function(event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
     });
 </script>
 {% endblock %} 

@@ -14,18 +14,34 @@
                         {% csrf_token %}
                         
                         <div class="mb-3">
-                            <label for="{{ form.customer.id_for_label }}" class="form-label">Customer</label>
-                            {% render_field form.customer class="form-control" %}
-                            {% if form.customer.errors %}
-                                <div class="text-danger">{{ form.customer.errors }}</div>
+                            <label for="{{ form.customer_name.id_for_label }}" class="form-label">Customer Name</label>
+                            {% render_field form.customer_name class="form-control" %}
+                            {% if form.customer_name.errors %}
+                                <div class="text-danger">{{ form.customer_name.errors }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.customer_email.id_for_label }}" class="form-label">Customer Email</label>
+                            {% render_field form.customer_email class="form-control" %}
+                            {% if form.customer_email.errors %}
+                                <div class="text-danger">{{ form.customer_email.errors }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.customer_phone.id_for_label }}" class="form-label">Customer Phone</label>
+                            {% render_field form.customer_phone class="form-control" %}
+                            {% if form.customer_phone.errors %}
+                                <div class="text-danger">{{ form.customer_phone.errors }}</div>
                             {% endif %}
                         </div>
 
                         <div class="mb-3">
-                            <label for="{{ form.table_number.id_for_label }}" class="form-label">Table Number</label>
-                            {% render_field form.table_number class="form-control" type="number" min="1" %}
-                            {% if form.table_number.errors %}
-                                <div class="text-danger">{{ form.table_number.errors }}</div>
+                            <label for="{{ form.table.id_for_label }}" class="form-label">Table</label>
+                            {% render_field form.table class="form-control" %}
+                            {% if form.table.errors %}
+                                <div class="text-danger">{{ form.table.errors }}</div>
                             {% endif %}
                         </div>
 
@@ -50,6 +66,14 @@
                             {% render_field form.status class="form-control" %}
                             {% if form.status.errors %}
                                 <div class="text-danger">{{ form.status.errors }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="{{ form.special_requests.id_for_label }}" class="form-label">Special Requests</label>
+                            {% render_field form.special_requests class="form-control" rows="3" %}
+                            {% if form.special_requests.errors %}
+                                <div class="text-danger">{{ form.special_requests.errors }}</div>
                             {% endif %}
                         </div>
 

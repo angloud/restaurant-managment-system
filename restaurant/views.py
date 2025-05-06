@@ -1,17 +1,20 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-from django.db.models import F
+from django.db.models import F, Sum, Count
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.conf import settings
 from itertools import groupby
 from datetime import datetime, timedelta
 from .models import (
     Reservation, Order, MenuItem, 
-    Staff, Schedule, Inventory, OrderItem
+    Staff, Schedule, OrderItem, Category, Table, Payment, Inventory
 )
 from .forms import (
     ReservationForm, OrderForm, MenuItemForm,
-    StaffForm, InventoryForm, OrderItemForm, ScheduleForm
+    StaffForm, OrderItemForm, ScheduleForm,
+    CategoryForm, TableForm, PaymentForm, InventoryForm
 )
 
 def home(request):
@@ -46,11 +49,24 @@ def reservation_list(request):
 @login_required
 def reservation_update(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk)
+    old_status = reservation.status
+    
     if request.method == 'POST':
         form = ReservationForm(request.POST, instance=reservation)
         if form.is_valid():
-            form.save()
-            messages.success(request, 'Reservation updated successfully!')
+            updated_reservation = form.save()
+            
+            # Check if status changed to CONFIRMED and send email
+            if old_status != 'CONFIRMED' and updated_reservation.status == 'CONFIRMED':
+                send_reservation_confirmation_email(updated_reservation)
+                messages.success(request, f'Reservation confirmed! Confirmation email sent to {updated_reservation.customer_email}')
+            # Check if status changed to CANCELLED
+            elif old_status != 'CANCELLED' and updated_reservation.status == 'CANCELLED':
+                send_reservation_cancellation_email(updated_reservation)
+                messages.success(request, f'Reservation cancelled! Notification email sent to {updated_reservation.customer_email}')
+            else:
+                messages.success(request, 'Reservation updated successfully!')
+                
             return redirect('restaurant:reservation_list')
     else:
         form = ReservationForm(instance=reservation)
@@ -59,6 +75,84 @@ def reservation_update(request, pk):
         'form': form,
         'reservation': reservation
     })
+
+def send_reservation_confirmation_email(reservation):
+    """Send a confirmation email to the customer when their reservation is confirmed."""
+    subject = 'Your Reservation is Confirmed!'
+    table_info = f"Table {reservation.table.number}" if reservation.table else "Your table"
+    formatted_date = reservation.date_time.strftime('%A, %B %d, %Y at %I:%M %p')
+    
+    message = f"""
+    Dear {reservation.customer_name},
+    
+    We're pleased to confirm your reservation at our restaurant!
+    
+    Reservation Details:
+    -------------------
+    Date and Time: {formatted_date}
+    Number of Guests: {reservation.number_of_guests}
+    {table_info}
+    
+    Special Requests: {reservation.special_requests if reservation.special_requests else 'None'}
+    
+    We look forward to welcoming you to our restaurant. If you need to make any changes to your reservation, please contact us as soon as possible.
+    
+    Thank you for choosing our restaurant!
+    
+    Best regards,
+    The Restaurant Team
+    """
+    
+    try:
+        send_mail(
+            subject,
+            message,
+            settings.DEFAULT_FROM_EMAIL,
+            [reservation.customer_email],
+            fail_silently=False,
+        )
+        return True
+    except Exception as e:
+        # Log the error but don't stop execution
+        print(f"Error sending confirmation email: {str(e)}")
+        return False
+
+def send_reservation_cancellation_email(reservation):
+    """Send a notification email to the customer when their reservation is cancelled."""
+    subject = 'Your Reservation has been Cancelled'
+    formatted_date = reservation.date_time.strftime('%A, %B %d, %Y at %I:%M %p')
+    
+    message = f"""
+    Dear {reservation.customer_name},
+    
+    We regret to inform you that your reservation at our restaurant has been cancelled.
+    
+    Cancelled Reservation Details:
+    ----------------------------
+    Date and Time: {formatted_date}
+    Number of Guests: {reservation.number_of_guests}
+    
+    If you believe this cancellation was made in error or would like to make a new reservation, please contact us.
+    
+    Thank you for your understanding.
+    
+    Best regards,
+    The Restaurant Team
+    """
+    
+    try:
+        send_mail(
+            subject,
+            message,
+            settings.DEFAULT_FROM_EMAIL,
+            [reservation.customer_email],
+            fail_silently=False,
+        )
+        return True
+    except Exception as e:
+        # Log the error but don't stop execution
+        print(f"Error sending cancellation email: {str(e)}")
+        return False
 
 @login_required
 def reservation_delete(request, pk):
@@ -70,7 +164,7 @@ def reservation_delete(request, pk):
 # Order Views
 @login_required
 def order_list(request):
-    orders = Order.objects.all().order_by('-order_time')
+    orders = Order.objects.all().order_by('-created_at')
     return render(request, 'restaurant/orders/list.html', {
         'orders': orders
     })
@@ -87,15 +181,15 @@ def order_create(request):
             # Process order items
             menu_items = request.POST.getlist('menu_item[]')
             quantities = request.POST.getlist('quantity[]')
-            special_requests = request.POST.getlist('special_requests[]')
+            special_instructions = request.POST.getlist('special_instructions[]')
             
-            for item_id, qty, special in zip(menu_items, quantities, special_requests):
+            for item_id, qty, special in zip(menu_items, quantities, special_instructions):
                 if item_id and int(qty) > 0:
                     OrderItem.objects.create(
                         order=order,
                         menu_item_id=item_id,
                         quantity=qty,
-                        special_requests=special
+                        special_instructions=special
                     )
             
             messages.success(request, 'Order created successfully!')
@@ -103,7 +197,7 @@ def order_create(request):
     else:
         form = OrderForm()
     
-    menu_items = MenuItem.objects.all().order_by('category', 'item_name')
+    menu_items = MenuItem.objects.all().order_by('category', 'name')
     return render(request, 'restaurant/orders/form.html', {
         'form': form,
         'menu_items': menu_items
@@ -118,20 +212,20 @@ def order_update(request, pk):
             form.save()
             
             # Clear existing items
-            order.orderitem_set.all().delete()
+            order.items.all().delete()
             
             # Process order items
             menu_items = request.POST.getlist('menu_item[]')
             quantities = request.POST.getlist('quantity[]')
-            special_requests = request.POST.getlist('special_requests[]')
+            special_instructions = request.POST.getlist('special_instructions[]')
             
-            for item_id, qty, special in zip(menu_items, quantities, special_requests):
+            for item_id, qty, special in zip(menu_items, quantities, special_instructions):
                 if item_id and int(qty) > 0:
                     OrderItem.objects.create(
                         order=order,
                         menu_item_id=item_id,
                         quantity=qty,
-                        special_requests=special
+                        special_instructions=special
                     )
             
             messages.success(request, 'Order updated successfully!')
@@ -139,7 +233,7 @@ def order_update(request, pk):
     else:
         form = OrderForm(instance=order)
     
-    menu_items = MenuItem.objects.all().order_by('category', 'item_name')
+    menu_items = MenuItem.objects.all().order_by('category', 'name')
     return render(request, 'restaurant/orders/form.html', {
         'form': form,
         'menu_items': menu_items,
@@ -157,7 +251,7 @@ def order_delete(request, pk):
 # Menu Views
 @login_required
 def menu_list(request):
-    menu_items = MenuItem.objects.all().order_by('category', 'item_name')
+    menu_items = MenuItem.objects.all().order_by('category', 'name')
     return render(request, 'restaurant/menu/list.html', {
         'menu_items': menu_items
     })
@@ -165,7 +259,7 @@ def menu_list(request):
 @login_required
 def menu_create(request):
     if request.method == 'POST':
-        form = MenuItemForm(request.POST)
+        form = MenuItemForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'Menu item created successfully!')
@@ -181,7 +275,7 @@ def menu_create(request):
 def menu_update(request, pk):
     menu_item = get_object_or_404(MenuItem, pk=pk)
     if request.method == 'POST':
-        form = MenuItemForm(request.POST, instance=menu_item)
+        form = MenuItemForm(request.POST, request.FILES, instance=menu_item)
         if form.is_valid():
             form.save()
             messages.success(request, 'Menu item updated successfully!')
@@ -197,9 +291,11 @@ def menu_update(request, pk):
 @login_required
 def menu_delete(request, pk):
     menu_item = get_object_or_404(MenuItem, pk=pk)
-    menu_item.delete()
-    messages.success(request, 'Menu item deleted successfully!')
-    return redirect('restaurant:menu_list')
+    if request.method == 'POST':
+        menu_item.delete()
+        messages.success(request, 'Menu item deleted successfully!')
+        return redirect('restaurant:menu_list')
+    return render(request, 'restaurant/menu/delete.html', {'menu_item': menu_item})
 
 # Staff Views
 @login_required
@@ -290,7 +386,49 @@ def inventory_update(request, pk):
 
 @login_required
 def inventory_delete(request, pk):
-    inventory_item = get_object_or_404(Inventory, pk=pk)
-    inventory_item.delete()
-    messages.success(request, 'Inventory item deleted successfully!')
-    return redirect('restaurant:inventory_list') 
+    inventory = get_object_or_404(Inventory, pk=pk)
+    if request.method == 'POST':
+        inventory.delete()
+        messages.success(request, 'Inventory item deleted successfully!')
+        return redirect('restaurant:inventory_list')
+    return render(request, 'restaurant/inventory_delete.html', {'inventory': inventory})
+
+# Table Management
+@login_required
+def table_list(request):
+    tables = Table.objects.all().order_by('number')
+    return render(request, 'restaurant/table_list.html', {'tables': tables})
+
+@login_required
+def table_create(request):
+    if request.method == 'POST':
+        form = TableForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Table created successfully!')
+            return redirect('restaurant:table_list')
+    else:
+        form = TableForm()
+    return render(request, 'restaurant/table_form.html', {'form': form, 'action': 'Create'})
+
+@login_required
+def table_update(request, pk):
+    table = get_object_or_404(Table, pk=pk)
+    if request.method == 'POST':
+        form = TableForm(request.POST, instance=table)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Table updated successfully!')
+            return redirect('restaurant:table_list')
+    else:
+        form = TableForm(instance=table)
+    return render(request, 'restaurant/table_form.html', {'form': form, 'table': table, 'action': 'Update'})
+
+@login_required
+def table_delete(request, pk):
+    table = get_object_or_404(Table, pk=pk)
+    if request.method == 'POST':
+        table.delete()
+        messages.success(request, 'Table deleted successfully!')
+        return redirect('restaurant:table_list')
+    return render(request, 'restaurant/table_delete.html', {'table': table}) 

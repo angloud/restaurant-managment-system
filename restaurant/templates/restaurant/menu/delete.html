@@ -1,0 +1,43 @@
+{% extends 'restaurant/base/base.html' %}
+{% load static %}
+
+{% block title %}Delete {{ menu_item.name }} - Restaurant{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-header bg-danger text-white">
+                    <h4 class="mb-0">Delete Menu Item</h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Are you sure you want to delete "{{ menu_item.name }}"?</h5>
+                    <div class="alert alert-warning">
+                        <p><strong>Name:</strong> {{ menu_item.name }}</p>
+                        <p><strong>Price:</strong> ${{ menu_item.price }}</p>
+                        <p><strong>Category:</strong> {% if menu_item.category %}{{ menu_item.category.name }}{% else %}Uncategorized{% endif %}</p>
+                        {% if menu_item.image %}
+                        <p><img src="{{ menu_item.image.url }}" alt="{{ menu_item.name }}" class="img-thumbnail" style="max-height: 100px;"></p>
+                        {% endif %}
+                    </div>
+                    <div class="alert alert-danger">
+                        <i class="fas fa-exclamation-triangle"></i> Warning: This action cannot be undone. Any orders containing this item will be affected.
+                    </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="d-flex justify-content-between">
+                            <a href="{% url 'restaurant:menu_list' %}" class="btn btn-secondary">
+                                <i class="fas fa-times"></i> Cancel
+                            </a>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fas fa-trash"></i> Yes, Delete
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

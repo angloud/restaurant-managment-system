@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import (
     Customer, Reservation, Order, POSTransaction,
-    Inventory, MenuItem, OrderItem, Staff, Schedule
+    Inventory, MenuItem, OrderItem, Staff, Schedule, Table, Category
 )
 
 # Register models with proper verbose names
@@ -26,3 +26,5 @@ admin.site.register(MenuItem)
 admin.site.register(OrderItem)
 admin.site.register(Staff, StaffAdmin)
 admin.site.register(Schedule, ScheduleAdmin) 
+admin.site.register(Table)
+admin.site.register(Category) 

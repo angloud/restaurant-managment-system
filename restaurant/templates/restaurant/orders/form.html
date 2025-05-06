@@ -14,10 +14,10 @@
                         {% csrf_token %}
                         
                         <div class="mb-3">
-                            <label for="{{ form.table_number.id_for_label }}" class="form-label">Table Number</label>
-                            {% render_field form.table_number class="form-control" type="number" min="1" %}
-                            {% if form.table_number.errors %}
-                                <div class="text-danger">{{ form.table_number.errors }}</div>
+                            <label for="{{ form.table.id_for_label }}" class="form-label">Table</label>
+                            {% render_field form.table class="form-control" %}
+                            {% if form.table.errors %}
+                                <div class="text-danger">{{ form.table.errors }}</div>
                             {% endif %}
                         </div>
 
@@ -33,7 +33,7 @@
                                                 <select name="menu_item[]" class="form-control">
                                                     {% for menu_item in menu_items %}
                                                     <option value="{{ menu_item.pk }}" {% if menu_item.pk == item.menu_item.pk %}selected{% endif %}>
-                                                        {{ menu_item.item_name }} - ${{ menu_item.price }}
+                                                        {{ menu_item.name }} - ${{ menu_item.price }}
                                                     </option>
                                                     {% endfor %}
                                                 </select>
@@ -44,7 +44,7 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <label class="form-label">Special Requests</label>
-                                                <input type="text" name="special_requests[]" class="form-control" value="{{ item.special_requests|default:'' }}">
+                                                <input type="text" name="special_requests[]" class="form-control" value="{{ item.special_instructions|default:'' }}">
                                             </div>
                                             <div class="col-md-1 d-flex align-items-end">
                                                 <button type="button" class="btn btn-danger remove-item" onclick="removeOrderItem(this)">
@@ -62,7 +62,7 @@
                                                 <select name="menu_item[]" class="form-control">
                                                     {% for menu_item in menu_items %}
                                                     <option value="{{ menu_item.pk }}">
-                                                        {{ menu_item.item_name }} - ${{ menu_item.price }}
+                                                        {{ menu_item.name }} - ${{ menu_item.price }}
                                                     </option>
                                                     {% endfor %}
                                                 </select>
@@ -105,36 +105,35 @@
 
 <script>
 function addOrderItem() {
-    const template = `
-        <div class="order-item mb-3 border p-3 rounded">
-            <div class="row">
-                <div class="col-md-5">
-                    <label class="form-label">Menu Item</label>
-                    <select name="menu_item[]" class="form-control">
+    let html = '<div class="order-item mb-3 border p-3 rounded">';
+    html += '<div class="row">';
+    html += '<div class="col-md-5">';
+    html += '<label class="form-label">Menu Item</label>';
+    html += '<select name="menu_item[]" class="form-control">';
+    
                         {% for menu_item in menu_items %}
-                        <option value="{{ menu_item.pk }}">
-                            {{ menu_item.item_name }} - ${{ menu_item.price }}
-                        </option>
+    html += '<option value="{{ menu_item.pk }}">{{ menu_item.name }} - ${{ menu_item.price }}</option>';
                         {% endfor %}
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <label class="form-label">Quantity</label>
-                    <input type="number" name="quantity[]" class="form-control" value="1" min="1">
-                </div>
-                <div class="col-md-3">
-                    <label class="form-label">Special Requests</label>
-                    <input type="text" name="special_requests[]" class="form-control" placeholder="e.g., No onions">
-                </div>
-                <div class="col-md-1 d-flex align-items-end">
-                    <button type="button" class="btn btn-danger remove-item" onclick="removeOrderItem(this)">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    `;
-    document.getElementById('orderItems').insertAdjacentHTML('beforeend', template);
+    
+    html += '</select>';
+    html += '</div>';
+    html += '<div class="col-md-3">';
+    html += '<label class="form-label">Quantity</label>';
+    html += '<input type="number" name="quantity[]" class="form-control" value="1" min="1">';
+    html += '</div>';
+    html += '<div class="col-md-3">';
+    html += '<label class="form-label">Special Requests</label>';
+    html += '<input type="text" name="special_requests[]" class="form-control" placeholder="e.g., No onions">';
+    html += '</div>';
+    html += '<div class="col-md-1 d-flex align-items-end">';
+    html += '<button type="button" class="btn btn-danger remove-item" onclick="removeOrderItem(this)">';
+    html += '<i class="fas fa-trash"></i>';
+    html += '</button>';
+    html += '</div>';
+    html += '</div>';
+    html += '</div>';
+    
+    document.getElementById('orderItems').insertAdjacentHTML('beforeend', html);
 }
 
 function removeOrderItem(button) {

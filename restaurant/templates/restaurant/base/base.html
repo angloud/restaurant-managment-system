@@ -53,6 +53,10 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'inventory_list' %}active{% endif %}"
                            href="{% url 'restaurant:inventory_list' %}">Inventory</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'table_list' %}active{% endif %}"
+                           href="{% url 'restaurant:table_list' %}">Tables</a>
+                    </li>
                 </ul>
                 {% if user.is_authenticated %}
                 <div class="navbar-nav">

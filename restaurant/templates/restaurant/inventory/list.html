@@ -1,59 +1,60 @@
 {% extends 'restaurant/base/base.html' %}
-{% load widget_tweaks %}
+
+{% block title %}Inventory - Restaurant Management System{% endblock %}
 
 {% block content %}
-<div class="container mt-4">
+<div class="container">
     <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Inventory</h2>
+        <h1>Inventory Management</h1>
         <a href="{% url 'restaurant:inventory_create' %}" class="btn btn-primary">
-            <i class="fas fa-plus"></i> Add Inventory Item
+            <i class="fas fa-plus"></i> Add New Item
         </a>
     </div>
 
-    {% if inventory_items %}
-    <div class="table-responsive">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th>Item Name</th>
-                    <th>Quantity on Hand</th>
-                    <th>Reorder Level</th>
-                    <th>Status</th>
-                    <th>Supplier Info</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in inventory_items %}
-                <tr>
-                    <td>{{ item.item_name }}</td>
-                    <td>{{ item.quantity_on_hand }}</td>
-                    <td>{{ item.reorder_level }}</td>
-                    <td>
-                        {% if item.quantity_on_hand <= item.reorder_level %}
-                            <span class="badge bg-danger">Low Stock</span>
-                        {% else %}
-                            <span class="badge bg-success">In Stock</span>
-                        {% endif %}
-                    </td>
-                    <td>{{ item.supplier_info }}</td>
-                    <td>
-                        <a href="{% url 'restaurant:inventory_update' pk=item.pk %}" class="btn btn-sm btn-outline-primary">
-                            <i class="fas fa-edit"></i>
-                        </a>
-                        <a href="{% url 'restaurant:inventory_delete' pk=item.pk %}" class="btn btn-sm btn-outline-danger">
-                            <i class="fas fa-trash"></i>
-                        </a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                            <th>Reorder Level</th>
+                            <th>Supplier Info</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in inventory_items %}
+                        <tr>
+                            <td>{{ item.item_name }}</td>
+                            <td>
+                                {% if item.quantity_on_hand <= item.reorder_level %}
+                                <span class="badge bg-danger">{{ item.quantity_on_hand }}</span>
+                                {% else %}
+                                <span class="badge bg-success">{{ item.quantity_on_hand }}</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ item.reorder_level }}</td>
+                            <td>{{ item.supplier_info|truncatechars:50 }}</td>
+                            <td>
+                                <a href="{% url 'restaurant:inventory_update' item.pk %}" class="btn btn-sm btn-warning">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <a href="{% url 'restaurant:inventory_delete' item.pk %}" class="btn btn-sm btn-danger">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="5" class="text-center">No inventory items found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    {% else %}
-    <div class="alert alert-info">
-        No inventory items found. <a href="{% url 'restaurant:inventory_create' %}">Add a new inventory item</a>
-    </div>
-    {% endif %}
 </div>
 {% endblock %} 

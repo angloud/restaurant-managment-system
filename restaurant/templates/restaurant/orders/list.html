@@ -1,5 +1,5 @@
 {% extends 'restaurant/base/base.html' %}
-{% load widget_tweaks %}
+{% load static %}
 
 {% block content %}
 <div class="container mt-4">
@@ -27,21 +27,21 @@
                 {% for order in orders %}
                 <tr>
                     <td>#{{ order.order_id }}</td>
-                    <td>{{ order.table_number }}</td>
-                    <td>{{ order.order_time|date:"F j, Y, g:i a" }}</td>
+                    <td>{% if order.table %}{{ order.table.number }}{% else %}N/A{% endif %}</td>
+                    <td>{{ order.created_at|date:"F j, Y, g:i a" }}</td>
                     <td>
-                        <span class="badge {% if order.status == 'COMPLETED' %}bg-success
+                        <span class="badge {% if order.status == 'DELIVERED' %}bg-success
                                          {% elif order.status == 'PENDING' %}bg-warning
                                          {% elif order.status == 'PREPARING' %}bg-info
                                          {% elif order.status == 'READY' %}bg-primary
-                                         {% elif order.status == 'SERVED' %}bg-secondary
+                                         {% elif order.status == 'CANCELLED' %}bg-danger
                                          {% endif %}">
-                            {{ order.get_status_display }}
+                            {{ order.status }}
                         </span>
                     </td>
                     <td>
-                        {% for item in order.orderitem_set.all %}
-                            {{ item.quantity }}x {{ item.menu_item.item_name }}{% if not forloop.last %}, {% endif %}
+                        {% for item in order.items.all %}
+                            {{ item.quantity }}x {{ item.menu_item.name }}{% if not forloop.last %}, {% endif %}
                         {% endfor %}
                     </td>
                     <td>

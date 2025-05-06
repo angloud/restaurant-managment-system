@@ -23,8 +23,12 @@
             <tbody>
                 {% for reservation in reservations %}
                 <tr>
-                    <td>{{ reservation.customer.customer_name }}</td>
-                    <td>{{ reservation.table_number }}</td>
+                    <td>
+                        {{ reservation.customer_name }}
+                        <br>
+                        <small class="text-muted">{{ reservation.customer_email }}</small>
+                    </td>
+                    <td>{% if reservation.table %}Table {{ reservation.table.number }}{% else %}Not assigned{% endif %}</td>
                     <td>{{ reservation.date_time|date:"F j, Y, g:i a" }}</td>
                     <td>{{ reservation.number_of_guests }}</td>
                     <td>
