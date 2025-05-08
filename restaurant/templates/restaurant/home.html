@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container">
-    <!-- Dashboard Stats -->
+    <!-- Dashboard Stats - First Row -->
     <div class="row mb-4">
         <div class="col-md-3">
             <div class="card text-white bg-primary">
@@ -35,6 +35,37 @@
                 <div class="card-body">
                     <h5 class="card-title">Low Stock Items</h5>
                     <p class="card-text display-4">{{ low_stock_count }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Dashboard Stats - Second Row (Order Statuses) -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card text-white bg-info">
+                <div class="card-body">
+                    <h5 class="card-title">Orders Being Prepared</h5>
+                    <p class="card-text display-4">{{ preparing_orders_count }}</p>
+                    <a href="{% url 'restaurant:kitchen_dashboard' %}" class="btn btn-sm btn-light mt-2">View in Kitchen</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Ready for Pickup</h5>
+                    <p class="card-text display-4">{{ ready_orders_count }}</p>
+                    <a href="{% url 'restaurant:kitchen_dashboard' %}" class="btn btn-sm btn-light mt-2">View in Kitchen</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white" style="background-color: #6f42c1;"> <!-- Purple -->
+                <div class="card-body">
+                    <h5 class="card-title">Total Orders Today</h5>
+                    <p class="card-text display-4">{{ active_orders_count|add:ready_orders_count }}</p>
+                    <a href="{% url 'restaurant:order_list' %}" class="btn btn-sm btn-light mt-2">View All Orders</a>
                 </div>
             </div>
         </div>

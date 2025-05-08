@@ -21,9 +21,10 @@ class ReservationForm(forms.ModelForm):
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ['table']
+        fields = ['table', 'status']
         widgets = {
             'table': forms.Select(attrs={'class': 'form-control'}),
+            'status': forms.Select(attrs={'class': 'form-control'}),
         }
 
 class MenuItemForm(forms.ModelForm):

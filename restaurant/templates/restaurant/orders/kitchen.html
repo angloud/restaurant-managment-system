@@ -1,0 +1,56 @@
+{% extends 'restaurant/base/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Kitchen Orders Dashboard</h2>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs" id="orderTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button" role="tab" aria-controls="pending" aria-selected="true">
+                        Pending <span class="badge bg-warning">{{ pending_orders.count }}</span>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="preparing-tab" data-bs-toggle="tab" data-bs-target="#preparing" type="button" role="tab" aria-controls="preparing" aria-selected="false">
+                        Preparing <span class="badge bg-info">{{ preparing_orders.count }}</span>
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="ready-tab" data-bs-toggle="tab" data-bs-target="#ready" type="button" role="tab" aria-controls="ready" aria-selected="false">
+                        Ready for Pickup <span class="badge bg-primary">{{ ready_orders.count }}</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tab-content" id="orderTabContent">
+        <!-- Pending Orders -->
+        <div class="tab-pane fade show active" id="pending" role="tabpanel" aria-labelledby="pending-tab">
+            {% include 'restaurant/orders/kitchen_orders_list.html' with orders=pending_orders next_status='PREPARING' next_status_label='Start Preparing' %}
+        </div>
+        
+        <!-- Preparing Orders -->
+        <div class="tab-pane fade" id="preparing" role="tabpanel" aria-labelledby="preparing-tab">
+            {% include 'restaurant/orders/kitchen_orders_list.html' with orders=preparing_orders next_status='READY' next_status_label='Mark Ready for Pickup' %}
+        </div>
+        
+        <!-- Ready Orders -->
+        <div class="tab-pane fade" id="ready" role="tabpanel" aria-labelledby="ready-tab">
+            {% include 'restaurant/orders/kitchen_orders_list.html' with orders=ready_orders next_status='DELIVERED' next_status_label='Mark Delivered' %}
+        </div>
+    </div>
+</div>
+
+<script>
+    // Auto refresh the page every 30 seconds to show new orders
+    setTimeout(function(){
+        location.reload();
+    }, 30000);
+</script>
+{% endblock %} 

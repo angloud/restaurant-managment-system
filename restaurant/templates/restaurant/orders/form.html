@@ -21,11 +21,24 @@
                             {% endif %}
                         </div>
 
+                        {% if order %}
+                        <div class="mb-3">
+                            <label for="{{ form.status.id_for_label }}" class="form-label">Status</label>
+                            {% render_field form.status class="form-control" %}
+                            {% if form.status.errors %}
+                                <div class="text-danger">{{ form.status.errors }}</div>
+                            {% endif %}
+                        </div>
+                        {% else %}
+                        {# For new orders, include status as hidden field with PENDING value #}
+                        <input type="hidden" name="status" value="PENDING">
+                        {% endif %}
+
                         <div class="mb-4">
                             <h5>Order Items</h5>
                             <div id="orderItems">
                                 {% if order %}
-                                    {% for item in order.orderitem_set.all %}
+                                    {% for item in order.items.all %}
                                     <div class="order-item mb-3 border p-3 rounded">
                                         <div class="row">
                                             <div class="col-md-5">
@@ -43,8 +56,8 @@
                                                 <input type="number" name="quantity[]" class="form-control" value="{{ item.quantity }}" min="1">
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label">Special Requests</label>
-                                                <input type="text" name="special_requests[]" class="form-control" value="{{ item.special_instructions|default:'' }}">
+                                                <label class="form-label">Special Instructions</label>
+                                                <input type="text" name="special_instructions[]" class="form-control" value="{{ item.special_instructions|default:'' }}">
                                             </div>
                                             <div class="col-md-1 d-flex align-items-end">
                                                 <button type="button" class="btn btn-danger remove-item" onclick="removeOrderItem(this)">
@@ -72,8 +85,8 @@
                                                 <input type="number" name="quantity[]" class="form-control" value="1" min="1">
                                             </div>
                                             <div class="col-md-3">
-                                                <label class="form-label">Special Requests</label>
-                                                <input type="text" name="special_requests[]" class="form-control" placeholder="e.g., No onions">
+                                                <label class="form-label">Special Instructions</label>
+                                                <input type="text" name="special_instructions[]" class="form-control" placeholder="e.g., No onions">
                                             </div>
                                             <div class="col-md-1 d-flex align-items-end">
                                                 <button type="button" class="btn btn-danger remove-item" onclick="removeOrderItem(this)">
@@ -85,7 +98,7 @@
                                 {% endif %}
                             </div>
                             
-                            <button type="button" class="btn btn-secondary" onclick="addOrderItem()">
+                            <button type="button" class="btn btn-secondary" id="addItemBtn">
                                 <i class="fas fa-plus"></i> Add Item
                             </button>
                         </div>
@@ -104,37 +117,23 @@
 </div>
 
 <script>
-function addOrderItem() {
-    let html = '<div class="order-item mb-3 border p-3 rounded">';
-    html += '<div class="row">';
-    html += '<div class="col-md-5">';
-    html += '<label class="form-label">Menu Item</label>';
-    html += '<select name="menu_item[]" class="form-control">';
-    
-                        {% for menu_item in menu_items %}
-    html += '<option value="{{ menu_item.pk }}">{{ menu_item.name }} - ${{ menu_item.price }}</option>';
-                        {% endfor %}
-    
-    html += '</select>';
-    html += '</div>';
-    html += '<div class="col-md-3">';
-    html += '<label class="form-label">Quantity</label>';
-    html += '<input type="number" name="quantity[]" class="form-control" value="1" min="1">';
-    html += '</div>';
-    html += '<div class="col-md-3">';
-    html += '<label class="form-label">Special Requests</label>';
-    html += '<input type="text" name="special_requests[]" class="form-control" placeholder="e.g., No onions">';
-    html += '</div>';
-    html += '<div class="col-md-1 d-flex align-items-end">';
-    html += '<button type="button" class="btn btn-danger remove-item" onclick="removeOrderItem(this)">';
-    html += '<i class="fas fa-trash"></i>';
-    html += '</button>';
-    html += '</div>';
-    html += '</div>';
-    html += '</div>';
-    
-    document.getElementById('orderItems').insertAdjacentHTML('beforeend', html);
-}
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('addItemBtn').addEventListener('click', function() {
+        // Clone the first order item
+        var template = document.querySelector('.order-item');
+        var newItem = template.cloneNode(true);
+        
+        // Reset values in the clone
+        newItem.querySelector('select[name="menu_item[]"]').selectedIndex = 0;
+        newItem.querySelector('input[name="quantity[]"]').value = 1;
+        var specialInput = newItem.querySelector('input[name="special_instructions[]"]');
+        specialInput.value = '';
+        specialInput.placeholder = 'e.g., No onions';
+        
+        // Add the new item to the container
+        document.getElementById('orderItems').appendChild(newItem);
+    });
+});
 
 function removeOrderItem(button) {
     const orderItems = document.getElementById('orderItems');

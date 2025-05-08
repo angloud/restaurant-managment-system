@@ -36,15 +36,20 @@
                                          {% elif order.status == 'READY' %}bg-primary
                                          {% elif order.status == 'CANCELLED' %}bg-danger
                                          {% endif %}">
-                            {{ order.status }}
+                            {{ order.get_status_display }}
                         </span>
                     </td>
                     <td>
                         {% for item in order.items.all %}
                             {{ item.quantity }}x {{ item.menu_item.name }}{% if not forloop.last %}, {% endif %}
+                        {% empty %}
+                            <span class="text-muted">No items</span>
                         {% endfor %}
                     </td>
                     <td>
+                        <a href="{% url 'restaurant:order_detail' order.order_id %}" class="btn btn-sm btn-outline-info">
+                            <i class="fas fa-eye"></i>
+                        </a>
                         <a href="{% url 'restaurant:order_update' order.order_id %}" class="btn btn-sm btn-outline-primary">
                             <i class="fas fa-edit"></i>
                         </a>

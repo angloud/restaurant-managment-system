@@ -1,0 +1,57 @@
+{% if orders %}
+<div class="row">
+    {% for order in orders %}
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between">
+                <h5>Order #{{ order.order_id }}</h5>
+                <span class="badge {% if order.status == 'DELIVERED' %}bg-success
+                               {% elif order.status == 'PENDING' %}bg-warning
+                               {% elif order.status == 'PREPARING' %}bg-info
+                               {% elif order.status == 'READY' %}bg-primary
+                               {% elif order.status == 'CANCELLED' %}bg-danger
+                               {% endif %}">
+                    {{ order.get_status_display }}
+                </span>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <strong>Table:</strong> {% if order.table %}{{ order.table.number }}{% else %}N/A{% endif %}<br>
+                    <strong>Time:</strong> {{ order.created_at|date:"F j, Y, g:i a" }}<br>
+                    <strong>Last Updated:</strong> {{ order.updated_at|date:"F j, Y, g:i a" }}
+                </div>
+                
+                <div class="mb-3">
+                    <h6>Items:</h6>
+                    <ul class="list-group">
+                        {% for item in order.items.all %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                                <strong>{{ item.quantity }}x {{ item.menu_item.name }}</strong>
+                                {% if item.special_instructions %}
+                                <br><small class="text-muted">{{ item.special_instructions }}</small>
+                                {% endif %}
+                            </div>
+                            <span class="badge bg-secondary rounded-pill">{{ item.menu_item.preparation_time }} min</span>
+                        </li>
+                        {% empty %}
+                        <li class="list-group-item">No items in this order</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <form method="post" action="{% url 'restaurant:order_update_status' order.order_id %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="status" value="{{ next_status }}">
+                    <button type="submit" class="btn btn-primary w-100">{{ next_status_label }}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="alert alert-info">
+    No orders in this status.
+</div>
+{% endif %} 

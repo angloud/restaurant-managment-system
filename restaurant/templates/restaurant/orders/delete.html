@@ -1,0 +1,46 @@
+{% extends 'restaurant/base/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h4>Confirm Delete</h4>
+                </div>
+                <div class="card-body">
+                    <p>Are you sure you want to delete Order #{{ order.order_id }}?</p>
+                    
+                    <div class="mb-3">
+                        <strong>Table:</strong> {% if order.table %}{{ order.table.number }}{% else %}N/A{% endif %}<br>
+                        <strong>Status:</strong> {{ order.get_status_display }}<br>
+                        <strong>Date:</strong> {{ order.created_at|date:"F j, Y, g:i a" }}
+                    </div>
+                    
+                    <h6>Order Items:</h6>
+                    <ul class="list-group mb-4">
+                        {% for item in order.items.all %}
+                        <li class="list-group-item">
+                            {{ item.quantity }}x {{ item.menu_item.name }}
+                            {% if item.special_instructions %}
+                            <br><small class="text-muted">{{ item.special_instructions }}</small>
+                            {% endif %}
+                        </li>
+                        {% empty %}
+                        <li class="list-group-item">No items in this order</li>
+                        {% endfor %}
+                    </ul>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                            <a href="{% url 'restaurant:order_list' %}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

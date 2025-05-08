@@ -42,6 +42,10 @@
                            href="{% url 'restaurant:order_list' %}">Orders</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'kitchen_dashboard' %}active{% endif %}"
+                           href="{% url 'restaurant:kitchen_dashboard' %}">Kitchen</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {% if request.resolver_match.url_name == 'menu_list' %}active{% endif %}"
                            href="{% url 'restaurant:menu_list' %}">Menu</a>
                     </li>

@@ -27,6 +27,12 @@ def home(request):
         'active_orders_count': Order.objects.filter(
             status__in=['PENDING', 'PREPARING']
         ).count(),
+        'ready_orders_count': Order.objects.filter(
+            status='READY'
+        ).count(),
+        'preparing_orders_count': Order.objects.filter(
+            status='PREPARING'
+        ).count(),
         'staff_on_duty_count': Schedule.objects.filter(
             shift_date=today
         ).count(),
@@ -172,30 +178,52 @@ def order_list(request):
 @login_required
 def order_create(request):
     if request.method == 'POST':
-        form = OrderForm(request.POST)
+        # Create a copy of POST data to modify
+        post_data = request.POST.copy()
+        # Set a default status if not provided
+        if 'status' not in post_data or not post_data['status']:
+            post_data['status'] = 'PENDING'
+            
+        form = OrderForm(post_data)
         if form.is_valid():
-            order = form.save(commit=False)
-            order.status = 'PENDING'
-            order.save()
+            order = form.save()
             
             # Process order items
             menu_items = request.POST.getlist('menu_item[]')
             quantities = request.POST.getlist('quantity[]')
             special_instructions = request.POST.getlist('special_instructions[]')
             
+            # Debug information
+            print(f"Menu items: {menu_items}")
+            print(f"Quantities: {quantities}")
+            print(f"Special instructions: {special_instructions}")
+            
+            # Check if we have any items to process
+            if not menu_items or len(menu_items) == 0:
+                messages.warning(request, 'Order created but no items were added.')
+                return redirect('restaurant:order_list')
+                
             for item_id, qty, special in zip(menu_items, quantities, special_instructions):
                 if item_id and int(qty) > 0:
-                    OrderItem.objects.create(
-                        order=order,
-                        menu_item_id=item_id,
-                        quantity=qty,
-                        special_instructions=special
-                    )
+                    try:
+                        OrderItem.objects.create(
+                            order=order,
+                            menu_item_id=item_id,
+                            quantity=qty,
+                            special_instructions=special
+                        )
+                        print(f"Created order item: {item_id}, qty: {qty}")
+                    except Exception as e:
+                        print(f"Error creating order item: {str(e)}")
+                        messages.error(request, f"Error adding item to order: {str(e)}")
             
             messages.success(request, 'Order created successfully!')
             return redirect('restaurant:order_list')
+        else:
+            print(f"Form errors: {form.errors}")
+            messages.error(request, f"Form validation failed: {form.errors}")
     else:
-        form = OrderForm()
+        form = OrderForm(initial={'status': 'PENDING'})
     
     menu_items = MenuItem.objects.all().order_by('category', 'name')
     return render(request, 'restaurant/orders/form.html', {
@@ -219,17 +247,41 @@ def order_update(request, pk):
             quantities = request.POST.getlist('quantity[]')
             special_instructions = request.POST.getlist('special_instructions[]')
             
+            # Debug information
+            print(f"Update - Menu items: {menu_items}")
+            print(f"Update - Quantities: {quantities}")
+            print(f"Update - Special instructions: {special_instructions}")
+            
+            # Check if we have any items to process
+            if not menu_items or len(menu_items) == 0:
+                messages.warning(request, 'Order updated but no items were added.')
+                return redirect('restaurant:order_list')
+                
             for item_id, qty, special in zip(menu_items, quantities, special_instructions):
                 if item_id and int(qty) > 0:
-                    OrderItem.objects.create(
-                        order=order,
-                        menu_item_id=item_id,
-                        quantity=qty,
-                        special_instructions=special
-                    )
+                    try:
+                        OrderItem.objects.create(
+                            order=order,
+                            menu_item_id=item_id,
+                            quantity=qty,
+                            special_instructions=special
+                        )
+                        print(f"Updated order item: {item_id}, qty: {qty}")
+                    except Exception as e:
+                        print(f"Error updating order item: {str(e)}")
+                        messages.error(request, f"Error updating item in order: {str(e)}")
             
             messages.success(request, 'Order updated successfully!')
+
+            # Notify kitchen staff if status changed to READY
+            if order.status == 'READY':
+                messages.info(request, 'Kitchen staff has been notified that the order is ready.')
+                # Send notification logic would go here
+            
             return redirect('restaurant:order_list')
+        else:
+            print(f"Update form errors: {form.errors}")
+            messages.error(request, f"Form validation failed: {form.errors}")
     else:
         form = OrderForm(instance=order)
     
@@ -244,9 +296,54 @@ def order_update(request, pk):
 @login_required
 def order_delete(request, pk):
     order = get_object_or_404(Order, pk=pk)
-    order.delete()
-    messages.success(request, 'Order deleted successfully!')
-    return redirect('restaurant:order_list')
+    if request.method == 'POST':
+        order.delete()
+        messages.success(request, 'Order deleted successfully!')
+        return redirect('restaurant:order_list')
+    return render(request, 'restaurant/orders/delete.html', {'order': order})
+
+@login_required
+def order_detail(request, pk):
+    """View order details including all items"""
+    order = get_object_or_404(Order, pk=pk)
+    return render(request, 'restaurant/orders/detail.html', {'order': order})
+
+@login_required
+def kitchen_dashboard(request):
+    """Kitchen staff dashboard to view and update order status"""
+    pending_orders = Order.objects.filter(status='PENDING').order_by('-created_at')
+    preparing_orders = Order.objects.filter(status='PREPARING').order_by('-created_at')
+    ready_orders = Order.objects.filter(status='READY').order_by('-created_at')
+    
+    return render(request, 'restaurant/orders/kitchen.html', {
+        'pending_orders': pending_orders,
+        'preparing_orders': preparing_orders,
+        'ready_orders': ready_orders
+    })
+
+@login_required
+def order_update_status(request, pk):
+    """Update order status quickly from kitchen dashboard"""
+    if request.method == 'POST':
+        order = get_object_or_404(Order, pk=pk)
+        status = request.POST.get('status')
+        
+        if status in [s[0] for s in Order.STATUS_CHOICES]:
+            previous_status = order.status
+            order.status = status
+            order.save()
+            
+            # Add success message
+            messages.success(request, f'Order #{order.order_id} updated to {order.get_status_display()}')
+            
+            # Notify staff if the order is ready
+            if status == 'READY' and previous_status != 'READY':
+                messages.info(request, 'Staff has been notified that the order is ready for delivery.')
+                # Send notification logic would go here
+                
+        return redirect('restaurant:kitchen_dashboard')
+    
+    return redirect('restaurant:kitchen_dashboard')
 
 # Menu Views
 @login_required
