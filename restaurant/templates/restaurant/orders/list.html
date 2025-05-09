@@ -30,7 +30,7 @@
                     <td>{% if order.table %}{{ order.table.number }}{% else %}N/A{% endif %}</td>
                     <td>{{ order.created_at|date:"F j, Y, g:i a" }}</td>
                     <td>
-                        <span class="badge {% if order.status == 'DELIVERED' %}bg-success
+                        <span class="badge {% if order.status == 'SERVED' %}bg-success
                                          {% elif order.status == 'PENDING' %}bg-warning
                                          {% elif order.status == 'PREPARING' %}bg-info
                                          {% elif order.status == 'READY' %}bg-primary

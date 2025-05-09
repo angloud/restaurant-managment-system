@@ -20,6 +20,9 @@ class Category(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     def __str__(self):
         return self.name
 
@@ -151,7 +154,7 @@ class Order(models.Model):
         ('PENDING', 'Pending'),
         ('PREPARING', 'Preparing'),
         ('READY', 'Ready for Pickup'),
-        ('DELIVERED', 'Delivered'),
+        ('SERVED', 'Served'),
         ('CANCELLED', 'Cancelled'),
     ]
 

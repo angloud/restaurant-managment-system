@@ -5,7 +5,7 @@
         <div class="card">
             <div class="card-header d-flex justify-content-between">
                 <h5>Order #{{ order.order_id }}</h5>
-                <span class="badge {% if order.status == 'DELIVERED' %}bg-success
+                <span class="badge {% if order.status == 'SERVED' %}bg-success
                                {% elif order.status == 'PENDING' %}bg-warning
                                {% elif order.status == 'PREPARING' %}bg-info
                                {% elif order.status == 'READY' %}bg-primary
