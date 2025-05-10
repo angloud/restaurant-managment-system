@@ -1,0 +1,35 @@
+{% extends 'restaurant/base/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h4>Delete Staff Member</h4>
+                </div>
+                <div class="card-body">
+                    <p>Are you sure you want to delete the staff member "{{ staff.name }}"?</p>
+                    <p><strong>This action cannot be undone.</strong></p>
+                    
+                    <div class="alert alert-warning">
+                        <p><strong>Warning:</strong> Deleting this staff member will also delete:</p>
+                        <ul>
+                            <li>All schedules for this staff member</li>
+                            <li>All time-off requests for this staff member</li>
+                        </ul>
+                    </div>
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                            <a href="{% url 'restaurant:staff_list' %}" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

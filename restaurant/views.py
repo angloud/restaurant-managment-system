@@ -6,15 +6,16 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
 from itertools import groupby
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from .models import (
     Reservation, Order, MenuItem, 
-    Staff, Schedule, OrderItem, Category, Table, Payment, Inventory
+    Staff, Schedule, OrderItem, Category, Table, Payment, Inventory, TimeOffRequest
 )
 from .forms import (
     ReservationForm, OrderForm, MenuItemForm,
     StaffForm, OrderItemForm, ScheduleForm,
-    CategoryForm, TableForm, PaymentForm, InventoryForm
+    CategoryForm, TableForm, PaymentForm, InventoryForm,
+    TimeOffRequestManagerForm, TimeOffRequestForm
 )
 
 def home(request):
@@ -396,14 +397,200 @@ def menu_delete(request, pk):
 
 # Staff Views
 @login_required
+def staff_list(request):
+    """View all staff members"""
+    staff_members = Staff.objects.all().order_by('name')
+    return render(request, 'restaurant/staff/list.html', {
+        'staff_members': staff_members
+    })
+
+@login_required
+def staff_create(request):
+    """Create a new staff member"""
+    if request.method == 'POST':
+        form = StaffForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Staff member created successfully!')
+            return redirect('restaurant:staff_list')
+    else:
+        form = StaffForm()
+    
+    return render(request, 'restaurant/staff/staff_form.html', {
+        'form': form,
+        'action': 'Create'
+    })
+
+@login_required
+def staff_update(request, pk):
+    """Update an existing staff member"""
+    staff = get_object_or_404(Staff, pk=pk)
+    if request.method == 'POST':
+        form = StaffForm(request.POST, instance=staff)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Staff member updated successfully!')
+            return redirect('restaurant:staff_list')
+    else:
+        form = StaffForm(instance=staff)
+    
+    return render(request, 'restaurant/staff/staff_form.html', {
+        'form': form,
+        'staff': staff,
+        'action': 'Update'
+    })
+
+@login_required
+def staff_delete(request, pk):
+    """Delete a staff member"""
+    staff = get_object_or_404(Staff, pk=pk)
+    if request.method == 'POST':
+        staff.delete()
+        messages.success(request, 'Staff member deleted successfully!')
+        return redirect('restaurant:staff_list')
+    return render(request, 'restaurant/staff/staff_delete.html', {'staff': staff})
+
+@login_required
 def staff_schedule(request):
+    """View all staff schedules"""
     schedules = Schedule.objects.all().order_by('shift_date')
     return render(request, 'restaurant/staff/schedule.html', {
         'schedules': schedules
     })
 
 @login_required
+def staff_schedule_calendar(request):
+    """View staff schedules in a calendar format"""
+    import calendar
+    from datetime import datetime, timedelta, date
+    
+    # Get the month and year from the request, default to current month/year
+    now = timezone.now()
+    month = int(request.GET.get('month', now.month))
+    year = int(request.GET.get('year', now.year))
+    
+    # Create a calendar for the month
+    cal = calendar.monthcalendar(year, month)
+    
+    # Get month name
+    month_name = calendar.month_name[month]
+    
+    # Calculate previous and next month
+    if month == 1:
+        prev_month = 12
+        prev_year = year - 1
+    else:
+        prev_month = month - 1
+        prev_year = year
+        
+    if month == 12:
+        next_month = 1
+        next_year = year + 1
+    else:
+        next_month = month + 1
+        next_year = year
+    
+    # Get all schedules for the month
+    start_date = date(year, month, 1)
+    if month == 12:
+        end_date = date(year + 1, 1, 1)
+    else:
+        end_date = date(year, month + 1, 1)
+    
+    schedules = Schedule.objects.filter(
+        shift_date__gte=start_date,
+        shift_date__lt=end_date
+    ).select_related('staff')
+    
+    # Organize schedules by date
+    schedule_by_date = {}
+    for schedule in schedules:
+        date_str = schedule.shift_date.strftime('%Y-%m-%d')
+        if date_str not in schedule_by_date:
+            schedule_by_date[date_str] = []
+        schedule_by_date[date_str].append(schedule)
+    
+    # Generate calendar days
+    calendar_days = []
+    today = timezone.now().date()
+    
+    # Add days from previous month if needed
+    first_day_weekday = calendar.monthrange(year, month)[0]
+    if first_day_weekday > 0:
+        # Get the last few days from the previous month
+        if month == 1:
+            prev_month = 12
+            prev_year = year - 1
+        else:
+            prev_month = month - 1
+            prev_year = year
+            
+        prev_month_days = calendar.monthrange(prev_year, prev_month)[1]
+        for i in range(first_day_weekday):
+            day = prev_month_days - first_day_weekday + i + 1
+            current_date = date(prev_year, prev_month, day)
+            date_str = current_date.strftime('%Y-%m-%d')
+            
+            calendar_days.append({
+                'day': day,
+                'date': current_date,
+                'today': current_date == today,
+                'other_month': True,
+                'shifts': schedule_by_date.get(date_str, [])
+            })
+    
+    # Add days from current month
+    month_days = calendar.monthrange(year, month)[1]
+    for day in range(1, month_days + 1):
+        current_date = date(year, month, day)
+        date_str = current_date.strftime('%Y-%m-%d')
+        
+        calendar_days.append({
+            'day': day,
+            'date': current_date,
+            'today': current_date == today,
+            'other_month': False,
+            'shifts': schedule_by_date.get(date_str, [])
+        })
+    
+    # Add days from next month if needed
+    days_so_far = len(calendar_days)
+    if days_so_far % 7 != 0:
+        days_to_add = 7 - (days_so_far % 7)
+        
+        if month == 12:
+            next_month = 1
+            next_year = year + 1
+        else:
+            next_month = month + 1
+            next_year = year
+            
+        for day in range(1, days_to_add + 1):
+            current_date = date(next_year, next_month, day)
+            date_str = current_date.strftime('%Y-%m-%d')
+            
+            calendar_days.append({
+                'day': day,
+                'date': current_date,
+                'today': current_date == today,
+                'other_month': True,
+                'shifts': schedule_by_date.get(date_str, [])
+            })
+    
+    return render(request, 'restaurant/staff/schedule_calendar.html', {
+        'schedules': schedules,
+        'calendar_days': calendar_days,
+        'current_month': month_name,
+        'current_year': year,
+        'prev_month': prev_month,
+        'prev_year': prev_year,
+        'next_month': next_month,
+        'next_year': next_year
+    })
+
+@login_required
 def schedule_create(request):
+    """Create a new staff schedule"""
     if request.method == 'POST':
         form = ScheduleForm(request.POST)
         if form.is_valid():
@@ -419,6 +606,7 @@ def schedule_create(request):
 
 @login_required
 def schedule_update(request, pk):
+    """Update an existing staff schedule"""
     schedule = get_object_or_404(Schedule, pk=pk)
     if request.method == 'POST':
         form = ScheduleForm(request.POST, instance=schedule)
@@ -436,10 +624,194 @@ def schedule_update(request, pk):
 
 @login_required
 def schedule_delete(request, pk):
+    """Delete a staff schedule"""
     schedule = get_object_or_404(Schedule, pk=pk)
     schedule.delete()
     messages.success(request, 'Staff schedule deleted successfully!')
     return redirect('restaurant:staff_schedule')
+
+@login_required
+def my_schedule(request):
+    """View own staff schedule"""
+    # Get the staff member associated with the current user
+    try:
+        staff = Staff.objects.get(user=request.user)
+        schedules = Schedule.objects.filter(staff=staff).order_by('shift_date')
+        return render(request, 'restaurant/staff/my_schedule.html', {
+            'schedules': schedules,
+            'staff': staff
+        })
+    except Staff.DoesNotExist:
+        messages.error(request, 'You are not registered as a staff member.')
+        return redirect('restaurant:home')
+
+# Time-off Request Views
+@login_required
+def time_off_request_list(request):
+    """View all time-off requests (for managers)"""
+    time_off_requests = TimeOffRequest.objects.all().order_by('-created_at')
+    return render(request, 'restaurant/staff/time_off_request_list.html', {
+        'time_off_requests': time_off_requests
+    })
+
+@login_required
+def time_off_request_create(request):
+    """Create a new time-off request"""
+    # Try to get the staff member associated with the current user
+    try:
+        staff = Staff.objects.get(user=request.user)
+    except Staff.DoesNotExist:
+        # If no staff member is associated, check if the user is a manager
+        if request.user.is_staff or request.user.is_superuser:
+            if request.method == 'POST':
+                form = TimeOffRequestManagerForm(request.POST)
+                if form.is_valid():
+                    form.save()
+                    messages.success(request, 'Time-off request created successfully!')
+                    return redirect('restaurant:time_off_request_list')
+            else:
+                form = TimeOffRequestManagerForm()
+            
+            return render(request, 'restaurant/staff/time_off_request_form.html', {
+                'form': form,
+                'action': 'Create'
+            })
+        else:
+            messages.error(request, 'You are not registered as a staff member.')
+            return redirect('restaurant:home')
+    
+    # If we got here, the user is a staff member
+    if request.method == 'POST':
+        form = TimeOffRequestForm(request.POST)
+        if form.is_valid():
+            time_off_request = form.save(commit=False)
+            time_off_request.staff = staff
+            time_off_request.save()
+            messages.success(request, 'Time-off request submitted successfully!')
+            return redirect('restaurant:my_time_off_requests')
+    else:
+        form = TimeOffRequestForm(initial={'staff': staff})
+        # Disable the staff field since we're setting it automatically
+        form.fields['staff'].disabled = True
+    
+    return render(request, 'restaurant/staff/time_off_request_form.html', {
+        'form': form,
+        'action': 'Create'
+    })
+
+@login_required
+def time_off_request_update(request, pk):
+    """Update an existing time-off request"""
+    time_off_request = get_object_or_404(TimeOffRequest, pk=pk)
+    
+    # Check if the user is the staff member who created this request or a manager
+    is_manager = request.user.is_staff or request.user.is_superuser
+    is_owner = hasattr(request.user, 'staff') and request.user.staff == time_off_request.staff
+    
+    if not (is_manager or is_owner):
+        messages.error(request, 'You do not have permission to edit this time-off request.')
+        return redirect('restaurant:home')
+    
+    if request.method == 'POST':
+        # Use different form based on role
+        if is_manager:
+            form = TimeOffRequestManagerForm(request.POST, instance=time_off_request)
+        else:
+            form = TimeOffRequestForm(request.POST, instance=time_off_request)
+            
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Time-off request updated successfully!')
+            
+            # Redirect based on role
+            if is_manager:
+                return redirect('restaurant:time_off_request_list')
+            else:
+                return redirect('restaurant:my_time_off_requests')
+    else:
+        # Use different form based on role
+        if is_manager:
+            form = TimeOffRequestManagerForm(instance=time_off_request)
+        else:
+            form = TimeOffRequestForm(instance=time_off_request)
+            # Disable staff field for regular staff
+            form.fields['staff'].disabled = True
+    
+    return render(request, 'restaurant/staff/time_off_request_form.html', {
+        'form': form,
+        'time_off_request': time_off_request,
+        'action': 'Update'
+    })
+
+@login_required
+def time_off_request_delete(request, pk):
+    """Delete a time-off request"""
+    time_off_request = get_object_or_404(TimeOffRequest, pk=pk)
+    
+    # Check if the user is the staff member who created this request or a manager
+    is_manager = request.user.is_staff or request.user.is_superuser
+    is_owner = hasattr(request.user, 'staff') and request.user.staff == time_off_request.staff
+    
+    if not (is_manager or is_owner):
+        messages.error(request, 'You do not have permission to delete this time-off request.')
+        return redirect('restaurant:home')
+    
+    if request.method == 'POST':
+        time_off_request.delete()
+        messages.success(request, 'Time-off request deleted successfully!')
+        
+        # Redirect based on role
+        if is_manager:
+            return redirect('restaurant:time_off_request_list')
+        else:
+            return redirect('restaurant:my_time_off_requests')
+            
+    return render(request, 'restaurant/staff/time_off_request_delete.html', {
+        'time_off_request': time_off_request
+    })
+
+@login_required
+def my_time_off_requests(request):
+    """View own time-off requests"""
+    # Get the staff member associated with the current user
+    try:
+        staff = Staff.objects.get(user=request.user)
+        time_off_requests = TimeOffRequest.objects.filter(staff=staff).order_by('-created_at')
+        return render(request, 'restaurant/staff/my_time_off_requests.html', {
+            'time_off_requests': time_off_requests,
+            'staff': staff
+        })
+    except Staff.DoesNotExist:
+        messages.error(request, 'You are not registered as a staff member.')
+        return redirect('restaurant:home')
+
+@login_required
+def time_off_request_approve(request, pk):
+    """Approve a time-off request (for managers only)"""
+    if not (request.user.is_staff or request.user.is_superuser):
+        messages.error(request, 'You do not have permission to approve time-off requests.')
+        return redirect('restaurant:home')
+        
+    time_off_request = get_object_or_404(TimeOffRequest, pk=pk)
+    time_off_request.status = 'APPROVED'
+    time_off_request.save()
+    
+    messages.success(request, f'Time-off request from {time_off_request.staff.name} has been approved.')
+    return redirect('restaurant:time_off_request_list')
+
+@login_required
+def time_off_request_reject(request, pk):
+    """Reject a time-off request (for managers only)"""
+    if not (request.user.is_staff or request.user.is_superuser):
+        messages.error(request, 'You do not have permission to reject time-off requests.')
+        return redirect('restaurant:home')
+        
+    time_off_request = get_object_or_404(TimeOffRequest, pk=pk)
+    time_off_request.status = 'REJECTED'
+    time_off_request.save()
+    
+    messages.success(request, f'Time-off request from {time_off_request.staff.name} has been rejected.')
+    return redirect('restaurant:time_off_request_list')
 
 # Inventory Views
 @login_required

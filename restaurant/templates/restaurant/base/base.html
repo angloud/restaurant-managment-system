@@ -49,9 +49,27 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'menu_list' %}active{% endif %}"
                            href="{% url 'restaurant:menu_list' %}">Menu</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.resolver_match.url_name == 'staff_schedule' %}active{% endif %}"
-                           href="{% url 'restaurant:staff_schedule' %}">Staff</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {% if 'staff' in request.resolver_match.url_name %}active{% endif %}" 
+                           href="#" 
+                           id="staffDropdown" 
+                           role="button" 
+                           data-bs-toggle="dropdown" 
+                           aria-expanded="false">
+                            Staff
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="staffDropdown">
+                            <li><a class="dropdown-item" href="{% url 'restaurant:staff_list' %}">Staff Members</a></li>
+                            <li><a class="dropdown-item" href="{% url 'restaurant:staff_schedule' %}">Schedule List</a></li>
+                            <li><a class="dropdown-item" href="{% url 'restaurant:staff_schedule_calendar' %}">Schedule Calendar</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'restaurant:time_off_request_list' %}">Time-Off Requests</a></li>
+                            {% if user.is_authenticated and not user.is_staff %}
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'restaurant:my_schedule' %}">My Schedule</a></li>
+                            <li><a class="dropdown-item" href="{% url 'restaurant:my_time_off_requests' %}">My Time-Off Requests</a></li>
+                            {% endif %}
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.resolver_match.url_name == 'inventory_list' %}active{% endif %}"

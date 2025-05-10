@@ -1,7 +1,7 @@
 from django import forms
 from .models import (
     Reservation, Order, MenuItem, OrderItem,
-    Category, Table, Payment, Staff, Schedule, Inventory
+    Category, Table, Payment, Staff, Schedule, Inventory, TimeOffRequest
 )
 
 class ReservationForm(forms.ModelForm):
@@ -54,10 +54,7 @@ class OrderItemForm(forms.ModelForm):
 class StaffForm(forms.ModelForm):
     class Meta:
         model = Staff
-        fields = ['name', 'position', 'contact_info', 'hire_date', 'user']
-        widgets = {
-            'hire_date': forms.DateInput(attrs={'type': 'date'}),
-        }
+        fields = ['name', 'position', 'contact_info', 'user']
 
 class ScheduleForm(forms.ModelForm):
     class Meta:
@@ -102,4 +99,26 @@ class InventoryForm(forms.ModelForm):
         fields = ['item_name', 'quantity_on_hand', 'reorder_level', 'supplier_info']
         widgets = {
             'supplier_info': forms.Textarea(attrs={'rows': 3}),
+        }
+
+class TimeOffRequestForm(forms.ModelForm):
+    class Meta:
+        model = TimeOffRequest
+        fields = ['staff', 'start_date', 'end_date', 'reason']
+        widgets = {
+            'start_date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'end_date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'reason': forms.Textarea(attrs={'rows': 3, 'class': 'form-control'}),
+        }
+        
+class TimeOffRequestManagerForm(forms.ModelForm):
+    class Meta:
+        model = TimeOffRequest
+        fields = ['staff', 'start_date', 'end_date', 'reason', 'status', 'notes']
+        widgets = {
+            'start_date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'end_date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'reason': forms.Textarea(attrs={'rows': 3, 'class': 'form-control'}),
+            'status': forms.Select(attrs={'class': 'form-control'}),
+            'notes': forms.Textarea(attrs={'rows': 3, 'class': 'form-control'}),
         } 

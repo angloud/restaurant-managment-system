@@ -1,0 +1,145 @@
+{% extends 'restaurant/base/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Time-Off Requests</h2>
+        <a href="{% url 'restaurant:time_off_request_create' %}" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Create Request
+        </a>
+    </div>
+
+    {% if time_off_requests %}
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5>Pending Requests</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Staff Member</th>
+                            <th>Position</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Status</th>
+                            <th>Reason</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for request in time_off_requests %}
+                            {% if request.status == 'PENDING' %}
+                            <tr>
+                                <td>{{ request.staff.name }}</td>
+                                <td>{{ request.staff.get_position_display }}</td>
+                                <td>{{ request.start_date|date:"M d, Y" }}</td>
+                                <td>{{ request.end_date|date:"M d, Y" }}</td>
+                                <td>
+                                    <span class="badge bg-warning">{{ request.get_status_display }}</span>
+                                </td>
+                                <td>{{ request.reason|truncatechars:30 }}</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <a href="{% url 'restaurant:time_off_request_approve' pk=request.pk %}" class="btn btn-sm btn-success">
+                                            <i class="fas fa-check"></i> Approve
+                                        </a>
+                                        <a href="{% url 'restaurant:time_off_request_reject' pk=request.pk %}" class="btn btn-sm btn-danger">
+                                            <i class="fas fa-times"></i> Reject
+                                        </a>
+                                    </div>
+                                    <a href="{% url 'restaurant:time_off_request_update' pk=request.pk %}" class="btn btn-sm btn-info">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            {% endif %}
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Approved Requests</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Staff</th>
+                                    <th>Dates</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for request in time_off_requests %}
+                                    {% if request.status == 'APPROVED' %}
+                                    <tr>
+                                        <td>{{ request.staff.name }}</td>
+                                        <td>{{ request.start_date|date:"M d" }} - {{ request.end_date|date:"M d, Y" }}</td>
+                                        <td>
+                                            <a href="{% url 'restaurant:time_off_request_update' pk=request.pk %}" class="btn btn-sm btn-outline-info">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endif %}
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Rejected Requests</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Staff</th>
+                                    <th>Dates</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for request in time_off_requests %}
+                                    {% if request.status == 'REJECTED' %}
+                                    <tr>
+                                        <td>{{ request.staff.name }}</td>
+                                        <td>{{ request.start_date|date:"M d" }} - {{ request.end_date|date:"M d, Y" }}</td>
+                                        <td>
+                                            <a href="{% url 'restaurant:time_off_request_update' pk=request.pk %}" class="btn btn-sm btn-outline-info">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endif %}
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="alert alert-info">
+        No time-off requests found. <a href="{% url 'restaurant:time_off_request_create' %}">Create a new request</a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %} 

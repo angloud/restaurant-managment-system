@@ -1,0 +1,151 @@
+{% extends 'restaurant/base/base.html' %}
+{% load static %}
+
+{% block extra_head %}
+<style>
+    .calendar {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-gap: 5px;
+        margin-bottom: 20px;
+    }
+    
+    .calendar-header {
+        text-align: center;
+        font-weight: bold;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 4px;
+    }
+    
+    .calendar-day {
+        min-height: 100px;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 4px;
+    }
+    
+    .calendar-day.today {
+        background-color: #e0f7fa;
+        border: 1px solid #00bcd4;
+    }
+    
+    .calendar-day-header {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    .calendar-day.other-month {
+        background-color: #eee;
+        color: #999;
+    }
+    
+    .shift-item {
+        background-color: #bbdefb;
+        padding: 5px;
+        border-radius: 3px;
+        margin-bottom: 5px;
+        font-size: 0.8rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    
+    .shift-item.manager {
+        background-color: #c8e6c9;
+    }
+    
+    .shift-item.chef {
+        background-color: #ffccbc;
+    }
+    
+    .shift-item.waiter {
+        background-color: #d1c4e9;
+    }
+    
+    .shift-item.cashier {
+        background-color: #fff9c4;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Staff Schedule Calendar</h2>
+        <div>
+            <a href="{% url 'restaurant:staff_schedule' %}" class="btn btn-secondary">
+                <i class="fas fa-list"></i> List View
+            </a>
+            <a href="{% url 'restaurant:schedule_create' %}" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Add Schedule
+            </a>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>{{ current_month }} {{ current_year }}</h5>
+                <div>
+                    <a href="?month={{ prev_month }}&year={{ prev_year }}" class="btn btn-sm btn-outline-secondary">
+                        <i class="fas fa-chevron-left"></i> Previous Month
+                    </a>
+                    <a href="?month={{ next_month }}&year={{ next_year }}" class="btn btn-sm btn-outline-secondary">
+                        Next Month <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="calendar">
+                <!-- Days of week headers -->
+                <div class="calendar-header">Sunday</div>
+                <div class="calendar-header">Monday</div>
+                <div class="calendar-header">Tuesday</div>
+                <div class="calendar-header">Wednesday</div>
+                <div class="calendar-header">Thursday</div>
+                <div class="calendar-header">Friday</div>
+                <div class="calendar-header">Saturday</div>
+                
+                <!-- Calendar days will be populated by the view -->
+                {% for day in calendar_days %}
+                <div class="calendar-day {% if day.today %}today{% endif %} {% if day.other_month %}other-month{% endif %}">
+                    <div class="calendar-day-header">{{ day.day }}</div>
+                    {% for shift in day.shifts %}
+                    <div class="shift-item {{ shift.staff.position|lower }}">
+                        {{ shift.staff.name }} ({{ shift.shift_start_time|time:"g:i A" }} - {{ shift.shift_end_time|time:"g:i A" }})
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <h5>Position Legend</h5>
+        </div>
+        <div class="card-body">
+            <div class="d-flex flex-wrap">
+                <div class="me-3 mb-2">
+                    <span class="badge" style="background-color: #c8e6c9;">Manager</span>
+                </div>
+                <div class="me-3 mb-2">
+                    <span class="badge" style="background-color: #ffccbc;">Chef</span>
+                </div>
+                <div class="me-3 mb-2">
+                    <span class="badge" style="background-color: #d1c4e9;">Waiter</span>
+                </div>
+                <div class="me-3 mb-2">
+                    <span class="badge" style="background-color: #fff9c4;">Cashier</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
