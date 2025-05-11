@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib import messages
 from django.utils import timezone
 from .forms import (
@@ -23,6 +23,10 @@ class CustomAuthenticationForm(AuthenticationForm):
     )
 
 def auth_page(request):
+    if request.user.is_authenticated and request.GET.get('logout'):
+        # If the user is trying to log out with GET parameter, redirect them to the proper logout URL
+        return redirect('customer_portal:logout')
+        
     if request.method == 'POST':
         if 'login' in request.POST:
             login_form = CustomAuthenticationForm(request, data=request.POST)
@@ -191,3 +195,10 @@ def dashboard(request):
     }
     
     return render(request, 'customer_portal/dashboard.html', context)
+
+def logout_user(request):
+    """Custom logout view that handles both GET and POST requests."""
+    if request.user.is_authenticated:
+        logout(request)
+        messages.success(request, "You have been logged out successfully!")
+    return redirect('customer_portal:auth_page')

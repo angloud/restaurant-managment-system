@@ -14,5 +14,5 @@ urlpatterns = [
     path('feedback/order/<int:order_id>/', views.submit_feedback, name='submit_feedback_order'),
     path('payment/reservation/<int:reservation_id>/', views.process_payment, name='process_payment_reservation'),
     path('payment/order/<int:order_id>/', views.process_payment, name='process_payment_order'),
-    path('logout/', LogoutView.as_view(next_page='customer_portal:auth_page'), name='logout'),
+    path('logout/', views.logout_user, name='logout'),
 ] 

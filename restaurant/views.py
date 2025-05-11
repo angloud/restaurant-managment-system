@@ -17,6 +17,7 @@ from .forms import (
     CategoryForm, TableForm, PaymentForm, InventoryForm,
     TimeOffRequestManagerForm, TimeOffRequestForm
 )
+from django.contrib.auth import logout
 
 def home(request):
     today = timezone.now().date()
@@ -900,4 +901,11 @@ def table_delete(request, pk):
         table.delete()
         messages.success(request, 'Table deleted successfully!')
         return redirect('restaurant:table_list')
-    return render(request, 'restaurant/table_delete.html', {'table': table}) 
+    return render(request, 'restaurant/table_delete.html', {'table': table})
+
+def logout_view(request):
+    """Custom logout view that handles both GET and POST requests."""
+    if request.user.is_authenticated:
+        logout(request)
+        messages.success(request, "You have been logged out successfully!")
+    return redirect('restaurant:home') 

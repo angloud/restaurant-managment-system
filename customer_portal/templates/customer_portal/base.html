@@ -23,7 +23,8 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'customer_portal:dashboard' %}">Restaurant Portal</a>
+            <a class="navbar-brand" href="{% if user.is_authenticated %}{% url 'customer_portal:dashboard' %}{% else %}{% url 'customer_portal:auth_page' %}{% endif %}">Restaurant Portal</a>
+            {% if user.is_authenticated %}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -35,16 +36,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'customer_portal:make_reservation' %}">Make Reservation</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'customer_portal:profile' %}">Profile</a>
-                    </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'customer_portal:auth_page' %}?logout=1">Logout</a>
+                        <a class="nav-link" href="{% url 'customer_portal:logout' %}">Logout</a>
                     </li>
                 </ul>
             </div>
+            {% endif %}
         </div>
     </nav>
 
@@ -63,11 +62,11 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="row">
+            <div class="row text-center">
                 <div class="col-md-6">
                     <h5>Contact Us</h5>
                     <p>Email: info@restaurant.com</p>
-                    <p>Phone: (123) 456-7890</p>
+                    <p>Phone: 210 9999999</p>
                 </div>
                 <div class="col-md-6">
                     <h5>Hours</h5>
