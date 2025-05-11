@@ -1,0 +1,225 @@
+{% extends 'restaurant/base/base.html' %}
+
+{% block title %}POS Integration - Restaurant Management System{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>POS Integration</h1>
+        <a href="{% url 'restaurant:home' %}" class="btn btn-secondary">
+            <i class="fas fa-arrow-left"></i> Back to Dashboard
+        </a>
+    </div>
+
+    <!-- Connection Status -->
+    <div class="card mb-4">
+        <div class="card-header bg-light">
+            <h5 class="mb-0">POS System Connection Status</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Connection Status
+                            {% if pos_status.connected %}
+                            <span class="badge bg-success">Connected</span>
+                            {% else %}
+                            <span class="badge bg-danger">Disconnected</span>
+                            {% endif %}
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            System Name
+                            <span class="badge bg-primary">{{ pos_status.system_name }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Version
+                            <span class="badge bg-info">{{ pos_status.version }}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Last Sync
+                            <span class="badge bg-secondary">{{ pos_status.last_sync|date:"M d, Y H:i" }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Terminal Count
+                            <span class="badge bg-warning text-dark">{{ pos_status.terminal_count }}</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <button class="btn btn-primary" id="syncButton">
+                                <i class="fas fa-sync"></i> Sync Now
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Today's Sales Summary -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-center bg-success text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Total Sales</h5>
+                    <p class="card-text fs-2">${{ sales_data.total_sales|floatformat:2 }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center bg-info text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Cash Sales</h5>
+                    <p class="card-text fs-3">${{ sales_data.cash_sales|floatformat:2 }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center bg-primary text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Card Sales</h5>
+                    <p class="card-text fs-3">${{ sales_data.card_sales|floatformat:2 }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center bg-secondary text-white h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Online Sales</h5>
+                    <p class="card-text fs-3">${{ sales_data.online_sales|floatformat:2 }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Transactions -->
+    <div class="card mb-4">
+        <div class="card-header bg-light">
+            <h5 class="mb-0">Recent Transactions</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Table</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Time</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in recent_orders %}
+                        <tr>
+                            <td>{{ order.order_id }}</td>
+                            <td>{% if order.table %}Table {{ order.table.number }}{% else %}Takeaway{% endif %}</td>
+                            <td>${{ order.total_amount|floatformat:2 }}</td>
+                            <td>
+                                <span class="badge 
+                                    {% if order.status == 'PENDING' %}bg-warning text-dark
+                                    {% elif order.status == 'PREPARING' %}bg-info
+                                    {% elif order.status == 'READY' %}bg-primary
+                                    {% elif order.status == 'SERVED' %}bg-success
+                                    {% else %}bg-danger{% endif %}">
+                                    {{ order.status }}
+                                </span>
+                            </td>
+                            <td>{{ order.created_at|date:"M d, Y H:i" }}</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary process-payment" data-order-id="{{ order.order_id }}">
+                                    <i class="fas fa-cash-register"></i> Process
+                                </button>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="6" class="text-center">No recent transactions found.</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Sync button
+    document.getElementById('syncButton').addEventListener('click', function() {
+        // Show loading indicator
+        Swal.fire({
+            title: 'Syncing with POS system...',
+            html: 'Please wait while data is synchronized',
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Sync Complete',
+                    text: 'Data has been successfully synchronized with the POS system',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            }
+        });
+    });
+
+    // Process payment buttons
+    document.querySelectorAll('.process-payment').forEach(button => {
+        button.addEventListener('click', function() {
+            const orderId = this.getAttribute('data-order-id');
+            
+            Swal.fire({
+                title: 'Process Payment',
+                html: `
+                    <div class="mb-3">
+                        <label class="form-label">Order #${orderId}</label>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Payment Method</label>
+                        <select class="form-select" id="paymentMethod">
+                            <option value="CASH">Cash</option>
+                            <option value="CARD">Credit/Debit Card</option>
+                            <option value="ONLINE">Online Payment</option>
+                        </select>
+                    </div>
+                `,
+                showCancelButton: true,
+                confirmButtonText: 'Process',
+                showLoaderOnConfirm: true,
+                preConfirm: () => {
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            resolve({
+                                success: true,
+                                method: document.getElementById('paymentMethod').value
+                            });
+                        }, 1500);
+                    });
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Payment Processed',
+                        text: `Order #${orderId} has been paid via ${result.value.method}`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            });
+        });
+    });
+});
+</script>
+{% endblock %} 
