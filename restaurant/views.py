@@ -976,4 +976,38 @@ def logout_view(request):
     if request.user.is_authenticated:
         logout(request)
         messages.success(request, "You have been logged out successfully!")
-    return redirect('restaurant:home') 
+    return redirect('restaurant:home')
+
+@login_required
+def pos_integration(request):
+    """Simple POS integration demonstration for academic purposes."""
+    # Get recent orders for demonstration
+    recent_orders = Order.objects.all().order_by('-created_at')[:5]
+    
+    # Mock POS connection status
+    pos_status = {
+        'connected': True,
+        'system_name': 'RestaurantPOS Pro',
+        'version': '2.5.1',
+        'last_sync': timezone.now(),
+        'terminal_count': 3,
+    }
+    
+    # Mock daily sales data
+    from random import randint
+    sales_data = {
+        'cash_sales': randint(500, 1500),
+        'card_sales': randint(1000, 3000),
+        'online_sales': randint(300, 800),
+        'total_sales': 0,
+        'transaction_count': randint(30, 100),
+    }
+    sales_data['total_sales'] = sales_data['cash_sales'] + sales_data['card_sales'] + sales_data['online_sales']
+    
+    context = {
+        'recent_orders': recent_orders,
+        'pos_status': pos_status,
+        'sales_data': sales_data,
+    }
+    
+    return render(request, 'restaurant/pos/integration.html', context) 

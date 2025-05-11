@@ -63,4 +63,7 @@ urlpatterns = [
     path('tables/create/', views.table_create, name='table_create'),
     path('tables/<int:pk>/update/', views.table_update, name='table_update'),
     path('tables/<int:pk>/delete/', views.table_delete, name='table_delete'),
+    
+    # POS Integration
+    path('pos/', views.pos_integration, name='pos_integration'),
 ] 
