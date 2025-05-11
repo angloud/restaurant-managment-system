@@ -863,6 +863,74 @@ def inventory_delete(request, pk):
         return redirect('restaurant:inventory_list')
     return render(request, 'restaurant/inventory_delete.html', {'inventory': inventory})
 
+@login_required
+def inventory_usage_report(request):
+    """
+    Generate inventory usage report to help with planning and reducing waste.
+    """
+    # Get date range parameters from request or set defaults
+    from_date_str = request.GET.get('from_date', '')
+    to_date_str = request.GET.get('to_date', '')
+    
+    # Set default date range to the past 30 days if not provided
+    if not from_date_str or not to_date_str:
+        to_date = timezone.now().date()
+        from_date = to_date - timedelta(days=30)
+    else:
+        try:
+            from_date = datetime.strptime(from_date_str, '%Y-%m-%d').date()
+            to_date = datetime.strptime(to_date_str, '%Y-%m-%d').date()
+        except ValueError:
+            messages.error(request, 'Invalid date format. Please use YYYY-MM-DD.')
+            to_date = timezone.now().date()
+            from_date = to_date - timedelta(days=30)
+    
+    # Fetch orders in the date range
+    orders = Order.objects.filter(
+        created_at__date__gte=from_date,
+        created_at__date__lte=to_date
+    )
+    
+    # Collect order items and count by menu item
+    order_items = OrderItem.objects.filter(order__in=orders)
+    
+    # Aggregate data by menu item
+    menu_item_usage = {}
+    for item in order_items:
+        menu_item_name = item.menu_item.name
+        if menu_item_name not in menu_item_usage:
+            menu_item_usage[menu_item_name] = {
+                'quantity': 0,
+                'menu_item_id': item.menu_item.id,
+                'revenue': 0
+            }
+        menu_item_usage[menu_item_name]['quantity'] += item.quantity
+        menu_item_usage[menu_item_name]['revenue'] += item.subtotal
+    
+    # Sort by usage (most used first)
+    sorted_items = sorted(menu_item_usage.items(), key=lambda x: x[1]['quantity'], reverse=True)
+    
+    # Connect to inventory data
+    for item_name, data in menu_item_usage.items():
+        menu_item = MenuItem.objects.get(id=data['menu_item_id'])
+        data['category'] = menu_item.category.name if menu_item.category else 'Uncategorized'
+    
+    # Get low stock items
+    low_stock_items = Inventory.objects.filter(
+        quantity_on_hand__lte=F('reorder_level')
+    ).order_by('item_name')
+    
+    context = {
+        'from_date': from_date,
+        'to_date': to_date,
+        'sorted_items': sorted_items,
+        'low_stock_items': low_stock_items,
+        'total_orders': orders.count(),
+        'total_revenue': sum(data['revenue'] for _, data in menu_item_usage.items())
+    }
+    
+    return render(request, 'restaurant/inventory/usage_report.html', context)
+
 # Table Management
 @login_required
 def table_list(request):
