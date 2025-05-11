@@ -272,7 +272,7 @@ class POSTransaction(models.Model):
     transaction_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Transaction {self.transaction_id} - {self.payment_method}"
+        return f"Transaction {self.transaction_id} - {self.payment_method}" 
 
 class TimeOffRequest(models.Model):
     STATUS_CHOICES = [

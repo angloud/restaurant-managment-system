@@ -1,0 +1,6128 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2025-04-16T02:07:17.016Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "patates",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2025-04-16T02:07:34.828Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "kremidia",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2025-04-25T11:43:54.696Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "1",
+        "object_repr": "Table 1 (Capacity: 4)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2025-04-25T11:43:59.806Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "2",
+        "object_repr": "Table 2 (Capacity: 6)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2025-04-25T11:44:08.631Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "3",
+        "object_repr": "Table 3 (Capacity: 2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2025-04-25T11:44:17.878Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "4",
+        "object_repr": "Table 4 (Capacity: 8)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2025-04-25T11:47:02.380Z",
+        "user": 1,
+        "content_type": 19,
+        "object_id": "1",
+        "object_repr": "Almira",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2025-04-25T11:47:34.035Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "souvlaki",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2025-04-28T18:00:28.446Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "1",
+        "object_repr": "Makis Petaloudas - WAITER",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2025-04-28T18:01:00.250Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "2",
+        "object_repr": "Kostas Tromaras - CHEF",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2025-04-28T18:06:59.677Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "giaourti",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2025-04-28T18:49:09.111Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "9",
+        "object_repr": "testakias",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2025-04-28T18:52:27.813Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "5",
+        "object_repr": "Table 5 (Capacity: 7)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2025-04-28T20:16:14.693Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Kokoras Krasatos",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2025-04-28T20:16:44.465Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "xwriatiki salata",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2025-04-28T21:38:40.567Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "4",
+        "object_repr": "Pastitsio",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2025-04-28T21:38:47.250Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "xwriatiki salata",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Preparation time\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2025-04-28T21:38:52.993Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "souvlaki",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Preparation time\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2025-05-09T23:56:37.313Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "14",
+        "object_repr": "manageropoulos",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2025-05-09T23:57:17.493Z",
+        "user": 1,
+        "content_type": 4,
+        "object_id": "14",
+        "object_repr": "manageropoulos",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add Inventory Item",
+        "content_type": 7,
+        "codename": "add_inventory"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change Inventory Item",
+        "content_type": 7,
+        "codename": "change_inventory"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete Inventory Item",
+        "content_type": 7,
+        "codename": "delete_inventory"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view Inventory Item",
+        "content_type": 7,
+        "codename": "view_inventory"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add Menu Item",
+        "content_type": 8,
+        "codename": "add_menuitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change Menu Item",
+        "content_type": 8,
+        "codename": "change_menuitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete Menu Item",
+        "content_type": 8,
+        "codename": "delete_menuitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view Menu Item",
+        "content_type": 8,
+        "codename": "view_menuitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add customer",
+        "content_type": 9,
+        "codename": "add_customer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change customer",
+        "content_type": 9,
+        "codename": "change_customer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete customer",
+        "content_type": 9,
+        "codename": "delete_customer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view customer",
+        "content_type": 9,
+        "codename": "view_customer"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add order",
+        "content_type": 10,
+        "codename": "add_order"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change order",
+        "content_type": 10,
+        "codename": "change_order"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete order",
+        "content_type": 10,
+        "codename": "delete_order"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view order",
+        "content_type": 10,
+        "codename": "view_order"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add order item",
+        "content_type": 11,
+        "codename": "add_orderitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change order item",
+        "content_type": 11,
+        "codename": "change_orderitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete order item",
+        "content_type": 11,
+        "codename": "delete_orderitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view order item",
+        "content_type": 11,
+        "codename": "view_orderitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add pos transaction",
+        "content_type": 12,
+        "codename": "add_postransaction"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change pos transaction",
+        "content_type": 12,
+        "codename": "change_postransaction"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete pos transaction",
+        "content_type": 12,
+        "codename": "delete_postransaction"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view pos transaction",
+        "content_type": 12,
+        "codename": "view_postransaction"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add reservation",
+        "content_type": 13,
+        "codename": "add_reservation"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change reservation",
+        "content_type": 13,
+        "codename": "change_reservation"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete reservation",
+        "content_type": 13,
+        "codename": "delete_reservation"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view reservation",
+        "content_type": 13,
+        "codename": "view_reservation"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add Staff Member",
+        "content_type": 14,
+        "codename": "add_staff"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change Staff Member",
+        "content_type": 14,
+        "codename": "change_staff"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete Staff Member",
+        "content_type": 14,
+        "codename": "delete_staff"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view Staff Member",
+        "content_type": 14,
+        "codename": "view_staff"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+        "name": "Can add Staff Schedule",
+        "content_type": 15,
+        "codename": "add_schedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+        "name": "Can change Staff Schedule",
+        "content_type": 15,
+        "codename": "change_schedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+        "name": "Can delete Staff Schedule",
+        "content_type": 15,
+        "codename": "delete_schedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+        "name": "Can view Staff Schedule",
+        "content_type": 15,
+        "codename": "view_schedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+        "name": "Can add customer feedback",
+        "content_type": 16,
+        "codename": "add_customerfeedback"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+        "name": "Can change customer feedback",
+        "content_type": 16,
+        "codename": "change_customerfeedback"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+        "name": "Can delete customer feedback",
+        "content_type": 16,
+        "codename": "delete_customerfeedback"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+        "name": "Can view customer feedback",
+        "content_type": 16,
+        "codename": "view_customerfeedback"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+        "name": "Can add customer profile",
+        "content_type": 17,
+        "codename": "add_customerprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+        "name": "Can change customer profile",
+        "content_type": 17,
+        "codename": "change_customerprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+        "name": "Can delete customer profile",
+        "content_type": 17,
+        "codename": "delete_customerprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+        "name": "Can view customer profile",
+        "content_type": 17,
+        "codename": "view_customerprofile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 69,
+    "fields": {
+        "name": "Can add payment",
+        "content_type": 18,
+        "codename": "add_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 70,
+    "fields": {
+        "name": "Can change payment",
+        "content_type": 18,
+        "codename": "change_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 71,
+    "fields": {
+        "name": "Can delete payment",
+        "content_type": 18,
+        "codename": "delete_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 72,
+    "fields": {
+        "name": "Can view payment",
+        "content_type": 18,
+        "codename": "view_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 73,
+    "fields": {
+        "name": "Can add category",
+        "content_type": 19,
+        "codename": "add_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 74,
+    "fields": {
+        "name": "Can change category",
+        "content_type": 19,
+        "codename": "change_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 75,
+    "fields": {
+        "name": "Can delete category",
+        "content_type": 19,
+        "codename": "delete_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 76,
+    "fields": {
+        "name": "Can view category",
+        "content_type": 19,
+        "codename": "view_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 77,
+    "fields": {
+        "name": "Can add table",
+        "content_type": 20,
+        "codename": "add_table"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 78,
+    "fields": {
+        "name": "Can change table",
+        "content_type": 20,
+        "codename": "change_table"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 79,
+    "fields": {
+        "name": "Can delete table",
+        "content_type": 20,
+        "codename": "delete_table"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 80,
+    "fields": {
+        "name": "Can view table",
+        "content_type": 20,
+        "codename": "view_table"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 81,
+    "fields": {
+        "name": "Can add menu item ingredient",
+        "content_type": 21,
+        "codename": "add_menuitemingredient"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 82,
+    "fields": {
+        "name": "Can change menu item ingredient",
+        "content_type": 21,
+        "codename": "change_menuitemingredient"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 83,
+    "fields": {
+        "name": "Can delete menu item ingredient",
+        "content_type": 21,
+        "codename": "delete_menuitemingredient"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 84,
+    "fields": {
+        "name": "Can view menu item ingredient",
+        "content_type": 21,
+        "codename": "view_menuitemingredient"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 85,
+    "fields": {
+        "name": "Can add payment",
+        "content_type": 22,
+        "codename": "add_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 86,
+    "fields": {
+        "name": "Can change payment",
+        "content_type": 22,
+        "codename": "change_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 87,
+    "fields": {
+        "name": "Can delete payment",
+        "content_type": 22,
+        "codename": "delete_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 88,
+    "fields": {
+        "name": "Can view payment",
+        "content_type": 22,
+        "codename": "view_payment"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 89,
+    "fields": {
+        "name": "Can add inventory item",
+        "content_type": 23,
+        "codename": "add_inventoryitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 90,
+    "fields": {
+        "name": "Can change inventory item",
+        "content_type": 23,
+        "codename": "change_inventoryitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 91,
+    "fields": {
+        "name": "Can delete inventory item",
+        "content_type": 23,
+        "codename": "delete_inventoryitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 92,
+    "fields": {
+        "name": "Can view inventory item",
+        "content_type": 23,
+        "codename": "view_inventoryitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 93,
+    "fields": {
+        "name": "Can add supplier",
+        "content_type": 24,
+        "codename": "add_supplier"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 94,
+    "fields": {
+        "name": "Can change supplier",
+        "content_type": 24,
+        "codename": "change_supplier"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 95,
+    "fields": {
+        "name": "Can delete supplier",
+        "content_type": 24,
+        "codename": "delete_supplier"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 96,
+    "fields": {
+        "name": "Can view supplier",
+        "content_type": 24,
+        "codename": "view_supplier"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 97,
+    "fields": {
+        "name": "Can add inventory alert",
+        "content_type": 25,
+        "codename": "add_inventoryalert"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 98,
+    "fields": {
+        "name": "Can change inventory alert",
+        "content_type": 25,
+        "codename": "change_inventoryalert"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 99,
+    "fields": {
+        "name": "Can delete inventory alert",
+        "content_type": 25,
+        "codename": "delete_inventoryalert"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 100,
+    "fields": {
+        "name": "Can view inventory alert",
+        "content_type": 25,
+        "codename": "view_inventoryalert"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 101,
+    "fields": {
+        "name": "Can add stock transaction",
+        "content_type": 26,
+        "codename": "add_stocktransaction"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 102,
+    "fields": {
+        "name": "Can change stock transaction",
+        "content_type": 26,
+        "codename": "change_stocktransaction"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 103,
+    "fields": {
+        "name": "Can delete stock transaction",
+        "content_type": 26,
+        "codename": "delete_stocktransaction"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 104,
+    "fields": {
+        "name": "Can view stock transaction",
+        "content_type": 26,
+        "codename": "view_stocktransaction"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 105,
+    "fields": {
+        "name": "Can add Time Off Request",
+        "content_type": 27,
+        "codename": "add_timeoffrequest"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 106,
+    "fields": {
+        "name": "Can change Time Off Request",
+        "content_type": 27,
+        "codename": "change_timeoffrequest"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 107,
+    "fields": {
+        "name": "Can delete Time Off Request",
+        "content_type": 27,
+        "codename": "delete_timeoffrequest"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 108,
+    "fields": {
+        "name": "Can view Time Off Request",
+        "content_type": 27,
+        "codename": "view_timeoffrequest"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$Qt4MH4yNkxpWcRbA158MFf$i8hHlQiHarQ4sMk7SxhIquQlnTshS1GjPSqT987zka8=",
+        "last_login": "2025-05-11T12:42:48.207Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@rms1010101.gr",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-04-15T23:05:01.004Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$Mdyh2tbl7eCiXVMYQzXrNt$hvjBSLMDl9BS9QuboLccKMbHL2iLXZSWGK9D6bZyfso=",
+        "last_login": "2025-04-16T17:45:50.629Z",
+        "is_superuser": false,
+        "username": "test6",
+        "first_name": "",
+        "last_name": "",
+        "email": "tsotsddo@tsotso.gr",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T00:24:17.259Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$9qR8dRAJtS2DdVPAwTVABH$sPBGWVaftc01fDZmBD8JtMuL6RMhzlcQ8Aoxuiva9GA=",
+        "last_login": "2025-04-16T02:24:36.053Z",
+        "is_superuser": false,
+        "username": "test7",
+        "first_name": "",
+        "last_name": "",
+        "email": "test@hohodddho.gr",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T02:20:54.818Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$6Vr1na4SXMEwmhH3EXG0D0$EwklnYvvtoXROMZTL3blwl5C8ZASII6ygzlArpUN8Wk=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "test8",
+        "first_name": "",
+        "last_name": "",
+        "email": "testatos@yysday.gr",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T02:26:23.952Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$F96mODidYmtyntNlkwOxsl$xRkI/gXXJ5wIlrNNUttpyTqgkWDH448wz885GX3DyKI=",
+        "last_login": "2025-04-16T02:27:31.677Z",
+        "is_superuser": false,
+        "username": "test10",
+        "first_name": "",
+        "last_name": "",
+        "email": "testatos@yysday.gr",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T02:27:30.512Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$mtQKkzh7T8L407WBsNOhru$erSX8DGHRXuQNA340/QgrkNFePO+2tw0JvFCzVeShlA=",
+        "last_login": "2025-05-08T10:44:20.212Z",
+        "is_superuser": false,
+        "username": "test1010",
+        "first_name": "Kotas",
+        "last_name": "Karas",
+        "email": "tsiritsi@gmaic.gr",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-16T02:34:34.385Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$mjMOXhXV5mEG8wh0ji3HEr$XWO7YMuCufk0A1HVZzCq/rRPvbkp4xRFaySF8+ykexY=",
+        "last_login": "2025-04-25T04:14:53.365Z",
+        "is_superuser": false,
+        "username": "kotsos33",
+        "first_name": "Aggelos",
+        "last_name": "MAks",
+        "email": "test@hodddhoho.gr",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-25T04:14:52.218Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$ZPP0OhaD43BbqMRiOdOBeL$pYnCRMtNi8KDmWnOOq7W4rgLk5LEqHaPY9fve6TBoyk=",
+        "last_login": "2025-04-28T17:51:42.937Z",
+        "is_superuser": false,
+        "username": "ilias",
+        "first_name": "Ilias",
+        "last_name": "Mamalakis",
+        "email": "genxrhs@hotmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-28T17:51:41.236Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$jQD8iaWhBMwJ8kSYNkAkYZ$J6+VisyZIpxwI7CSd+WnjnZVvU0wiKr26XwoV6yqjaM=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "testakias",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-28T18:49:08.101Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$l8aGpsu9xgBp5g5cfZHFso$6ULgL/2aR9t3AH+MV/smm4WvLS3EHkb1XMMgWqqpk2E=",
+        "last_login": "2025-04-28T19:16:26.565Z",
+        "is_superuser": false,
+        "username": "realcustomer",
+        "first_name": "Kostis",
+        "last_name": "Antonopoulos",
+        "email": "kostisantonopoulos39@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-28T19:16:25.404Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$FnHmvRJhL83Y0Cxa64ZJSG$xmvmS8K5qWzlg69HiV/IRdrmBQHf/9Q5NA+kI3sl1o0=",
+        "last_login": "2025-04-28T22:01:00.453Z",
+        "is_superuser": false,
+        "username": "liakotsako",
+        "first_name": "Ilias",
+        "last_name": "Tsakarinas",
+        "email": "tsiritsi@gmaic.gr",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-28T22:00:58.473Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 12,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$SQUxalrvNeejEcsPMR99t2$IV2w2hikIsOvPsiTHYt16VYiZ8OpnQC66J3VQ2Ys0os=",
+        "last_login": "2025-04-28T22:02:02.951Z",
+        "is_superuser": false,
+        "username": "newone",
+        "first_name": "Pantas",
+        "last_name": "Neos",
+        "email": "pantaneos@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-04-28T22:02:01.285Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 13,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$qc9aqzlsWTJxrVQ70DcdCx$8AJ5H/DpMWAXZoI+ZP3KCi4qM2ZLAhUFrh7bDdakMnI=",
+        "last_login": "2025-05-06T02:25:29.596Z",
+        "is_superuser": false,
+        "username": "takitsan",
+        "first_name": "Hlias",
+        "last_name": "Neokopos",
+        "email": "iliasneokopos@gmail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-06T02:25:28.459Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 14,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$3ap87kmGdLGRTvt1bSNFCm$juRT13ysA7MzkRVK1dp93KiqfP13tGHPurVXlMySr08=",
+        "last_login": "2025-05-09T23:58:50.677Z",
+        "is_superuser": false,
+        "username": "manageropoulos",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-05-09T23:56:36Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$UrZU3yeW0wESzFMrqh0QoS$h22alFC8wMiPQ8Xq8TcIhIkng/X7qstDUQsNwzJWFy8=",
+        "last_login": "2025-05-10T00:23:45.930Z",
+        "is_superuser": true,
+        "username": "manager",
+        "first_name": "",
+        "last_name": "",
+        "email": "manager@restaurant.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-05-10T00:05:03.194Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 16,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$XOn4WMsqnQyDHc58dRtmBB$WZGSLYSkdrQ2ZqE40ZNlZ3pGxoaPgxWYdIcCdFGKPiE=",
+        "last_login": "2025-05-10T00:26:02.954Z",
+        "is_superuser": true,
+        "username": "staff",
+        "first_name": "",
+        "last_name": "",
+        "email": "staff@restaurant.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-05-10T00:06:56.795Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 17,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$0y5lZhOqcp3PCDLax4FJT3$qaK4gFrueWXngt2QAYTAPsijIfAKzj8ozh2xqr4dpoM=",
+        "last_login": "2025-05-11T00:17:11.717Z",
+        "is_superuser": false,
+        "username": "makopoulos",
+        "first_name": "Tseos",
+        "last_name": "Papatseos",
+        "email": "tsotso1@tsotso.gr",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T00:17:09.097Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 18,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$n5hXOv94VPlKk2ONydfQJQ$AV/l+hTNGexHTNFqkVyTYBjkCLIlklxUBMOLcuTnGII=",
+        "last_login": "2025-05-11T01:16:18.084Z",
+        "is_superuser": false,
+        "username": "takopapa",
+        "first_name": "takis",
+        "last_name": "paparakis",
+        "email": "papamaggos2@kokovios.gr",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T01:16:15.605Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 19,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$fOvQNnhTKeciO5X8ydrpEV$cgs3rine2JHVSEM448JijFw+6eNrsoD6lr2ZGm1qUy8=",
+        "last_login": "2025-05-11T01:35:12.221Z",
+        "is_superuser": false,
+        "username": "dsaasdsdasda",
+        "first_name": "321312",
+        "last_name": "312231231",
+        "email": "papamaggos321312@kokrovios.gr",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T01:35:09.795Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 45,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$EGTaVGs4nTjmTMYVkz4Cyf$rQKjsgET57GCF6UIAe9Hr+LFC1GLVSdT4jvW3PNqaxc=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_nikos",
+        "first_name": "Nikos",
+        "last_name": "Papadopoulos",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:41.993Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 46,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$0YK5i5oUaEE789olsi6z7d$OQBBWqqFL3gW8svY61cTkst+WnTlJyEYqpBXj68VdxY=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_maria",
+        "first_name": "Maria",
+        "last_name": "Kosta",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:42.913Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 47,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$tPjmwCV6C3X8u7UzsG5Dky$4AAOk0ySV2KrFoLyLTpMcfbmu/LkoDJBw+Xj8ycPRvA=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_dimitris",
+        "first_name": "Dimitris",
+        "last_name": "Georgiou",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:43.794Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 48,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$FPClfzwCHEp1bDa5MWHqyo$6M63h4kH45nV6pVDss82sKAj+8YinViQAj4W8+8+NjQ=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_elena",
+        "first_name": "Elena",
+        "last_name": "Papandreou",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:44.745Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 49,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$M4uuek5PUEIDEIRTJr7NQW$7vu/dxW5rumN8Lb4Cib9phTc9VF1Mx+GvOmRR+gnN/o=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_giorgos",
+        "first_name": "Giorgos",
+        "last_name": "Antoniou",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:45.676Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 50,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$hbon3md8Daf7GZtGsf7Zcq$k6wxKMgdtDHXDImz0UEg2p0YxzqRnH9EKwgMlmWTTtI=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_sofia",
+        "first_name": "Sofia",
+        "last_name": "Dimitriou",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:46.568Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 51,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$LjJ4va2OaPsysULtvFEqoS$nKLfLiOjo4Pt3zOjY5Bz+DPlYHfROftXlyf4Hc+DcyE=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_andreas",
+        "first_name": "Andreas",
+        "last_name": "Alexiou",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:47.501Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 52,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$O4rchpwrFvnhV2n1IeVK90$46A7Ko4YNTTmXwLsc47LnRtuUx1e5PHkZtRJ5OsWtKE=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_christina",
+        "first_name": "Christina",
+        "last_name": "Mavridou",
+        "email": "christina@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:49.203Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 53,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$2CD9KPsaM6z0x522LaLfPE$zLmcDVC3d+9pYK1QNyOfkP8OigaU6d6o7gnCvRwOY5k=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_theodoros",
+        "first_name": "Theodoros",
+        "last_name": "Karagiannis",
+        "email": "theo@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:50.370Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 54,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$ICkLL7cflmHeuTEiwfgZKz$/2wC9ggY3iZdCIRnrQ18s1z1tjpI7KWcALK6zZyi2rc=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_eleni",
+        "first_name": "Eleni",
+        "last_name": "Papathanasiou",
+        "email": "eleni@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:51.587Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 55,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$BmIrKfyFgnOnu8mvV8s1LW$9EDbLnOFWaWHQ+cdx/kRJEaKrysjcuMC+S4rWVhsWUk=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_kostas",
+        "first_name": "Kostas",
+        "last_name": "Athanasiou",
+        "email": "kostas@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:52.594Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 56,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$mOZfmkUAxJPUDKypjXK8Jl$uq3Ql8LwsPAM9YULwk7LtJZiTDXwqQstWnQ1H/Q56vI=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_stella",
+        "first_name": "Stella",
+        "last_name": "Papadaki",
+        "email": "stella@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:53.670Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 57,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$01fyGIDHusTF2iiriVwvG9$7GgJvqRtQIkDK5JVpQH4xcX34hprr7nD8t5tmvYSP+w=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_petros",
+        "first_name": "Petros",
+        "last_name": "Dimopoulos",
+        "email": "petros@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:54.599Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 58,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$AXFIIqg9kvEN0ary9t8eKD$6pYxdiOaJbd2GuQ08yt9pUH1/vV+8HcFq/JqWuay0jY=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_georgia",
+        "first_name": "Georgia",
+        "last_name": "Nikolaou",
+        "email": "georgia@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:55.586Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 59,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$XUPriMK2JyHKT90nfOhzvg$u25RvVPpn3W5Vj7R5OP5wAQF9o2G/2mnDl4ysqTjvC0=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_alexandros",
+        "first_name": "Alexandros",
+        "last_name": "Makris",
+        "email": "alexandros@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:56.605Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 60,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$WZK54NNUaEMZAmwGkerXkb$jALLqF9Ws13N6+4ITPyL5SQ9MqR45Dek2wh5QAj3yz8=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_vicky",
+        "first_name": "Vicky",
+        "last_name": "Adamopoulou",
+        "email": "vicky@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:57.666Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 61,
+    "fields": {
+        "password": "pbkdf2_sha256$1000000$GeP3CGuYIiwTBO3Aw0JpMD$fDCWvH5jshzORJnfNfxZ0aXVYevJGpi9Z5+e5Wbhoco=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "greek_yannis",
+        "first_name": "Yannis",
+        "last_name": "Pappas",
+        "email": "yannis@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2025-05-11T15:54:58.616Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "inventory"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "menuitem"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "customer"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "order"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "orderitem"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "postransaction"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "reservation"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "staff"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "schedule"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+        "app_label": "customer_portal",
+        "model": "customerfeedback"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+        "app_label": "customer_portal",
+        "model": "customerprofile"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 18,
+    "fields": {
+        "app_label": "customer_portal",
+        "model": "payment"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 19,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "category"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 20,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "table"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 21,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "menuitemingredient"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 22,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "payment"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 23,
+    "fields": {
+        "app_label": "inventory",
+        "model": "inventoryitem"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 24,
+    "fields": {
+        "app_label": "inventory",
+        "model": "supplier"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 25,
+    "fields": {
+        "app_label": "inventory",
+        "model": "inventoryalert"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 26,
+    "fields": {
+        "app_label": "inventory",
+        "model": "stocktransaction"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 27,
+    "fields": {
+        "app_label": "restaurant",
+        "model": "timeoffrequest"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "1qtngwxo4vmzox0ql1qtsniub3u3p2jy",
+    "fields": {
+        "session_data": ".eJxVjDEOwjAMRe-SGUWkOE7KyN4zRLZjSAGlUtNOiLtDpQ6w_vfef5lE61LS2nROYzZn46I5_I5M8tC6kXynepusTHWZR7abYnfa7DBlfV529--gUCvf-uQAEHriyIyR-Kgq2HGMwg4VUCVfQSDk0EH04BEkBOrFQyAvIub9ARRSOHg:1uDvIg:bMGJdw5cjeuV4cP0xjelcQJmZN5bgzRfvK6wp0QTUoE",
+        "expire_date": "2025-05-25T01:16:18.096Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "20ea6tci8ydx0nbpzmzbpx3nqfrap2ue",
+    "fields": {
+        "session_data": ".eJxVjDsOgzAQRO_iOrIWf7BJmZ4zWLv2OiaJsIShinL3gESRlDPvzbxFwG0tYWu8hCmJq-jE5bcjjE-eD5AeON-rjHVel4nkociTNjnWxK_b6f4dFGxlX0ftdM7ZWkWWgFkx6KyM9TCgBiA_AEDcY_bksLfGYO8tQ6Sucyqh-HwB1pw3Wg:1uDvcO:VwYjR7luvRhA9UMOxM_kgHX2NdpeacjRx717v4hNe7A",
+        "expire_date": "2025-05-25T01:36:40.200Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "2q6v8709blyymwmnmu1znugejmvekqen",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQRO_iGllef-KYkj5nsHb9wQHkSHFSIe6OI6WAcua9mTfzuG_F7y2tfo7syiS7_HaE4ZnqAeID633hYanbOhM_FH7SxqclptftdP8OCrbS14NzdnQIqAGizANCNqCFMD0AGGWTtgCjImcpqQ6NDYFIZA3KSkrs8wW2MDcG:1u4qZe:sGA2LJBceUZSvzfvqYXkbabWGXtyuHpB0UQPxvyIMx0",
+        "expire_date": "2025-04-30T00:24:18.419Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "3wi1r6dtrunhjt7aio02nydv8bi4a8u0",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSG8EZfu-w1kmAGpGkhKuzL-uzbpQrf3nHNfLMK21riNvMSZ2IU5dvrdEuAjtx3QHdqtc-xtXebEd4UfdPCpU35eD_fvoMKo39pak4o3EjUEkmiomJQcCKWFkxY96GyFyEo4i1QwBNLOnjOposhrJdn7A-WcN8Q:1u4sbj:NWwNUyXjGkhrTF72R74jeCX-unicamvtTbW9jatvFSE",
+        "expire_date": "2025-04-30T02:34:35.452Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "5f2fl6dy32ig7g6vfzmvcxo9fqfq52c1",
+    "fields": {
+        "session_data": ".eJxVjDsOgzAQRO_iOrIWf7BJmZ4zWLv2OiaJsIShinL3gESRlDPvzbxFwG0tYWu8hCmJq-jE5bcjjE-eD5AeON-rjHVel4nkociTNjnWxK_b6f4dFGxlX0ftdM7ZWkWWgFkx6KyM9TCgBiA_AEDcY_bksLfGYO8tQ6Sucyqh-HwB1pw3Wg:1u56qV:bTxJbwpSVuxp9HfdMAu_-wbB335ntu2W9vPnl5yM_HI",
+        "expire_date": "2025-04-30T17:46:47.798Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "7ly64puxpgeym48obj7sfnvv1nir1mo9",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQRO_iGllef-KYkj5nsHb9wQHkSHFSIe6OI6WAcua9mTfzuG_F7y2tfo7syiS7_HaE4ZnqAeID633hYanbOhM_FH7SxqclptftdP8OCrbS14NzdnQIqAGizANCNqCFMD0AGGWTtgCjImcpqQ6NDYFIZA3KSkrs8wW2MDcG:1u56pa:sjpw7zhz6b-YhpG2Zivw6Q7u8di5Akg4CzZFz3Mi-X8",
+        "expire_date": "2025-04-30T17:45:50.645Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "8xqoj9nopf8clgr0lzli2d3l6ux8vmsr",
+    "fields": {
+        "session_data": ".eJxVjM0OwiAQhN-FsyH8WAoevfsMZHdZpGpoUtqT8d0tSQ96mmS-b-YtImxriVvjJU5JXMQgTr8dAj25dpAeUO-zpLmuy4SyK_KgTd7mxK_r4f4dFGhlXzuNWYFOPlt9xrxHMAFpTADBkFLWOyYcVDcoOEZrEBnAkPVWj058vv4KOIY:1u4sUt:QAlEVbsTgh_i0oUo0bCupB0-gcurjM-ayA-E6j0lMZY",
+        "expire_date": "2025-04-30T02:27:31.704Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "atllhqpyg37h02x9frs1hla1bfcaptwr",
+    "fields": {
+        "session_data": ".eJxVjMEOwiAQRP-FsyEgWLYevfcbyC4sUjWQlPZk_Hdp0oMe5jLvzbyFx23Nfmu8-DmKq9BGnH5LwvDkspP4wHKvMtSyLjPJXZEHbXKqkV-3w_07yNhyXzvtRh4UOEVgiBPYkS6BgAECJWsC2cQRDStkBR1r44az7lEhoULx-QIRsThr:1uC7zt:N2FKEAxELVjw4MUyBDqXdcSh7tsqeWdey8fKUZsPgvk",
+        "expire_date": "2025-05-20T02:25:29.604Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "gofbtbuhm3qa8cf4193o0e2ydfiedxwc",
+    "fields": {
+        "session_data": ".eJxVjLsOAiEQAP-F2hAWPLi1tPcbyMIucmoguUdl_HdzyRXazkzmrSJta43bInOcWF0UnNXpFybKT2m74Qe1e9e5t3Wekt4TfdhF3zrL63q0f4NKS92_kI13zrPFEQo5nxECZLHBB7Eogc0QHCAWnywJs2PCUaQYDOCGpD5f6PM3tw:1uDXcA:byIIEMqoNdg_kI3AcBqbxYqsQ-S4A31LwTEEfUkZq74",
+        "expire_date": "2025-05-23T23:58:50.685Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "gve3z1asqxn7ytov5gxgiw7z3nme5n61",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSG8EZfu-w1kmAGpGkhKuzL-uzbpQrf3nHNfLMK21riNvMSZ2IU5dvrdEuAjtx3QHdqtc-xtXebEd4UfdPCpU35eD_fvoMKo39pak4o3EjUEkmiomJQcCKWFkxY96GyFyEo4i1QwBNLOnjOposhrJdn7A-WcN8Q:1uCyjk:qIUtlaYKsqaHaV7IKrCphEcLzTreC6soPCfjDopQC3U",
+        "expire_date": "2025-05-22T10:44:20.220Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "j2ptlogqu0wmpucvipvaol8ze2a9inaa",
+    "fields": {
+        "session_data": ".eJxVjDsOgzAQRO_iOrIWf7BJmZ4zWLv2OiaJsIShinL3gESRlDPvzbxFwG0tYWu8hCmJq-jE5bcjjE-eD5AeON-rjHVel4nkociTNjnWxK_b6f4dFGxlX0ftdM7ZWkWWgFkx6KyM9TCgBiA_AEDcY_bksLfGYO8tQ6Sucyqh-HwB1pw3Wg:1uDXbb:PyWPKLD0qdFadOcjbi1d79w-MrlN68KNTpnFVBTSojU",
+        "expire_date": "2025-05-23T23:58:15.031Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "kstwc6dpxoi0ybtftkkuw2nz23epjhj2",
+    "fields": {
+        "session_data": ".eJxVjDsOgzAQRO_iOrIWf7BJmZ4zWLv2OiaJsIShinL3gESRlDPvzbxFwG0tYWu8hCmJq-jE5bcjjE-eD5AeON-rjHVel4nkociTNjnWxK_b6f4dFGxlX0ftdM7ZWkWWgFkx6KyM9TCgBiA_AEDcY_bksLfGYO8tQ6Sucyqh-HwB1pw3Wg:1uE612:umt_Mvlyfl67xHPkeDff698QAXCZbQF1G26farw8BKw",
+        "expire_date": "2025-05-25T12:42:48.215Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ow7v47lzty8hhvnopyfchd9aeuwdqjrk",
+    "fields": {
+        "session_data": ".eJxVjDsOgzAQRO_iOrIWf7BJmZ4zWLv2OiaJsIShinL3gESRlDPvzbxFwG0tYWu8hCmJq-jE5bcjjE-eD5AeON-rjHVel4nkociTNjnWxK_b6f4dFGxlX0ftdM7ZWkWWgFkx6KyM9TCgBiA_AEDcY_bksLfGYO8tQ6Sucyqh-HwB1pw3Wg:1u8HIj:JhroZubV8AQ2zoujaxCUOOv8cTCdcRNzR6EyKTDg2Xk",
+        "expire_date": "2025-05-09T11:33:01.241Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "qz02nkcov6nvh4cz4anw707r6bgtjrd3",
+    "fields": {
+        "session_data": ".eJxVjDsOgzAQRO_iOrIWf7BJmZ4zWLv2OiaJsIShinL3gESRlDPvzbxFwG0tYWu8hCmJq-jE5bcjjE-eD5AeON-rjHVel4nkociTNjnWxK_b6f4dFGxlX0ftdM7ZWkWWgFkx6KyM9TCgBiA_AEDcY_bksLfGYO8tQ6Sucyqh-HwB1pw3Wg:1u4phh:7gma-_Fa7ruXz3zABUQ8_PjrTcRZU5_sVkxJOiF5QOw",
+        "expire_date": "2025-04-29T23:28:33.044Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "s99pgvxex2mmgc4woku1cpi4rxpd8e45",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQRO_iGllef-KYkj5nsHb9wQHkSHFSIe6OI6WAcua9mTfzuG_F7y2tfo7syiS7_HaE4ZnqAeID633hYanbOhM_FH7SxqclptftdP8OCrbS14NzdnQIqAGizANCNqCFMD0AGGWTtgCjImcpqQ6NDYFIZA3KSkrs8wW2MDcG:1u4sKp:gx7-ITjzbGOHNIZbZpLL5na0KG5DZw-wyHl71VJi24g",
+        "expire_date": "2025-04-30T02:17:07.309Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "w3lylh94q48n1rii13y70qrmtuthiee9",
+    "fields": {
+        "session_data": ".eJxVjDsOwyAQBe9CHSE-ZoGU6X0GtIYlOIlAMnYV5e6xJRdJ-2bmvVnAbS1h67SEObErk4pdfscJ45PqQdID673x2Oq6zBM_FH7SzseW6HU73b-Dgr3s9YCenPTC-L2xIBCU90SojUxghI1iQKVt0i4LMCoBOXA5EziwOhKwzxfyTTeS:1u9WY6:oxiMeWbI2JFkHsclzibgh1CMwMC7vHO8Z6Qc-jtB0Uo",
+        "expire_date": "2025-05-12T22:02:02.962Z"
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "customer_name": "admin",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 2,
+    "fields": {
+        "user": 2,
+        "customer_name": "test6",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 3,
+    "fields": {
+        "user": 3,
+        "customer_name": "test7",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 4,
+    "fields": {
+        "user": 4,
+        "customer_name": "test8",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 5,
+    "fields": {
+        "user": 5,
+        "customer_name": "test10",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 6,
+    "fields": {
+        "user": 6,
+        "customer_name": "test1010",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 7,
+    "fields": {
+        "user": 7,
+        "customer_name": "kotsos33",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 8,
+    "fields": {
+        "user": 8,
+        "customer_name": "ilias",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 9,
+    "fields": {
+        "user": 9,
+        "customer_name": "testakias",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 10,
+    "fields": {
+        "user": 10,
+        "customer_name": "realcustomer",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 11,
+    "fields": {
+        "user": 11,
+        "customer_name": "liakotsako",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 12,
+    "fields": {
+        "user": 12,
+        "customer_name": "newone",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 13,
+    "fields": {
+        "user": 13,
+        "customer_name": "takitsan",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 14,
+    "fields": {
+        "user": 14,
+        "customer_name": "manageropoulos",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 15,
+    "fields": {
+        "user": 15,
+        "customer_name": "manager",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 16,
+    "fields": {
+        "user": 16,
+        "customer_name": "staff",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 17,
+    "fields": {
+        "user": 17,
+        "customer_name": "makopoulos",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 18,
+    "fields": {
+        "user": 18,
+        "customer_name": "takopapa",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 19,
+    "fields": {
+        "user": 19,
+        "customer_name": "dsaasdsdasda",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 45,
+    "fields": {
+        "user": 45,
+        "customer_name": "greek_nikos",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 46,
+    "fields": {
+        "user": 46,
+        "customer_name": "greek_maria",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 47,
+    "fields": {
+        "user": 47,
+        "customer_name": "greek_dimitris",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 48,
+    "fields": {
+        "user": 48,
+        "customer_name": "greek_elena",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 49,
+    "fields": {
+        "user": 49,
+        "customer_name": "greek_giorgos",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 50,
+    "fields": {
+        "user": 50,
+        "customer_name": "greek_sofia",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 51,
+    "fields": {
+        "user": 51,
+        "customer_name": "greek_andreas",
+        "customer_info": ""
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 52,
+    "fields": {
+        "user": 52,
+        "customer_name": "Christina Mavridou",
+        "customer_info": "Frequent customer, prefers window seating"
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 53,
+    "fields": {
+        "user": 53,
+        "customer_name": "Theodoros Karagiannis",
+        "customer_info": "Allergic to nuts"
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 54,
+    "fields": {
+        "user": 54,
+        "customer_name": "Eleni Papathanasiou",
+        "customer_info": "Regular, likes table 5"
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 55,
+    "fields": {
+        "user": 55,
+        "customer_name": "Kostas Athanasiou",
+        "customer_info": "VIP customer"
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 56,
+    "fields": {
+        "user": 56,
+        "customer_name": "Stella Papadaki",
+        "customer_info": "Vegetarian"
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 57,
+    "fields": {
+        "user": 57,
+        "customer_name": "Petros Dimopoulos",
+        "customer_info": "Birthday on May: 15th"
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 58,
+    "fields": {
+        "user": 58,
+        "customer_name": "Georgia Nikolaou",
+        "customer_info": "Prefers quiet area"
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 59,
+    "fields": {
+        "user": 59,
+        "customer_name": "Alexandros Makris",
+        "customer_info": "Regular wine drinker"
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 60,
+    "fields": {
+        "user": 60,
+        "customer_name": "Vicky Adamopoulou",
+        "customer_info": "Visits with family often"
+    }
+},
+{
+    "model": "restaurant.customer",
+    "pk": 61,
+    "fields": {
+        "user": 61,
+        "customer_name": "Yannis Pappas",
+        "customer_info": "Seafood enthusiast"
+    }
+},
+{
+    "model": "restaurant.category",
+    "pk": 14,
+    "fields": {
+        "name": "Orektika",
+        "description": "Appetizers and small plates",
+        "created_at": "2025-05-11T15:54:41.568Z",
+        "updated_at": "2025-05-11T15:54:41.568Z"
+    }
+},
+{
+    "model": "restaurant.category",
+    "pk": 15,
+    "fields": {
+        "name": "Salates",
+        "description": "Traditional Greek salads",
+        "created_at": "2025-05-11T15:54:41.574Z",
+        "updated_at": "2025-05-11T15:54:41.574Z"
+    }
+},
+{
+    "model": "restaurant.category",
+    "pk": 16,
+    "fields": {
+        "name": "Kyria Piata",
+        "description": "Main dishes",
+        "created_at": "2025-05-11T15:54:41.580Z",
+        "updated_at": "2025-05-11T15:54:41.580Z"
+    }
+},
+{
+    "model": "restaurant.category",
+    "pk": 17,
+    "fields": {
+        "name": "Thalassina",
+        "description": "Seafood specialties",
+        "created_at": "2025-05-11T15:54:41.586Z",
+        "updated_at": "2025-05-11T15:54:41.586Z"
+    }
+},
+{
+    "model": "restaurant.category",
+    "pk": 18,
+    "fields": {
+        "name": "Epidorpia",
+        "description": "Desserts",
+        "created_at": "2025-05-11T15:54:41.593Z",
+        "updated_at": "2025-05-11T15:54:41.593Z"
+    }
+},
+{
+    "model": "restaurant.category",
+    "pk": 19,
+    "fields": {
+        "name": "Pota",
+        "description": "Beverages and drinks",
+        "created_at": "2025-05-11T15:54:41.599Z",
+        "updated_at": "2025-05-11T15:54:41.599Z"
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 57,
+    "fields": {
+        "name": "Tzatziki",
+        "description": "Greek yogurt with cucumber, garlic, and olive oil",
+        "price": "6.50",
+        "category": 14,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.737Z",
+        "updated_at": "2025-05-11T15:54:41.737Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 58,
+    "fields": {
+        "name": "Dolmadakia",
+        "description": "Grape leaves stuffed with rice and herbs",
+        "price": "7.50",
+        "category": 14,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.745Z",
+        "updated_at": "2025-05-11T15:54:41.745Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 59,
+    "fields": {
+        "name": "Saganaki",
+        "description": "Pan-seared Greek cheese",
+        "price": "8.00",
+        "category": 14,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.752Z",
+        "updated_at": "2025-05-11T15:54:41.752Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 60,
+    "fields": {
+        "name": "Feta me Meli",
+        "description": "Feta cheese drizzled with honey and sesame seeds",
+        "price": "7.00",
+        "category": 14,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.759Z",
+        "updated_at": "2025-05-11T15:54:41.759Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 61,
+    "fields": {
+        "name": "Spanakopitakia",
+        "description": "Mini spinach pies with feta cheese",
+        "price": "6.50",
+        "category": 14,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.769Z",
+        "updated_at": "2025-05-11T15:54:41.769Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 62,
+    "fields": {
+        "name": "Horiatiki Salata",
+        "description": "Traditional Greek salad with tomatoes, cucumbers, onions, feta, and olives",
+        "price": "9.50",
+        "category": 15,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.778Z",
+        "updated_at": "2025-05-11T15:54:41.778Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 63,
+    "fields": {
+        "name": "Marouli Salata",
+        "description": "Lettuce salad with dill and spring onions",
+        "price": "8.00",
+        "category": 15,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.785Z",
+        "updated_at": "2025-05-11T15:54:41.785Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 64,
+    "fields": {
+        "name": "Roka Salata",
+        "description": "Arugula salad with sundried tomatoes and Parmesan",
+        "price": "8.50",
+        "category": 15,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.796Z",
+        "updated_at": "2025-05-11T15:54:41.796Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 65,
+    "fields": {
+        "name": "Moussakas",
+        "description": "Traditional Greek casserole with eggplant, potato, and minced meat",
+        "price": "14.50",
+        "category": 16,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.803Z",
+        "updated_at": "2025-05-11T15:54:41.803Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 66,
+    "fields": {
+        "name": "Pastitsio",
+        "description": "Greek pasta baked with minced meat and béchamel sauce",
+        "price": "13.50",
+        "category": 16,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.810Z",
+        "updated_at": "2025-05-11T15:54:41.810Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 67,
+    "fields": {
+        "name": "Gemista",
+        "description": "Tomatoes and peppers stuffed with rice and herbs",
+        "price": "12.00",
+        "category": 16,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.817Z",
+        "updated_at": "2025-05-11T15:54:41.817Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 68,
+    "fields": {
+        "name": "Souvlaki",
+        "description": "Grilled meat skewers served with pita and tzatziki",
+        "price": "13.00",
+        "category": 16,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.823Z",
+        "updated_at": "2025-05-11T15:54:41.823Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 69,
+    "fields": {
+        "name": "Gyros Piato",
+        "description": "Gyro plate with pita, fries, and tzatziki",
+        "price": "12.50",
+        "category": 16,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.829Z",
+        "updated_at": "2025-05-11T15:54:41.829Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 70,
+    "fields": {
+        "name": "Kotopoulo Lemonato",
+        "description": "Lemon chicken with potatoes",
+        "price": "14.00",
+        "category": 16,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.836Z",
+        "updated_at": "2025-05-11T15:54:41.836Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 71,
+    "fields": {
+        "name": "Arnaki me Patates",
+        "description": "Roasted lamb with potatoes",
+        "price": "18.50",
+        "category": 16,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.844Z",
+        "updated_at": "2025-05-11T15:54:41.844Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 72,
+    "fields": {
+        "name": "Kalamarakia Tiganita",
+        "description": "Fried calamari served with lemon",
+        "price": "13.50",
+        "category": 17,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.851Z",
+        "updated_at": "2025-05-11T15:54:41.851Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 73,
+    "fields": {
+        "name": "Garides Saganaki",
+        "description": "Shrimp cooked in tomato sauce and feta",
+        "price": "15.00",
+        "category": 17,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.857Z",
+        "updated_at": "2025-05-11T15:54:41.857Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 74,
+    "fields": {
+        "name": "Psari Imeras",
+        "description": "Catch of the day, grilled and served with ladolemono",
+        "price": "22.00",
+        "category": 17,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.863Z",
+        "updated_at": "2025-05-11T15:54:41.863Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 75,
+    "fields": {
+        "name": "Baklavas",
+        "description": "Phyllo pastry with nuts and honey syrup",
+        "price": "7.00",
+        "category": 18,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.871Z",
+        "updated_at": "2025-05-11T15:54:41.871Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 76,
+    "fields": {
+        "name": "Galaktoboureko",
+        "description": "Semolina custard in phyllo with syrup",
+        "price": "6.50",
+        "category": 18,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.877Z",
+        "updated_at": "2025-05-11T15:54:41.877Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 77,
+    "fields": {
+        "name": "Giaourti me Meli",
+        "description": "Greek yogurt with honey and walnuts",
+        "price": "5.50",
+        "category": 18,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.883Z",
+        "updated_at": "2025-05-11T15:54:41.883Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 78,
+    "fields": {
+        "name": "Ellinikos Kafes",
+        "description": "Traditional Greek coffee",
+        "price": "3.50",
+        "category": 19,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.890Z",
+        "updated_at": "2025-05-11T15:54:41.890Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 79,
+    "fields": {
+        "name": "Frape",
+        "description": "Iced instant coffee",
+        "price": "4.00",
+        "category": 19,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.900Z",
+        "updated_at": "2025-05-11T15:54:41.900Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 80,
+    "fields": {
+        "name": "Ouzo",
+        "description": "Traditional Greek anise-flavored aperitif",
+        "price": "6.00",
+        "category": 19,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.907Z",
+        "updated_at": "2025-05-11T15:54:41.907Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 81,
+    "fields": {
+        "name": "Retsina",
+        "description": "Traditional Greek resinated wine",
+        "price": "7.00",
+        "category": 19,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.913Z",
+        "updated_at": "2025-05-11T15:54:41.913Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.menuitem",
+    "pk": 82,
+    "fields": {
+        "name": "Mythiki Bira",
+        "description": "Mythic Greek beer",
+        "price": "5.00",
+        "category": 19,
+        "is_available": true,
+        "preparation_time": 900,
+        "image": "",
+        "created_at": "2025-05-11T15:54:41.920Z",
+        "updated_at": "2025-05-11T15:54:41.920Z",
+        "stock_alert_threshold": 10
+    }
+},
+{
+    "model": "restaurant.table",
+    "pk": 27,
+    "fields": {
+        "number": 1,
+        "capacity": 2,
+        "is_available": true,
+        "created_at": "2025-05-11T15:54:41.926Z",
+        "updated_at": "2025-05-11T15:54:41.926Z"
+    }
+},
+{
+    "model": "restaurant.table",
+    "pk": 28,
+    "fields": {
+        "number": 2,
+        "capacity": 2,
+        "is_available": true,
+        "created_at": "2025-05-11T15:54:41.933Z",
+        "updated_at": "2025-05-11T15:54:41.933Z"
+    }
+},
+{
+    "model": "restaurant.table",
+    "pk": 29,
+    "fields": {
+        "number": 3,
+        "capacity": 4,
+        "is_available": true,
+        "created_at": "2025-05-11T15:54:41.939Z",
+        "updated_at": "2025-05-11T15:54:41.939Z"
+    }
+},
+{
+    "model": "restaurant.table",
+    "pk": 30,
+    "fields": {
+        "number": 4,
+        "capacity": 4,
+        "is_available": true,
+        "created_at": "2025-05-11T15:54:41.945Z",
+        "updated_at": "2025-05-11T15:54:41.945Z"
+    }
+},
+{
+    "model": "restaurant.table",
+    "pk": 31,
+    "fields": {
+        "number": 5,
+        "capacity": 6,
+        "is_available": true,
+        "created_at": "2025-05-11T15:54:41.952Z",
+        "updated_at": "2025-05-11T15:54:41.952Z"
+    }
+},
+{
+    "model": "restaurant.table",
+    "pk": 32,
+    "fields": {
+        "number": 6,
+        "capacity": 6,
+        "is_available": true,
+        "created_at": "2025-05-11T15:54:41.959Z",
+        "updated_at": "2025-05-11T15:54:41.959Z"
+    }
+},
+{
+    "model": "restaurant.table",
+    "pk": 33,
+    "fields": {
+        "number": 7,
+        "capacity": 8,
+        "is_available": true,
+        "created_at": "2025-05-11T15:54:41.966Z",
+        "updated_at": "2025-05-11T15:54:41.966Z"
+    }
+},
+{
+    "model": "restaurant.table",
+    "pk": 34,
+    "fields": {
+        "number": 8,
+        "capacity": 4,
+        "is_available": true,
+        "created_at": "2025-05-11T15:54:41.973Z",
+        "updated_at": "2025-05-11T15:54:41.973Z"
+    }
+},
+{
+    "model": "restaurant.table",
+    "pk": 35,
+    "fields": {
+        "number": 9,
+        "capacity": 4,
+        "is_available": true,
+        "created_at": "2025-05-11T15:54:41.979Z",
+        "updated_at": "2025-05-11T15:54:41.979Z"
+    }
+},
+{
+    "model": "restaurant.table",
+    "pk": 36,
+    "fields": {
+        "number": 10,
+        "capacity": 2,
+        "is_available": true,
+        "created_at": "2025-05-11T15:54:41.986Z",
+        "updated_at": "2025-05-11T15:54:41.986Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 34,
+    "fields": {
+        "customer_name": "Georgia Nikolaou",
+        "customer_email": "georgia@example.com",
+        "customer_phone": "6919413442",
+        "table": 32,
+        "date_time": "2025-05-15T19:00:00Z",
+        "number_of_guests": 1,
+        "status": "CANCELLED",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.600Z",
+        "updated_at": "2025-05-11T15:54:59.600Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 35,
+    "fields": {
+        "customer_name": "Stella Papadaki",
+        "customer_email": "stella@example.com",
+        "customer_phone": "6972568080",
+        "table": 27,
+        "date_time": "2025-05-25T21:00:00Z",
+        "number_of_guests": 2,
+        "status": "CONFIRMED",
+        "special_requests": "Window seat please",
+        "created_at": "2025-05-11T15:54:59.608Z",
+        "updated_at": "2025-05-11T15:54:59.608Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 36,
+    "fields": {
+        "customer_name": "Yannis Pappas",
+        "customer_email": "yannis@example.com",
+        "customer_phone": "6967746717",
+        "table": 33,
+        "date_time": "2025-05-11T18:00:00Z",
+        "number_of_guests": 3,
+        "status": "CONFIRMED",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.617Z",
+        "updated_at": "2025-05-11T15:54:59.617Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 37,
+    "fields": {
+        "customer_name": "Yannis Pappas",
+        "customer_email": "yannis@example.com",
+        "customer_phone": "6915375946",
+        "table": 32,
+        "date_time": "2025-05-17T20:00:00Z",
+        "number_of_guests": 1,
+        "status": "PENDING",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.625Z",
+        "updated_at": "2025-05-11T15:54:59.625Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 38,
+    "fields": {
+        "customer_name": "Alexandros Makris",
+        "customer_email": "alexandros@example.com",
+        "customer_phone": "6921074254",
+        "table": 29,
+        "date_time": "2025-05-21T20:00:00Z",
+        "number_of_guests": 4,
+        "status": "CONFIRMED",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.634Z",
+        "updated_at": "2025-05-11T15:54:59.634Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 39,
+    "fields": {
+        "customer_name": "Petros Dimopoulos",
+        "customer_email": "petros@example.com",
+        "customer_phone": "6947059962",
+        "table": 36,
+        "date_time": "2025-05-23T21:00:00Z",
+        "number_of_guests": 1,
+        "status": "PENDING",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.642Z",
+        "updated_at": "2025-05-11T15:54:59.642Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 40,
+    "fields": {
+        "customer_name": "Kostas Athanasiou",
+        "customer_email": "kostas@example.com",
+        "customer_phone": "6995169634",
+        "table": 33,
+        "date_time": "2025-05-11T20:00:00Z",
+        "number_of_guests": 3,
+        "status": "CONFIRMED",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.651Z",
+        "updated_at": "2025-05-11T15:54:59.651Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 41,
+    "fields": {
+        "customer_name": "Alexandros Makris",
+        "customer_email": "alexandros@example.com",
+        "customer_phone": "6923215605",
+        "table": 34,
+        "date_time": "2025-05-18T20:00:00Z",
+        "number_of_guests": 4,
+        "status": "CONFIRMED",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.659Z",
+        "updated_at": "2025-05-11T15:54:59.659Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 42,
+    "fields": {
+        "customer_name": "Christina Mavridou",
+        "customer_email": "christina@example.com",
+        "customer_phone": "6997404404",
+        "table": 27,
+        "date_time": "2025-05-10T21:00:00Z",
+        "number_of_guests": 2,
+        "status": "COMPLETED",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.668Z",
+        "updated_at": "2025-05-11T15:54:59.669Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 43,
+    "fields": {
+        "customer_name": "Kostas Athanasiou",
+        "customer_email": "kostas@example.com",
+        "customer_phone": "6938247183",
+        "table": 33,
+        "date_time": "2025-05-24T19:00:00Z",
+        "number_of_guests": 3,
+        "status": "PENDING",
+        "special_requests": "Quiet area",
+        "created_at": "2025-05-11T15:54:59.677Z",
+        "updated_at": "2025-05-11T15:54:59.677Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 44,
+    "fields": {
+        "customer_name": "Vicky Adamopoulou",
+        "customer_email": "vicky@example.com",
+        "customer_phone": "6979881956",
+        "table": 30,
+        "date_time": "2025-05-20T19:00:00Z",
+        "number_of_guests": 2,
+        "status": "CANCELLED",
+        "special_requests": "Celebrating a birthday",
+        "created_at": "2025-05-11T15:54:59.686Z",
+        "updated_at": "2025-05-11T15:54:59.686Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 45,
+    "fields": {
+        "customer_name": "Stella Papadaki",
+        "customer_email": "stella@example.com",
+        "customer_phone": "6921231253",
+        "table": 28,
+        "date_time": "2025-05-21T19:00:00Z",
+        "number_of_guests": 2,
+        "status": "CONFIRMED",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.694Z",
+        "updated_at": "2025-05-11T15:54:59.694Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 46,
+    "fields": {
+        "customer_name": "Kostas Athanasiou",
+        "customer_email": "kostas@example.com",
+        "customer_phone": "6910661686",
+        "table": 31,
+        "date_time": "2025-05-09T21:00:00Z",
+        "number_of_guests": 1,
+        "status": "COMPLETED",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.701Z",
+        "updated_at": "2025-05-11T15:54:59.701Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 47,
+    "fields": {
+        "customer_name": "Georgia Nikolaou",
+        "customer_email": "georgia@example.com",
+        "customer_phone": "6944491505",
+        "table": 30,
+        "date_time": "2025-05-08T20:00:00Z",
+        "number_of_guests": 1,
+        "status": "COMPLETED",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.709Z",
+        "updated_at": "2025-05-11T15:54:59.709Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 48,
+    "fields": {
+        "customer_name": "Petros Dimopoulos",
+        "customer_email": "petros@example.com",
+        "customer_phone": "6941204330",
+        "table": 35,
+        "date_time": "2025-05-24T20:00:00Z",
+        "number_of_guests": 4,
+        "status": "PENDING",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.718Z",
+        "updated_at": "2025-05-11T15:54:59.718Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 49,
+    "fields": {
+        "customer_name": "Georgia Nikolaou",
+        "customer_email": "georgia@example.com",
+        "customer_phone": "6991977141",
+        "table": 34,
+        "date_time": "2025-05-19T21:00:00Z",
+        "number_of_guests": 2,
+        "status": "CANCELLED",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.726Z",
+        "updated_at": "2025-05-11T15:54:59.726Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 50,
+    "fields": {
+        "customer_name": "Georgia Nikolaou",
+        "customer_email": "georgia@example.com",
+        "customer_phone": "6960213869",
+        "table": 34,
+        "date_time": "2025-05-14T20:00:00Z",
+        "number_of_guests": 1,
+        "status": "PENDING",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.735Z",
+        "updated_at": "2025-05-11T15:54:59.735Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 51,
+    "fields": {
+        "customer_name": "Eleni Papathanasiou",
+        "customer_email": "eleni@example.com",
+        "customer_phone": "6967161216",
+        "table": 34,
+        "date_time": "2025-05-10T21:00:00Z",
+        "number_of_guests": 1,
+        "status": "COMPLETED",
+        "special_requests": "Window seat please",
+        "created_at": "2025-05-11T15:54:59.744Z",
+        "updated_at": "2025-05-11T15:54:59.744Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 52,
+    "fields": {
+        "customer_name": "Georgia Nikolaou",
+        "customer_email": "georgia@example.com",
+        "customer_phone": "6949036894",
+        "table": 31,
+        "date_time": "2025-05-22T18:00:00Z",
+        "number_of_guests": 1,
+        "status": "CANCELLED",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.751Z",
+        "updated_at": "2025-05-11T15:54:59.751Z"
+    }
+},
+{
+    "model": "restaurant.reservation",
+    "pk": 53,
+    "fields": {
+        "customer_name": "Vicky Adamopoulou",
+        "customer_email": "vicky@example.com",
+        "customer_phone": "6947836920",
+        "table": 27,
+        "date_time": "2025-05-22T20:00:00Z",
+        "number_of_guests": 1,
+        "status": "CONFIRMED",
+        "special_requests": "",
+        "created_at": "2025-05-11T15:54:59.758Z",
+        "updated_at": "2025-05-11T15:54:59.758Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 39,
+    "fields": {
+        "table": 31,
+        "status": "SERVED",
+        "total_amount": "27.50",
+        "created_at": "2025-05-11T15:54:59.767Z",
+        "updated_at": "2025-05-11T15:54:59.802Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 40,
+    "fields": {
+        "table": 34,
+        "status": "SERVED",
+        "total_amount": "21.50",
+        "created_at": "2025-05-11T15:54:59.817Z",
+        "updated_at": "2025-05-11T15:54:59.849Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 41,
+    "fields": {
+        "table": 36,
+        "status": "SERVED",
+        "total_amount": "49.50",
+        "created_at": "2025-05-11T15:54:59.863Z",
+        "updated_at": "2025-05-11T15:54:59.923Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 42,
+    "fields": {
+        "table": 35,
+        "status": "SERVED",
+        "total_amount": "94.00",
+        "created_at": "2025-05-11T15:54:59.939Z",
+        "updated_at": "2025-05-11T15:55:00.044Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 43,
+    "fields": {
+        "table": 34,
+        "status": "PREPARING",
+        "total_amount": "16.00",
+        "created_at": "2025-05-11T15:55:00.058Z",
+        "updated_at": "2025-05-11T15:55:00.074Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 44,
+    "fields": {
+        "table": 29,
+        "status": "READY",
+        "total_amount": "39.00",
+        "created_at": "2025-05-11T15:55:00.081Z",
+        "updated_at": "2025-05-11T15:55:00.137Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 45,
+    "fields": {
+        "table": 29,
+        "status": "SERVED",
+        "total_amount": "14.50",
+        "created_at": "2025-05-11T15:55:00.145Z",
+        "updated_at": "2025-05-11T15:55:00.167Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 46,
+    "fields": {
+        "table": 32,
+        "status": "SERVED",
+        "total_amount": "85.50",
+        "created_at": "2025-05-11T15:55:00.185Z",
+        "updated_at": "2025-05-11T15:55:00.289Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 47,
+    "fields": {
+        "table": 33,
+        "status": "SERVED",
+        "total_amount": "112.50",
+        "created_at": "2025-05-11T15:55:00.307Z",
+        "updated_at": "2025-05-11T15:55:00.399Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 48,
+    "fields": {
+        "table": 27,
+        "status": "SERVED",
+        "total_amount": "21.00",
+        "created_at": "2025-05-11T15:55:00.414Z",
+        "updated_at": "2025-05-11T15:55:00.432Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 49,
+    "fields": {
+        "table": 33,
+        "status": "SERVED",
+        "total_amount": "26.50",
+        "created_at": "2025-05-11T15:55:00.447Z",
+        "updated_at": "2025-05-11T15:55:00.483Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 50,
+    "fields": {
+        "table": 30,
+        "status": "SERVED",
+        "total_amount": "41.50",
+        "created_at": "2025-05-11T15:55:00.503Z",
+        "updated_at": "2025-05-11T15:55:00.565Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 51,
+    "fields": {
+        "table": 32,
+        "status": "SERVED",
+        "total_amount": "73.50",
+        "created_at": "2025-05-11T15:55:00.582Z",
+        "updated_at": "2025-05-11T15:55:00.661Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 52,
+    "fields": {
+        "table": 28,
+        "status": "SERVED",
+        "total_amount": "110.00",
+        "created_at": "2025-05-11T15:55:00.677Z",
+        "updated_at": "2025-05-11T15:55:00.784Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 53,
+    "fields": {
+        "table": 36,
+        "status": "READY",
+        "total_amount": "117.50",
+        "created_at": "2025-05-11T15:55:00.800Z",
+        "updated_at": "2025-05-11T15:55:00.911Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 54,
+    "fields": {
+        "table": 29,
+        "status": "PREPARING",
+        "total_amount": "115.50",
+        "created_at": "2025-05-11T15:55:00.919Z",
+        "updated_at": "2025-05-11T15:55:01.034Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 55,
+    "fields": {
+        "table": 33,
+        "status": "SERVED",
+        "total_amount": "70.50",
+        "created_at": "2025-05-11T15:55:01.042Z",
+        "updated_at": "2025-05-11T15:55:01.121Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 56,
+    "fields": {
+        "table": 28,
+        "status": "PREPARING",
+        "total_amount": "91.50",
+        "created_at": "2025-05-11T15:55:01.138Z",
+        "updated_at": "2025-05-11T15:55:01.225Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 57,
+    "fields": {
+        "table": 34,
+        "status": "PENDING",
+        "total_amount": "46.50",
+        "created_at": "2025-05-11T15:55:01.233Z",
+        "updated_at": "2025-05-11T15:55:01.319Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 58,
+    "fields": {
+        "table": 31,
+        "status": "PENDING",
+        "total_amount": "7.00",
+        "created_at": "2025-05-11T15:55:01.327Z",
+        "updated_at": "2025-05-11T15:55:01.348Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 59,
+    "fields": {
+        "table": 32,
+        "status": "READY",
+        "total_amount": "71.50",
+        "created_at": "2025-05-11T15:55:01.357Z",
+        "updated_at": "2025-05-11T15:55:01.416Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 60,
+    "fields": {
+        "table": 31,
+        "status": "PREPARING",
+        "total_amount": "105.50",
+        "created_at": "2025-05-11T15:55:01.425Z",
+        "updated_at": "2025-05-11T15:55:01.533Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 61,
+    "fields": {
+        "table": 36,
+        "status": "READY",
+        "total_amount": "25.00",
+        "created_at": "2025-05-11T15:55:01.540Z",
+        "updated_at": "2025-05-11T15:55:01.566Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 62,
+    "fields": {
+        "table": 31,
+        "status": "READY",
+        "total_amount": "27.50",
+        "created_at": "2025-05-11T15:55:01.575Z",
+        "updated_at": "2025-05-11T15:55:01.613Z"
+    }
+},
+{
+    "model": "restaurant.order",
+    "pk": 63,
+    "fields": {
+        "table": 33,
+        "status": "SERVED",
+        "total_amount": "6.50",
+        "created_at": "2025-05-11T15:55:01.620Z",
+        "updated_at": "2025-05-11T15:55:01.638Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 73,
+    "fields": {
+        "order": 39,
+        "menu_item": 75,
+        "quantity": 3,
+        "special_instructions": "",
+        "created_at": "2025-05-11T15:54:59.775Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 74,
+    "fields": {
+        "order": 39,
+        "menu_item": 76,
+        "quantity": 1,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:54:59.792Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 75,
+    "fields": {
+        "order": 40,
+        "menu_item": 81,
+        "quantity": 1,
+        "special_instructions": "",
+        "created_at": "2025-05-11T15:54:59.824Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 76,
+    "fields": {
+        "order": 40,
+        "menu_item": 65,
+        "quantity": 1,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:54:59.839Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 77,
+    "fields": {
+        "order": 41,
+        "menu_item": 77,
+        "quantity": 1,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:54:59.872Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 78,
+    "fields": {
+        "order": 41,
+        "menu_item": 63,
+        "quantity": 2,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:54:59.892Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 79,
+    "fields": {
+        "order": 41,
+        "menu_item": 70,
+        "quantity": 2,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:54:59.910Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 80,
+    "fields": {
+        "order": 42,
+        "menu_item": 75,
+        "quantity": 2,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:54:59.946Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 81,
+    "fields": {
+        "order": 42,
+        "menu_item": 82,
+        "quantity": 1,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:54:59.962Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 82,
+    "fields": {
+        "order": 42,
+        "menu_item": 59,
+        "quantity": 3,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:54:59.981Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 83,
+    "fields": {
+        "order": 42,
+        "menu_item": 67,
+        "quantity": 3,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.006Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 84,
+    "fields": {
+        "order": 42,
+        "menu_item": 73,
+        "quantity": 1,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.030Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 85,
+    "fields": {
+        "order": 43,
+        "menu_item": 59,
+        "quantity": 2,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:00.064Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 86,
+    "fields": {
+        "order": 44,
+        "menu_item": 77,
+        "quantity": 2,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:00.089Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 87,
+    "fields": {
+        "order": 44,
+        "menu_item": 60,
+        "quantity": 2,
+        "special_instructions": "",
+        "created_at": "2025-05-11T15:55:00.109Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 88,
+    "fields": {
+        "order": 44,
+        "menu_item": 75,
+        "quantity": 2,
+        "special_instructions": "",
+        "created_at": "2025-05-11T15:55:00.128Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 89,
+    "fields": {
+        "order": 45,
+        "menu_item": 65,
+        "quantity": 1,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.153Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 90,
+    "fields": {
+        "order": 46,
+        "menu_item": 69,
+        "quantity": 2,
+        "special_instructions": "",
+        "created_at": "2025-05-11T15:55:00.192Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 91,
+    "fields": {
+        "order": 46,
+        "menu_item": 71,
+        "quantity": 1,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:00.212Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 92,
+    "fields": {
+        "order": 46,
+        "menu_item": 63,
+        "quantity": 1,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:00.233Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 93,
+    "fields": {
+        "order": 46,
+        "menu_item": 59,
+        "quantity": 2,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.256Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 94,
+    "fields": {
+        "order": 46,
+        "menu_item": 80,
+        "quantity": 3,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.276Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 95,
+    "fields": {
+        "order": 47,
+        "menu_item": 57,
+        "quantity": 2,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.316Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 96,
+    "fields": {
+        "order": 47,
+        "menu_item": 71,
+        "quantity": 3,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:00.333Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 97,
+    "fields": {
+        "order": 47,
+        "menu_item": 81,
+        "quantity": 2,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:00.351Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 98,
+    "fields": {
+        "order": 47,
+        "menu_item": 76,
+        "quantity": 2,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.370Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 99,
+    "fields": {
+        "order": 47,
+        "menu_item": 64,
+        "quantity": 2,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.387Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 100,
+    "fields": {
+        "order": 48,
+        "menu_item": 75,
+        "quantity": 3,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.423Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 101,
+    "fields": {
+        "order": 49,
+        "menu_item": 76,
+        "quantity": 3,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:00.454Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 102,
+    "fields": {
+        "order": 49,
+        "menu_item": 60,
+        "quantity": 1,
+        "special_instructions": "",
+        "created_at": "2025-05-11T15:55:00.471Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 103,
+    "fields": {
+        "order": 50,
+        "menu_item": 75,
+        "quantity": 2,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.513Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 104,
+    "fields": {
+        "order": 50,
+        "menu_item": 69,
+        "quantity": 1,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:00.530Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 105,
+    "fields": {
+        "order": 50,
+        "menu_item": 82,
+        "quantity": 3,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:00.551Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 106,
+    "fields": {
+        "order": 51,
+        "menu_item": 64,
+        "quantity": 3,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:00.589Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 107,
+    "fields": {
+        "order": 51,
+        "menu_item": 59,
+        "quantity": 1,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.607Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 108,
+    "fields": {
+        "order": 51,
+        "menu_item": 70,
+        "quantity": 1,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:00.627Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 109,
+    "fields": {
+        "order": 51,
+        "menu_item": 68,
+        "quantity": 2,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.648Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 110,
+    "fields": {
+        "order": 52,
+        "menu_item": 65,
+        "quantity": 1,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.684Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 111,
+    "fields": {
+        "order": 52,
+        "menu_item": 72,
+        "quantity": 2,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:00.703Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 112,
+    "fields": {
+        "order": 52,
+        "menu_item": 64,
+        "quantity": 3,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.723Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 113,
+    "fields": {
+        "order": 52,
+        "menu_item": 70,
+        "quantity": 2,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:00.746Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 114,
+    "fields": {
+        "order": 52,
+        "menu_item": 73,
+        "quantity": 1,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:00.767Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 115,
+    "fields": {
+        "order": 53,
+        "menu_item": 68,
+        "quantity": 3,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.809Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 116,
+    "fields": {
+        "order": 53,
+        "menu_item": 72,
+        "quantity": 1,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:00.828Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 117,
+    "fields": {
+        "order": 53,
+        "menu_item": 57,
+        "quantity": 3,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:00.850Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 118,
+    "fields": {
+        "order": 53,
+        "menu_item": 78,
+        "quantity": 1,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:00.873Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 119,
+    "fields": {
+        "order": 53,
+        "menu_item": 70,
+        "quantity": 3,
+        "special_instructions": "",
+        "created_at": "2025-05-11T15:55:00.895Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 120,
+    "fields": {
+        "order": 54,
+        "menu_item": 61,
+        "quantity": 2,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:00.930Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 121,
+    "fields": {
+        "order": 54,
+        "menu_item": 62,
+        "quantity": 2,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:00.949Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 122,
+    "fields": {
+        "order": 54,
+        "menu_item": 76,
+        "quantity": 2,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:00.970Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 123,
+    "fields": {
+        "order": 54,
+        "menu_item": 73,
+        "quantity": 1,
+        "special_instructions": "",
+        "created_at": "2025-05-11T15:55:00.992Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 124,
+    "fields": {
+        "order": 54,
+        "menu_item": 71,
+        "quantity": 3,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:01.018Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 125,
+    "fields": {
+        "order": 55,
+        "menu_item": 73,
+        "quantity": 1,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:01.049Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 126,
+    "fields": {
+        "order": 55,
+        "menu_item": 71,
+        "quantity": 1,
+        "special_instructions": "",
+        "created_at": "2025-05-11T15:55:01.073Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 127,
+    "fields": {
+        "order": 55,
+        "menu_item": 74,
+        "quantity": 1,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:01.091Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 128,
+    "fields": {
+        "order": 55,
+        "menu_item": 82,
+        "quantity": 3,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:01.109Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 129,
+    "fields": {
+        "order": 56,
+        "menu_item": 82,
+        "quantity": 1,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:01.146Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 130,
+    "fields": {
+        "order": 56,
+        "menu_item": 57,
+        "quantity": 3,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:01.164Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 131,
+    "fields": {
+        "order": 56,
+        "menu_item": 73,
+        "quantity": 3,
+        "special_instructions": "",
+        "created_at": "2025-05-11T15:55:01.187Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 132,
+    "fields": {
+        "order": 56,
+        "menu_item": 74,
+        "quantity": 1,
+        "special_instructions": "",
+        "created_at": "2025-05-11T15:55:01.209Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 133,
+    "fields": {
+        "order": 57,
+        "menu_item": 58,
+        "quantity": 1,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:01.243Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 134,
+    "fields": {
+        "order": 57,
+        "menu_item": 80,
+        "quantity": 3,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:01.262Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 135,
+    "fields": {
+        "order": 57,
+        "menu_item": 63,
+        "quantity": 1,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:01.285Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 136,
+    "fields": {
+        "order": 57,
+        "menu_item": 61,
+        "quantity": 2,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:01.306Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 137,
+    "fields": {
+        "order": 58,
+        "menu_item": 78,
+        "quantity": 2,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:01.336Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 138,
+    "fields": {
+        "order": 59,
+        "menu_item": 58,
+        "quantity": 2,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:01.365Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 139,
+    "fields": {
+        "order": 59,
+        "menu_item": 65,
+        "quantity": 3,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:01.384Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 140,
+    "fields": {
+        "order": 59,
+        "menu_item": 76,
+        "quantity": 2,
+        "special_instructions": "",
+        "created_at": "2025-05-11T15:55:01.403Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 141,
+    "fields": {
+        "order": 60,
+        "menu_item": 82,
+        "quantity": 1,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:01.434Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 142,
+    "fields": {
+        "order": 60,
+        "menu_item": 76,
+        "quantity": 3,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:01.450Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 143,
+    "fields": {
+        "order": 60,
+        "menu_item": 71,
+        "quantity": 2,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:01.473Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 144,
+    "fields": {
+        "order": 60,
+        "menu_item": 81,
+        "quantity": 2,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:01.497Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 145,
+    "fields": {
+        "order": 60,
+        "menu_item": 73,
+        "quantity": 2,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:01.518Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 146,
+    "fields": {
+        "order": 61,
+        "menu_item": 69,
+        "quantity": 2,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:01.555Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 147,
+    "fields": {
+        "order": 62,
+        "menu_item": 59,
+        "quantity": 1,
+        "special_instructions": "Extra spicy",
+        "created_at": "2025-05-11T15:55:01.583Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 148,
+    "fields": {
+        "order": 62,
+        "menu_item": 76,
+        "quantity": 3,
+        "special_instructions": "No salt",
+        "created_at": "2025-05-11T15:55:01.600Z"
+    }
+},
+{
+    "model": "restaurant.orderitem",
+    "pk": 149,
+    "fields": {
+        "order": 63,
+        "menu_item": 57,
+        "quantity": 1,
+        "special_instructions": "Dressing on the side",
+        "created_at": "2025-05-11T15:55:01.628Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 20,
+    "fields": {
+        "order": 39,
+        "amount": "27.50",
+        "payment_method": "CARD",
+        "transaction_id": "TXN-16099",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:54:59.810Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 21,
+    "fields": {
+        "order": 40,
+        "amount": "21.50",
+        "payment_method": "CASH",
+        "transaction_id": "TXN-25970",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:54:59.855Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 22,
+    "fields": {
+        "order": 41,
+        "amount": "49.50",
+        "payment_method": "CARD",
+        "transaction_id": "TXN-27751",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:54:59.931Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 23,
+    "fields": {
+        "order": 42,
+        "amount": "94.00",
+        "payment_method": "ONLINE",
+        "transaction_id": "TXN-30180",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:55:00.051Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 24,
+    "fields": {
+        "order": 45,
+        "amount": "14.50",
+        "payment_method": "ONLINE",
+        "transaction_id": "TXN-49106",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:55:00.176Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 25,
+    "fields": {
+        "order": 46,
+        "amount": "85.50",
+        "payment_method": "ONLINE",
+        "transaction_id": "TXN-66266",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:55:00.297Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 26,
+    "fields": {
+        "order": 47,
+        "amount": "112.50",
+        "payment_method": "ONLINE",
+        "transaction_id": "TXN-90321",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:55:00.406Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 27,
+    "fields": {
+        "order": 48,
+        "amount": "21.00",
+        "payment_method": "CARD",
+        "transaction_id": "TXN-65544",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:55:00.439Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 28,
+    "fields": {
+        "order": 49,
+        "amount": "26.50",
+        "payment_method": "ONLINE",
+        "transaction_id": "TXN-82438",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:55:00.491Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 29,
+    "fields": {
+        "order": 50,
+        "amount": "41.50",
+        "payment_method": "CASH",
+        "transaction_id": "TXN-53680",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:55:00.573Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 30,
+    "fields": {
+        "order": 51,
+        "amount": "73.50",
+        "payment_method": "ONLINE",
+        "transaction_id": "TXN-13291",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:55:00.668Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 31,
+    "fields": {
+        "order": 52,
+        "amount": "110.00",
+        "payment_method": "CASH",
+        "transaction_id": "TXN-27553",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:55:00.791Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 32,
+    "fields": {
+        "order": 55,
+        "amount": "70.50",
+        "payment_method": "CASH",
+        "transaction_id": "TXN-18125",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:55:01.128Z"
+    }
+},
+{
+    "model": "restaurant.payment",
+    "pk": 33,
+    "fields": {
+        "order": 63,
+        "amount": "6.50",
+        "payment_method": "ONLINE",
+        "transaction_id": "TXN-46983",
+        "status": "COMPLETED",
+        "created_at": "2025-05-11T15:55:01.645Z"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 45,
+    "fields": {
+        "item_name": "Eliolado",
+        "quantity_on_hand": 50,
+        "reorder_level": 10,
+        "supplier_info": "Greek Imports Ltd."
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 46,
+    "fields": {
+        "item_name": "Feta",
+        "quantity_on_hand": 30,
+        "reorder_level": 5,
+        "supplier_info": "Athena Cheese Co."
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 47,
+    "fields": {
+        "item_name": "Elies Kalamatas",
+        "quantity_on_hand": 40,
+        "reorder_level": 8,
+        "supplier_info": "Olympus Goods"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 48,
+    "fields": {
+        "item_name": "Giaourti",
+        "quantity_on_hand": 25,
+        "reorder_level": 5,
+        "supplier_info": "Aegean Dairy"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 49,
+    "fields": {
+        "item_name": "Arni",
+        "quantity_on_hand": 20,
+        "reorder_level": 5,
+        "supplier_info": "Ithaca Meats"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 50,
+    "fields": {
+        "item_name": "Moussaka Migma",
+        "quantity_on_hand": 15,
+        "reorder_level": 3,
+        "supplier_info": "Delphi Foods"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 51,
+    "fields": {
+        "item_name": "Ouzo",
+        "quantity_on_hand": 30,
+        "reorder_level": 5,
+        "supplier_info": "Mykonos Spirits"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 52,
+    "fields": {
+        "item_name": "Ryzi",
+        "quantity_on_hand": 60,
+        "reorder_level": 15,
+        "supplier_info": "Hellenic Grains"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 53,
+    "fields": {
+        "item_name": "Domates",
+        "quantity_on_hand": 45,
+        "reorder_level": 10,
+        "supplier_info": "Fresh Farms Athens"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 54,
+    "fields": {
+        "item_name": "Aggouri",
+        "quantity_on_hand": 35,
+        "reorder_level": 7,
+        "supplier_info": "Fresh Farms Athens"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 55,
+    "fields": {
+        "item_name": "Pita Psomi",
+        "quantity_on_hand": 100,
+        "reorder_level": 20,
+        "supplier_info": "Santorini Bakery"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 56,
+    "fields": {
+        "item_name": "Skordo",
+        "quantity_on_hand": 40,
+        "reorder_level": 8,
+        "supplier_info": "Fresh Farms Athens"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 57,
+    "fields": {
+        "item_name": "Lemonia",
+        "quantity_on_hand": 50,
+        "reorder_level": 10,
+        "supplier_info": "Crete Citrus"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 58,
+    "fields": {
+        "item_name": "Kanela",
+        "quantity_on_hand": 20,
+        "reorder_level": 5,
+        "supplier_info": "Greek Spices Inc."
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 59,
+    "fields": {
+        "item_name": "Meli",
+        "quantity_on_hand": 25,
+        "reorder_level": 5,
+        "supplier_info": "Mount Olympus Apiaries"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 60,
+    "fields": {
+        "item_name": "Kalamari",
+        "quantity_on_hand": 15,
+        "reorder_level": 5,
+        "supplier_info": "Aegean Seafood Inc."
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 61,
+    "fields": {
+        "item_name": "Garides",
+        "quantity_on_hand": 18,
+        "reorder_level": 4,
+        "supplier_info": "Aegean Seafood Inc."
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 62,
+    "fields": {
+        "item_name": "Retsina",
+        "quantity_on_hand": 20,
+        "reorder_level": 5,
+        "supplier_info": "Attica Wines"
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 63,
+    "fields": {
+        "item_name": "Baklavas Siropi",
+        "quantity_on_hand": 15,
+        "reorder_level": 3,
+        "supplier_info": "Sweet Greece Inc."
+    }
+},
+{
+    "model": "restaurant.inventory",
+    "pk": 64,
+    "fields": {
+        "item_name": "Fyllo Kroustas",
+        "quantity_on_hand": 30,
+        "reorder_level": 6,
+        "supplier_info": "Athens Bakery Supplies"
+    }
+},
+{
+    "model": "restaurant.staff",
+    "pk": 1,
+    "fields": {
+        "name": "Makis Petaloudas",
+        "position": "WAITER",
+        "contact_info": "698734636365",
+        "user": null
+    }
+},
+{
+    "model": "restaurant.staff",
+    "pk": 2,
+    "fields": {
+        "name": "Kostas Tromaras",
+        "position": "CHEF",
+        "contact_info": "23049782308973",
+        "user": null
+    }
+},
+{
+    "model": "restaurant.staff",
+    "pk": 17,
+    "fields": {
+        "name": "Nikos Papadopoulos",
+        "position": "MANAGER",
+        "contact_info": "nikos@ourrestaurant.gr, 69xxxxxxxx",
+        "user": 45
+    }
+},
+{
+    "model": "restaurant.staff",
+    "pk": 18,
+    "fields": {
+        "name": "Maria Kosta",
+        "position": "WAITER",
+        "contact_info": "maria@ourrestaurant.gr, 69xxxxxxxx",
+        "user": 46
+    }
+},
+{
+    "model": "restaurant.staff",
+    "pk": 19,
+    "fields": {
+        "name": "Dimitris Georgiou",
+        "position": "CHEF",
+        "contact_info": "dimitris@ourrestaurant.gr, 69xxxxxxxx",
+        "user": 47
+    }
+},
+{
+    "model": "restaurant.staff",
+    "pk": 20,
+    "fields": {
+        "name": "Elena Papandreou",
+        "position": "WAITER",
+        "contact_info": "elena@ourrestaurant.gr, 69xxxxxxxx",
+        "user": 48
+    }
+},
+{
+    "model": "restaurant.staff",
+    "pk": 21,
+    "fields": {
+        "name": "Giorgos Antoniou",
+        "position": "WAITER",
+        "contact_info": "giorgos@ourrestaurant.gr, 69xxxxxxxx",
+        "user": 49
+    }
+},
+{
+    "model": "restaurant.staff",
+    "pk": 22,
+    "fields": {
+        "name": "Sofia Dimitriou",
+        "position": "CASHIER",
+        "contact_info": "sofia@ourrestaurant.gr, 69xxxxxxxx",
+        "user": 50
+    }
+},
+{
+    "model": "restaurant.staff",
+    "pk": 23,
+    "fields": {
+        "name": "Andreas Alexiou",
+        "position": "CHEF",
+        "contact_info": "andreas@ourrestaurant.gr, 69xxxxxxxx",
+        "user": 51
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 201,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-11",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 202,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-11",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 203,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-11",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 204,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-11",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 205,
+    "fields": {
+        "staff": 17,
+        "shift_date": "2025-05-11",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 206,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-11",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 207,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-11",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 208,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-12",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 209,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-12",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 210,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-12",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 211,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-12",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 212,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-12",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 213,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-12",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 214,
+    "fields": {
+        "staff": 23,
+        "shift_date": "2025-05-12",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 215,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-13",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 216,
+    "fields": {
+        "staff": 23,
+        "shift_date": "2025-05-13",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 217,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-13",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 218,
+    "fields": {
+        "staff": 23,
+        "shift_date": "2025-05-13",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 219,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-13",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 220,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-13",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 221,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-13",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 222,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-14",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 223,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-14",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 224,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-14",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 225,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-14",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 226,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-14",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 227,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-14",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 228,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-14",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 229,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-15",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 230,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-15",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 231,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-15",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 232,
+    "fields": {
+        "staff": 23,
+        "shift_date": "2025-05-15",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 233,
+    "fields": {
+        "staff": 17,
+        "shift_date": "2025-05-15",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 234,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-15",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 235,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-15",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 236,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-16",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 237,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-16",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 238,
+    "fields": {
+        "staff": 17,
+        "shift_date": "2025-05-16",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 239,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-16",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 240,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-16",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 241,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-16",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 242,
+    "fields": {
+        "staff": 23,
+        "shift_date": "2025-05-16",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 243,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-17",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 244,
+    "fields": {
+        "staff": 23,
+        "shift_date": "2025-05-17",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 245,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-17",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 246,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-17",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 247,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-17",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 248,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-17",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 249,
+    "fields": {
+        "staff": 23,
+        "shift_date": "2025-05-17",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 250,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-18",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 251,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-18",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 252,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-18",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 253,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-18",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 254,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-18",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 255,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-18",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 256,
+    "fields": {
+        "staff": 17,
+        "shift_date": "2025-05-18",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 257,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-19",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 258,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-19",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 259,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-19",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 260,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-19",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 261,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-19",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 262,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-19",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 263,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-19",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 264,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-20",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 265,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-20",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 266,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-20",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 267,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-20",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 268,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-20",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 269,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-20",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 270,
+    "fields": {
+        "staff": 17,
+        "shift_date": "2025-05-20",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 271,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-21",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 272,
+    "fields": {
+        "staff": 23,
+        "shift_date": "2025-05-21",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 273,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-21",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 274,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-21",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 275,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-21",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 276,
+    "fields": {
+        "staff": 17,
+        "shift_date": "2025-05-21",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 277,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-21",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 278,
+    "fields": {
+        "staff": 17,
+        "shift_date": "2025-05-22",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 279,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-22",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 280,
+    "fields": {
+        "staff": 23,
+        "shift_date": "2025-05-22",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 281,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-22",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 282,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-22",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 283,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-22",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 284,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-22",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 285,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-23",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 286,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-23",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 287,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-23",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 288,
+    "fields": {
+        "staff": 20,
+        "shift_date": "2025-05-23",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 289,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-23",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 290,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-23",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 291,
+    "fields": {
+        "staff": 17,
+        "shift_date": "2025-05-23",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 292,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-24",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 293,
+    "fields": {
+        "staff": 23,
+        "shift_date": "2025-05-24",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 294,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-24",
+        "shift_start_time": "09:00:00",
+        "shift_end_time": "17:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 295,
+    "fields": {
+        "staff": 22,
+        "shift_date": "2025-05-24",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 296,
+    "fields": {
+        "staff": 21,
+        "shift_date": "2025-05-24",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 297,
+    "fields": {
+        "staff": 18,
+        "shift_date": "2025-05-24",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.schedule",
+    "pk": 298,
+    "fields": {
+        "staff": 19,
+        "shift_date": "2025-05-24",
+        "shift_start_time": "17:00:00",
+        "shift_end_time": "01:00:00",
+        "hours_worked": "8.00"
+    }
+},
+{
+    "model": "restaurant.timeoffrequest",
+    "pk": 1,
+    "fields": {
+        "staff": 1,
+        "start_date": "2025-05-16",
+        "end_date": "2025-05-15",
+        "reason": "astheneia",
+        "status": "PENDING",
+        "notes": "ela ree",
+        "created_at": "2025-05-09T23:16:06.562Z",
+        "updated_at": "2025-05-09T23:16:06.562Z"
+    }
+}
+]
