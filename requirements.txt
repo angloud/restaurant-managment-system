@@ -8,4 +8,4 @@ python-dotenv==1.0.1
 stripe==7.10.0  # For payment processing
 django-crispy-forms==2.1
 crispy-bootstrap5==2023.10
-#comm
+#commetststs
