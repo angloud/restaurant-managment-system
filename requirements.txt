@@ -2,7 +2,7 @@ asgiref==3.8.1
 Django==5.2 # Template
 sqlparse==0.5.3 # Data-base
 tzdata==2025.2 # Data-Structure
-django-widget-tweaks==1.5.0 
+django-widget-tweaks==1.5.0 # Front-End
 Pillow==10.2.0 
 python-dotenv==1.0.1
 stripe==7.10.0  # For payment processing
