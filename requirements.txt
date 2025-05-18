@@ -4,7 +4,7 @@ sqlparse==0.5.3 # Data-base
 tzdata==2025.2 # Data-Structure
 django-widget-tweaks==1.5.0 # Front-End
 Pillow==10.2.0 # Server info
-python-dotenv==1.0.1
+python-dotenv==1.0.1 # Virtual env
 stripe==7.10.0  # For payment processing
 django-crispy-forms==2.1 
 crispy-bootstrap5==2023.10 
